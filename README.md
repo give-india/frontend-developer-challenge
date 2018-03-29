@@ -31,7 +31,7 @@ A simple Radio app where user can listen to already requested songs by other and
 - Submit a pull request (PR)
 
 ### API DOCS
-#### BASE PATH - https://staging.letzchange.org/api/playlist/
+#### BASE PATH - https://letzchange.org/api/playlist/
 
-#### Swagger - https://app.swaggerhub.com/apis/rahulroy9202/playlist/1.0.0
-#### Postman - https://www.getpostman.com/collections/6ffa9fd0618b95e60704
+#### [Swagger](playlist.yml)
+#### [Postman](https://www.getpostman.com/collections/6ffa9fd0618b95e60704)

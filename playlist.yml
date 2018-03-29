@@ -1,0 +1,99 @@
+swagger: '2.0'
+info:
+  description: JavaScript-Interview
+  version: 1.0.0
+  title: PLAYLIST API
+  contact:
+    email: manishbhatia@letzchange.org
+
+schemes:
+- https
+
+paths:
+  /list:
+    get:
+      operationId: getPlaylist
+      description: get playlist
+      produces:
+      - application/json
+      responses:
+        200:
+          description: get playlist
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                description: ok
+              data:
+                type: array
+                items:
+                  $ref: '#/definitions/PlaylistItem'
+        400:
+          description: bad input parameter
+  /add:
+    post:
+      summary: adds an playlist item
+      operationId: addPlaylistItem
+      description: Adds an PlaylistItem to the system
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: PlaylistItem
+        description: PlaylistItem to add
+        schema:
+          type: object
+          properties:
+            data:
+                $ref: '#/definitions/PlaylistItem'
+      responses:
+        200:
+          description: item created
+        500:
+          description: error
+  /remove/{id}:
+    post:
+      summary: remove an playlist item
+      operationId: removePlaylistItem
+      description: remove an PlaylistItem
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        type: string
+        required: true
+        description: Playlist Item to remove by id
+      responses:
+        200:
+          description: item removed
+        404:
+          description: not found
+        500:
+          description: error
+
+definitions:
+  PlaylistItem:
+    type: object
+    required:
+    - id
+    - title
+    - duration
+    properties:
+      title:
+        type: string
+        example: Clarke and Dawe - The Front Fell Off
+      id:
+        type: string
+        example: 3m5qxZm_JqM
+      duration:
+        type: number
+        example: 24
+
+host: staging.letzchange.org
+basePath: /api/playlist/

@@ -1,4 +1,4 @@
-## Frontend Developer at LetzChange Foundation
+## Frontend Developer at LetzChange ( a unit of Give Foundation )
 
 Not just ‘Frontend’, are you a pro at web development with a special liking for JavaScript? How about working with a team that’s full of the creative breed and where food and outings are considered as being equally important to work?
 
@@ -10,17 +10,19 @@ We are looking for determined front-end developers who come with a strong experi
 ### Objective
 A simple Radio app where user can listen to already requested songs by other and request songs to be played by adding YouTube links
 
+![Sample UI](https://letzchangefiles.s3.ap-southeast-1.amazonaws.com/ec4db85c-5e31-4427-9463-aec56061f61a.jpg)
+
 ### Tasks
 - The application must be a SPA.
-- The application should fetch the current playlist from the provided REST API and start playing songs from the playlist.
+- The application should allow user to add a youtube link to the playlist and start playing songs from the playlist.
 - Once a song is finished, it should be removed from the playlist.
 - The user should be able to add a YouTube link, which must be validated by the app.
 - The app should then fetch basic information about the link like title, thumbnail and duration and add it to the playlist.
-- The playlist must be synced to the server using the provided REST API.
 
 ### Bonus
 
-- Allow user to search youtube instead of just providing a url to YouTube video
+- Allow user to search youtube instead of just providing a url to YouTube video.
+- Allow the playlist to be synced to a server-side REST API.
 - Sync different versions of the application. If the application is open across two tabs or two different computers, both must be in sync for all activities. For e.g adding/removing/forwarding a song on any one, should update both of them.
 
 ### Deliverables
@@ -29,9 +31,3 @@ A simple Radio app where user can listen to already requested songs by other and
 - Include instructions on how to set it up and run in the README.md
 - Add your resume and other profile / project links **(Don't include your social profiles. We really don't care unless it's your steam profile.)**
 - Submit a pull request (PR)
-
-### API DOCS
-#### BASE PATH - https://letzchange.org/api/playlist/
-
-#### [Swagger](playlist.yml)
-#### [Postman](https://www.getpostman.com/collections/6ffa9fd0618b95e60704)

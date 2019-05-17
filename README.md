@@ -1,9 +1,9 @@
-## Frontend Developer at LetzChange ( a unit of Give Foundation )
+## Frontend Developer at Give
 
 Not just ‘Frontend’, are you a pro at web development with a special liking for JavaScript? How about working with a team that’s full of the creative breed and where food and outings are considered as being equally important to work?
 
-We would love it if you are blessed with prudent design aesthetics but we would also want you to be game about having ‘fun’ while working. Welcome to the world of LetzChange, where we have come together to introduce a culture of giving that aims to change lives for the better.
-Stalk us at [our website](https://letzchange.org), [YouTube](https://www.youtube.com/user/LetzChange), [FB](https://facebook.com/LetzChange), [Twitter](https://twitter.com/letz_change), [LinkedIn](https://www.linkedin.com/company/letzchange-org)
+We would love it if you are blessed with prudent design aesthetics but we would also want you to be game about having ‘fun’ while working. Welcome to the world of Give, where we have come together to introduce a culture of giving that aims to change lives for the better.
+Stalk us at [our website](https://www.giveindia.org/), [FB](https://www.facebook.com/GiveIndia/), [Twitter](https://twitter.com/giveindia/), [LinkedIn](https://www.linkedin.com/company/giveindia/)
 
 We are looking for determined front-end developers who come with a strong experience in implementing modern web UIs that prove to be are a delight for the user. If you think you have what it takes, build us this simple app in a frontend stack of your choosing.
 

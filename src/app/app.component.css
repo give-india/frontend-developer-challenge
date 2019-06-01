@@ -1,0 +1,11 @@
+.playArea {
+    display: flex;
+}
+
+.right{
+    /* flex-grow: 3; */
+    width: 65%
+}
+.left{
+   
+}

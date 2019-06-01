@@ -1,0 +1,23 @@
+<div class="playArea">
+  <div class="left">
+
+    <iframe #videoplayer [src]="videoUrl" width="560" height="315" frameborder="0"></iframe>
+
+    <!-- <div class="buttons"> -->
+      <button (click)=previous(videoUrl)>Previous</button>
+      <button (click)=next(videoUrl)>Next</button>
+    <!-- </div> -->
+  </div>
+
+  <div class="right">
+    <div *ngFor="let video of allVideos">
+      <h5>{{video.title}}</h5>
+      <img src={{video.thumbnail}} (click)="playSelectedVideo(video)" alt="thumbnail">
+      <p>{{video.title}}</p>
+      <hr>
+    </div>
+
+  </div>
+</div>
+
+<!-- https://www.youtube.com/embed/Pt7s-HBkhGM?enablejsapi=1&origin=http://localhost:4200 -->

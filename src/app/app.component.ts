@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { GoogleApiService } from 'ng-gapi';
+import { GoogleApiService, GoogleAuthService} from 'ng-gapi';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 
@@ -12,11 +12,16 @@ export class AppComponent {
   title = 'myRadioApp';
   @ViewChild('videoplayer') videoPlayer ;
 
-  constructor(private gapiService: GoogleApiService, private sanitizer: DomSanitizer){ 
+  constructor(private gapiService: GoogleApiService, auth: GoogleAuthService, private sanitizer: DomSanitizer){ 
       this.extractAllVideos();
       this.extractAllVideoIds();
       this.currentVideoid = this.allVideoIds[0];
       this.videoUrl =   this.sanitizer.bypassSecurityTrustResourceUrl(this.host + this.allVideoIds[0] + this.params)
+      // gapiService.onLoad().subscribe(data => console.log(data, "this is some thing "))
+      auth.getAuth().subscribe(auth =>  {
+        console.log("here ??")
+        auth.signIn().then(data => console.log(data, "??"))
+      })
   }
 
   host:String =  "https://www.youtube.com/embed/";

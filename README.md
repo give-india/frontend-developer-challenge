@@ -10,24 +10,23 @@ We are looking for determined front-end developers who come with a strong experi
 ### Objective
 A simple Radio app where user can listen to already requested songs by other and request songs to be played by adding YouTube links
 
-![Sample UI](https://letzchangefiles.s3.ap-southeast-1.amazonaws.com/ec4db85c-5e31-4427-9463-aec56061f61a.jpg)
+Sample UI below. The app doesn't need to have fancy design. We are looking for functional implementation.
+![Sample UI](https://d1v9g1a6pf512p.cloudfront.net/static/images/misc/ec4db85c-5e31-4427-9463-aec56061f61a-a.jpg)
 
 ### Tasks
 - The application must be a SPA.
-- The application should allow user to add a youtube link to the playlist and start playing songs from the playlist.
+- The application should allow user to add a youtube link to the playlist and start playing songs from the playlist first in first out.
 - Once a song is finished, it should be removed from the playlist.
-- The user should be able to add a YouTube link, which must be validated by the app.
-- The app should then fetch basic information about the link like title, thumbnail and duration and add it to the playlist.
+- The youtube link must be validated by the app for proper url format before adding to the queue.
 
 ### Bonus
 
-- Allow user to search youtube instead of just providing a url to YouTube video.
-- Allow the playlist to be synced to a server-side REST API.
-- Sync different versions of the application. If the application is open across two tabs or two different computers, both must be in sync for all activities. For e.g adding/removing/forwarding a song on any one, should update both of them.
+- Allow the user to remove and reorder items in the playlist.
+- Sync different versions of the application. If the application is open across two tabs, both must be in sync for all activities. For e.g adding/removing/forwarding a song on any one, should update both of them.
 
 ### Deliverables
 - Create a fork of this repository
 - Code your solution in a frontend stack of your choice
 - Include instructions on how to set it up and run in the README.md
-- Add your resume and other profile / project links **(Don't include your social profiles. We really don't care unless it's your steam profile.)**
+- Add your resume and other profile / project links
 - Submit a pull request (PR)

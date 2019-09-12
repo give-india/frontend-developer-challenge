@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.form-element {
+    width: 350px;
+    margin: 5px 10px;
+}
+
+.btn {
+    width: 20%;
+    margin: 3px 5px;
+    background: darkslategrey;
+    color: white;
+    height: 30px;
+    border: 0;
+}
+
+.player-playlist {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.video {
+    width: 700px;
+    border: 2px solid rgba(0, 0, 0, .8);
+    padding: 5px;
+}
+
+.list {
+    list-style: none;
+    width: 40%;
+}
+
+.item {
+    border: 2px solid rgba(0, 0, 0, .8);
+    border-radius: 5px;
+    height: auto;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 5px 5px 10px;
+    transform: scale(.95);
+}
+
+.item:nth-child(1) {
+    background: whitesmoke;
+    transform: scale(1);
+}
+
+.info {
+    display: flex;
+    text-align: left;
+    margin: 0 0 2px 7px;
+    overflow: initial;
+    
+}
+
+.item-btn {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nowplaying {
+    border-radius: 10px;
+    background-color: forestgreen;
+}
+
+.delete-btn {
+    border-radius: 10px;
+    background-color: brown;
+}
+
+.move-btn {
+    border-radius: 10px;
+    background-color: teal;
+}
+
+@media only screen and (min-width: 250px) and (max-width: 1240px) {
+    .player-playlist {
+        flex-direction: column;
+    }
+
+    .list, .video {
+        width: 100%;
+    }
+}

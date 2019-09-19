@@ -1,0 +1,3 @@
+<ng-container *ngIf="totalVideos != 0">
+  <youtube-player [videoId]="id" height=600 width=800 (ready)="savePlayer($event)" (change)="onStateChange($event)"></youtube-player>
+</ng-container>

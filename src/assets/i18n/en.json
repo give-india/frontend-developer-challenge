@@ -1,0 +1,10 @@
+{
+  "AddLink": "Add Link",
+  "InsertYoutubeLink": "Add a youtube link (e.g. https://www.youtube.com/watch?v=hvIg3PTJWxs )",
+  "Errors" :{
+      "InvalidYoutubeLink": "The youtube link is invalid. Please check.",
+      "LinkAlreadyExists": "The link already exists in the playlist.",
+      "VideoNotFound": "The youtube video being added could not be found."
+  },
+  "VideoAdded": "Video Successfully added"
+}

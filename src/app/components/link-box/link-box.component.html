@@ -1,0 +1,11 @@
+<div class="row link-box">
+  <div class="col-6">
+    <img src="{{videoData.thumbnail}}">
+  </div>
+  <div class="col-6">
+    <strong>{{videoData.title}}</strong><br />
+    <input *ngIf="videoPosition != 0" type="button" value="↑" (click)="moveUp()" title="Move Up">
+    <input *ngIf="videoPosition < (totalVideos - 1)" type="button" class="m-l-5" value="↓" (click)="moveDown()" title="Move Down">
+    <input type="button" class="m-l-5" value="X" (click)="deleteVideo()" title="Delete">
+  </div>
+</div>

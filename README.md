@@ -21,3 +21,5 @@ Sample UI below. The app doesn't need to have fancy design. We are looking for f
 - Use `npm start` to run the app locally.
 - Use `npm run build` to build the production site. While building tweak `homepage` attribute in `package.json` according to deployment.
 - The most-recent build is in `/docs` in the repository; To run copy the `/docs` directory and use programs like `serve` to serve the live project - `serve -s docs`;
+
+### Live build v1.1-beta - https://astriskit.github.io/frontend-developer-challenge/

@@ -1,7 +1,12 @@
 import React from "react";
+import * as firebase from "firebase/app";
+import "firebase/firestore";
+import firebaseConfig from "./firebase.no-show.js"; // required for initializing the firebase-app; api-ref: https://firebase.google.com/docs/reference/js/firebase.html?authuser=0#initialize-app
 
 const PLAYER_HEIGHT = "400";
 const PLAYER_WIDTH = "600";
+const FIREBASE_COLLECTION_NAME = "radio-videos"; // for saving and getting documents
+const FIREBASE_ATTRIB_NAME_VIDEO_ID = "videoId"; // to save and get a youtube-video-id in a document
 
 const Loading = () => {
   return "....";
@@ -16,14 +21,29 @@ class YouTubeRadio extends React.Component {
     playerReady: false
   };
 
-  playNext = () => {
+  constructor() {
+    super();
+    this.appHandle = firebase.initializeApp(firebaseConfig);
+  }
+
+  playNext = (vid, cb) => {
     let playlist = this.state.videoIds;
-    if (this.state.current) {
-      playlist = playlist.filter(vid => vid !== this.state.current);
-    }
     if (playlist.length) {
+      if (this.state.current) {
+        if (vid) {
+          let current = 0;
+          let toCurrent = playlist.findIndex(id => id === vid);
+          if (toCurrent >= 0) {
+            playlist[current] = vid;
+            playlist[toCurrent] = this.state.current;
+          }
+        } else {
+          playlist = playlist.filter(id => id !== this.state.current);
+        }
+      }
       this.setState({ current: playlist[0], videoIds: playlist }, () => {
         window.ytPlayer.loadVideoById(playlist[0]);
+        cb && cb();
       });
     }
   };
@@ -62,10 +82,23 @@ class YouTubeRadio extends React.Component {
 
   componentWillUnmount() {
     window.ytPlayer && window.ytPlayer.destroy();
+    this.appHandle && this.appHandle.delete();
   }
 
   loadVideoList = async () => {
     let list = [];
+    if (this.appHandle) {
+      let dbHandle = this.appHandle.firestore();
+      let querySnapshot = await dbHandle
+        .collection(FIREBASE_COLLECTION_NAME)
+        .get();
+      querySnapshot.forEach(doc => {
+        let data = doc.data();
+        if (FIREBASE_ATTRIB_NAME_VIDEO_ID in data) {
+          list.push(data[FIREBASE_ATTRIB_NAME_VIDEO_ID]);
+        }
+      });
+    }
     return [...list, ...this.state.videoIds];
   };
 
@@ -81,20 +114,45 @@ class YouTubeRadio extends React.Component {
     return "";
   };
 
-  handleEnter = ({ keyCode }) => {
+  handleEnter = async ({ keyCode }) => {
     let vid = this.extractVideoId();
     if (keyCode === 13 && vid) {
+      if (this.appHandle) {
+        let dbHandle = this.appHandle.firestore();
+        let data = { on: Date.now() };
+        data[FIREBASE_ATTRIB_NAME_VIDEO_ID] = vid;
+        await dbHandle.collection(FIREBASE_COLLECTION_NAME).add(data);
+        console.log(`video-added to db - ${vid}`);
+      }
       this.setState(
         {
           videoIds: [...this.state.videoIds, vid],
           url: ""
         },
         () => {
-          if (!this.current && this.state.playerReady) {
+          if (!this.state.current && this.state.playerReady) {
             this.playNext();
           }
         }
       );
+    }
+  };
+
+  setPlayBack = vid => {
+    if (this.state.current === vid) {
+      if (
+        window.ytPlayer.getPlayerState() === window.YT.PlayerState.PAUSED ||
+        window.ytPlayer.getPlayerState() === window.YT.PlayerState.UNSTARTED
+      ) {
+        window.ytPlayer.playVideo();
+      } else {
+        window.ytPlayer.pauseVideo();
+      }
+    } else {
+      window.ytPlayer.pauseVideo();
+      this.playNext(vid, () => {
+        window.ytPlayer.playVideo();
+      });
     }
   };
 
@@ -156,8 +214,21 @@ class YouTubeRadio extends React.Component {
                   return (
                     <li
                       key={`${vId}-${index}`}
-                      className={this.state.current === vId ? "w3-teal" : ""}
+                      className={this.state.current === vId ? "w3-blue" : ""}
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center"
+                      }}
                     >
+                      <span
+                        className={`w3-btn w3-hover-${
+                          this.state.current === vId ? "red" : "green"
+                        }`}
+                        onClick={() => this.setPlayBack(vId)}
+                      >
+                        {this.state.current === vId ? "😎" : "😴"}
+                      </span>
                       <a href={link}>{link}</a>
                     </li>
                   );

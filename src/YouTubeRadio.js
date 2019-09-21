@@ -9,7 +9,7 @@ const FIREBASE_COLLECTION_NAME = "radio-videos"; // for saving and getting docum
 const FIREBASE_ATTRIB_NAME_VIDEO_ID = "videoId"; // to save and get a youtube-video-id in a document
 
 const Loading = () => {
-  return "....";
+  return <span className="w3-animate-spin">😮</span>;
 };
 
 class YouTubeRadio extends React.Component {
@@ -18,12 +18,20 @@ class YouTubeRadio extends React.Component {
     url: "",
     current: "",
     loadingVideoIds: true,
-    playerReady: false
+    playerReady: false,
+    isAlreadyMounted: false
   };
 
   constructor() {
     super();
-    this.appHandle = firebase.initializeApp(firebaseConfig);
+    let isAlreadyMounted = localStorage["isAlreadyMounted"] ? true : false;
+    this.state.isAlreadyMounted = isAlreadyMounted;
+    if (!isAlreadyMounted) {
+      localStorage["isAlreadyMounted"] = true;
+      this.appHandle = firebase.initializeApp(firebaseConfig);
+      this.cleanUp = this.cleanUp.bind(this);
+      window.addEventListener("beforeunload", this.cleanUp);
+    }
   }
 
   playNext = (vid, cb) => {
@@ -54,13 +62,16 @@ class YouTubeRadio extends React.Component {
   };
 
   onPlayerStateChange = event => {
-    console.log("state-change", event);
+    localStorage["debug"] && console.log("state-change", event);
     if (event.data === window.YT.PlayerState.ENDED) {
       this.playNext();
     }
   };
 
   componentDidMount() {
+    if (!this.appHandle) {
+      return;
+    }
     this.loadVideoList().then(list => {
       this.setState({ videoIds: list, loadingVideoIds: false }, () => {
         let script = document.createElement("script");
@@ -80,9 +91,13 @@ class YouTubeRadio extends React.Component {
     };
   }
 
-  componentWillUnmount() {
+  cleanUp() {
     window.ytPlayer && window.ytPlayer.destroy();
-    this.appHandle && this.appHandle.delete();
+    if (this.appHandle) {
+      this.appHandle.delete();
+      delete localStorage["isAlreadyMounted"];
+    }
+    window.removeEventListener("beforeunload", this.cleanUp);
   }
 
   loadVideoList = async () => {
@@ -157,6 +172,13 @@ class YouTubeRadio extends React.Component {
   };
 
   render() {
+    if (this.state.isAlreadyMounted) {
+      return (
+        <div className="w3-display-middle w3-panel w3-round w3-xxlarge w3-aqua w3-text-grey w3-wide">
+          Already opened in some tab :)
+        </div>
+      );
+    }
     return (
       <div
         className="w3-container"

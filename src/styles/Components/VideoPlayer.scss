@@ -1,0 +1,14 @@
+.body{
+    width: 100%;
+    height: calc(100vh - 70px);
+    display: flex;
+    .video-player{
+        flex:2;
+        height: 100%;
+    }
+    .play-list{
+        flex:1;
+        height: 100%;
+        background-color: #141414;
+    }
+}

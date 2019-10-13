@@ -20,6 +20,7 @@ class HomePage extends React.Component{
             loading: false,
             selectedIndex: -1
         }
+        window.addEventListener('storage',this.changeState)
     }
 
     static getDerivedStateFromProps(nextProps,prevState){
@@ -50,6 +51,20 @@ class HomePage extends React.Component{
         })
     }
 
+    changeState = (e) => {
+        try {
+           if(e.key === 'state'){
+            const newState = JSON.parse(e.newValue);
+            this.setState(newState)
+           }
+        }catch(e){
+            this.setState({
+                errorMsg:'Some Error Occured',
+                notValid: true,
+            })
+        }
+    }
+
     removeVideo = (url) => {
         const index = this.state.urlList.findIndex(el => el.url === url);
         if(index > -1){
@@ -68,10 +83,12 @@ class HomePage extends React.Component{
         })
     }
 
-    end = (e) =>{
-        const index = this.state.urlList.findIndex(el => el.url === url);
+    end = () =>{
         this.setState(prevState => {
-            prevState.splice
+            prevState.urlList.splice(this.state.selectedIndex,1);
+            return {
+                urlList: prevState.urlList,
+            }
         })
     }
     addUrl = (e) => {
@@ -98,6 +115,7 @@ class HomePage extends React.Component{
     }
 
     render() {
+        localStorage.setItem('state',JSON.stringify(this.state));
         return(
             <LoadingOverlay 
                 active={this.props.videoData.loading}
@@ -110,7 +128,7 @@ class HomePage extends React.Component{
                 </div>
                 <div className="body">
                     <VideoPlayer  video={this.state.urlList[this.state.selectedIndex]} end={this.end}/>
-                    <PlayList list={this.state.urlList} removeVideo={this.removeVideo} changeVideo={this.changeVideo}/>
+                    <PlayList list={this.state.urlList} removeVideo={this.removeVideo} changeVideo={this.changeVideo} selectedIndex={this.state.selectedIndex}/>
                 </div>
             </div>
             </LoadingOverlay>

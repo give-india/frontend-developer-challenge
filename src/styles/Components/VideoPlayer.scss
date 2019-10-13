@@ -28,6 +28,9 @@
             display: flex;
             padding: 10px 0;
             cursor: pointer;
+            &.active{
+                background-color: #1f1f1f;
+            }
             .thumb{
                 flex:1;
                 width: 40%;

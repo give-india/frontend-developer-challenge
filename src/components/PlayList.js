@@ -11,7 +11,7 @@ const PlayList = (props) => (
         {
             props.list.map((video,index) => {
                 return (
-                    <div className="playlist-card" key={isvalidYoutubeUrl(video.url)} onClick={() => props.changeVideo(index)}>
+                    <div className={`playlist-card ${props.selectedIndex === index ? 'active':''}`} key={isvalidYoutubeUrl(video.url)} onClick={() => props.changeVideo(index)}>
                         <img className="thumb" src={video.thumbnail_url} />
                         <div className='title'>{video.title}
                         <a href={video.author_url} target="_blank" rel="noopener noreferrer">{video.author_name}</a>
@@ -29,11 +29,13 @@ PlayList.propTypes={
     list: PropTypes.array.isRequired,
     removeVideo: PropTypes.func,
     changeVideo: PropTypes.func,
+    selectedIndex:PropTypes.number,
 }
 
 PlayList.defaultProps={
     removeVideo: () => {},
-    changeVideo: () => {}
+    changeVideo: () => {},
+    selectedIndex: 0
 }
 
 export default PlayList;

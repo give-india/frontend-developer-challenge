@@ -26,7 +26,6 @@ export const videoDataReducer = (state = INITIAL_STATE, action)=> {
             }
         }
         case FETCH_VIDEO_ERROR:{
-            console.log(action)
             return {
                 loading: false,
                 error: true,

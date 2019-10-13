@@ -48,6 +48,19 @@ class HomePage extends React.Component{
         })
     }
 
+    removeVideo = (url) => {
+        const index = this.state.urlList.findIndex(el => el.url === url);
+        if(index > -1){
+            this.setState(prevState => {
+                prevState.urlList.splice(index,1);
+                console.log(prevState)
+                return {
+                    urlList:prevState.urlList
+                }
+            })
+        }
+    }
+
     addUrl = (e) => {
         e.preventDefault()
         const id = isvalidYoutubeUrl(this.state.urlValue)
@@ -84,7 +97,7 @@ class HomePage extends React.Component{
                 </div>
                 <div className="body">
                     <VideoPlayer />
-                    <PlayList list={this.state.urlList}/>
+                    <PlayList list={this.state.urlList} removeVideo={this.removeVideo}/>
                 </div>
             </div>
             </LoadingOverlay>

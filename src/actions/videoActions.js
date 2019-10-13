@@ -1,9 +1,9 @@
 import * as types from '../constants'
 
-export const videoDataAction = () => {
+export const videoDataAction = (id) => {
     return function(dispatch){
         dispatch({type:types.FETCH_VIDEO});
-        return fetch('https://noembed.com/embed?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ',{method:'GET', headers:{
+        return fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${id}`,{method:'GET', headers:{
             'Content-Type': 'application/json'
           }}).then(data => data.json()).then(data => {
             dispatch({

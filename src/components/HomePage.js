@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import LoadingOverlay from 'react-loading-overlay'
+import BounceLoader from 'react-spinners/BounceLoader'
 import UrlBar from './UrlBar';
 import VideoPlayer from './VideoPlayer';
 import PlayList from './PlayList';
@@ -13,10 +15,32 @@ class HomePage extends React.Component{
         this.state ={
             urlValue: '',
             urlList:[],
-            notValid: false
+            notValid: false,
+            errorMsg:'',
+            loading: false
         }
     }
 
+    static getDerivedStateFromProps(nextProps,prevState){
+        if(nextProps.videoData.flag && prevState.loading){
+            if(nextProps.videoData.data.error){
+                return {
+                    notValid: true,
+                    errorMsg: nextProps.videoData.data.error
+                }
+            }
+            return {
+                urlList: prevState.urlList.concat(JSON.parse(JSON.stringify(nextProps.videoData.data))),
+                loading: false
+            }
+        }
+        if(nextProps.videoData.loading !== prevState.loading){
+            return {
+                loading:nextProps.videoData.loading
+            }
+        }
+        return null;
+    }
     changeUrl = (e) => {
         this.setState({
             urlValue: e.target.value,
@@ -29,16 +53,11 @@ class HomePage extends React.Component{
         const id = isvalidYoutubeUrl(this.state.urlValue)
         if(id){
             this.props.videoDataAction(id)
-            this.setState(prevState => {
-                return {
-                    urlList : prevState.urlList.concat(prevState.urlValue),
-                    urlValue:''
-                }
-            })
         }else{
             this.setState({
                 notValid: true,
-                urlValue: ''
+                urlValue: '',
+                errorMsg:'Please enter a valid Youtube URL'
             })
         }
        
@@ -46,22 +65,33 @@ class HomePage extends React.Component{
 
     render() {
         return(
-            <div className="container">
+            <LoadingOverlay 
+                active={this.props.videoData.loading}
+                spinner={<BounceLoader />}
+                fadeSpeed={0}>
+            <div className="container ">
                 <div className="header">
                     <UrlBar value={this.state.urlValue} changeUrl={this.changeUrl} addUrl={this.addUrl}/>
-                    {this.state.notValid && <div className="error">Please enter a valid Youtube URL</div>}
+                    {this.state.notValid && <div className="error">{this.state.errorMsg}</div>}
                 </div>
                 <div className="body">
                     <VideoPlayer />
                     <PlayList list={this.state.urlList}/>
                 </div>
             </div>
+            </LoadingOverlay>
         )
     }
 }
 
 HomePage.propTypes = {
     videoDataAction:PropTypes.func.isRequired,
+    videoData: PropTypes.shape({
+        flag:PropTypes.bool.isRequired,
+        error:PropTypes.bool.isRequired,
+        loading: PropTypes.bool.isRequired,
+        data:PropTypes.object.isRequired,
+    })
 }
 const mapStateToProps = state => ({
     videoData: state.videoDataReducer

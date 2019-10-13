@@ -1,6 +1,7 @@
 import { FETCH_VIDEO,FETCH_VIDEO_ERROR,FETCH_VIDEO_SUCCESS } from "../constants";
 const INITIAL_STATE = {
     loading: false,
+    flag: false,
     data:{},
     error:false,
 }
@@ -11,6 +12,7 @@ export const videoDataReducer = (state = INITIAL_STATE, action)=> {
         case FETCH_VIDEO:{
             return {
                 ...state,
+                flag:false,
                 loading: true,
                 error: false,
             }
@@ -19,13 +21,16 @@ export const videoDataReducer = (state = INITIAL_STATE, action)=> {
             return {
                 loading: false,
                 error: false,
+                flag:true,
                 data: action.data
             }
         }
         case FETCH_VIDEO_ERROR:{
+            console.log(action)
             return {
                 loading: false,
                 error: true,
+                flag:false,
                 data:{} 
             }
         }

@@ -51,7 +51,7 @@ class HomePage extends React.Component{
     }
 
     removeVideo = (url) => {
-        const index = this.state.urlList.findIndex(el => el.);
+        const index = this.state.urlList.findIndex(el => el.url === url);
         if(index > -1){
             this.setState(prevState => {
                 prevState.urlList.splice(index,1);

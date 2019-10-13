@@ -52,7 +52,15 @@ class HomePage extends React.Component{
         e.preventDefault()
         const id = isvalidYoutubeUrl(this.state.urlValue)
         if(id){
-            this.props.videoDataAction(id)
+            if (this.state.urlList.findIndex(el => el.url === this.state.urlValue) > -1) {
+                this.setState({
+                    notValid: true,
+                    urlValue: '',
+                    errorMsg:'URL already exists in the playlist'
+                })
+            }else{
+                this.props.videoDataAction(id)
+            }
         }else{
             this.setState({
                 notValid: true,

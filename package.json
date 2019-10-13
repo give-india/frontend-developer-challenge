@@ -40,6 +40,7 @@
     "react-redux": "7.0.3",
     "react-router-dom": "5.0.0",
     "react-spinners": "0.6.1",
+    "react-youtube": "7.9.0",
     "redux": "4.0.1",
     "redux-thunk": "2.3.0"
   },

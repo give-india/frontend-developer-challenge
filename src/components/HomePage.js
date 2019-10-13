@@ -17,7 +17,8 @@ class HomePage extends React.Component{
             urlList:[],
             notValid: false,
             errorMsg:'',
-            loading: false
+            loading: false,
+            selectedIndex: -1
         }
     }
 
@@ -31,6 +32,7 @@ class HomePage extends React.Component{
             }
             return {
                 urlList: prevState.urlList.concat(JSON.parse(JSON.stringify(nextProps.videoData.data))),
+                selectedIndex: prevState.urlList.length ? prevState.selectedIndex : prevState.urlList.length,
                 loading: false
             }
         }
@@ -49,18 +51,29 @@ class HomePage extends React.Component{
     }
 
     removeVideo = (url) => {
-        const index = this.state.urlList.findIndex(el => el.url === url);
+        const index = this.state.urlList.findIndex(el => el.);
         if(index > -1){
             this.setState(prevState => {
                 prevState.urlList.splice(index,1);
-                console.log(prevState)
-                return {
-                    urlList:prevState.urlList
-                }
+              return {...{
+                    selectedIndex: prevState.selectedIndex === index ? '' : prevState.selectedIndex,
+                    urlList:prevState.urlList,
+                }}
             })
         }
     }
+    changeVideo = (index) => {
+        this.setState({
+            selectedIndex:  index
+        })
+    }
 
+    end = (e) =>{
+        const index = this.state.urlList.findIndex(el => el.url === url);
+        this.setState(prevState => {
+            prevState.splice
+        })
+    }
     addUrl = (e) => {
         e.preventDefault()
         const id = isvalidYoutubeUrl(this.state.urlValue)
@@ -96,8 +109,8 @@ class HomePage extends React.Component{
                     {this.state.notValid && <div className="error">{this.state.errorMsg}</div>}
                 </div>
                 <div className="body">
-                    <VideoPlayer />
-                    <PlayList list={this.state.urlList} removeVideo={this.removeVideo}/>
+                    <VideoPlayer  video={this.state.urlList[this.state.selectedIndex]} end={this.end}/>
+                    <PlayList list={this.state.urlList} removeVideo={this.removeVideo} changeVideo={this.changeVideo}/>
                 </div>
             </div>
             </LoadingOverlay>

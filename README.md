@@ -1,6 +1,6 @@
 ## Frontend Developer at Give
 
-Sample UI below. The app doesn't need to have fancy design. We are looking for functional implementation.
+Implemented UI
 ![Implemented UI](screenshot/scrshot.png)
 
 ### Tasks

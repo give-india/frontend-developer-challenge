@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import LoadingOverlay from 'react-loading-overlay'
-import BounceLoader from 'react-spinners/BounceLoader'
+import {PacmanLoader} from 'react-spinners'
 import UrlBar from './UrlBar';
 import VideoPlayer from './VideoPlayer';
 import PlayList from './PlayList';
@@ -75,7 +75,7 @@ class HomePage extends React.Component{
         return(
             <LoadingOverlay 
                 active={this.props.videoData.loading}
-                spinner={<BounceLoader />}
+                spinner={<PacmanLoader color='#ffffff' />}
                 fadeSpeed={0}>
             <div className="container ">
                 <div className="header">

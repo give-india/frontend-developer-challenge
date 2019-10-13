@@ -10,9 +10,10 @@ export const videoDataAction = () => {
                 type: types.FETCH_VIDEO_SUCCESS,
                 data
             })
-        }).catch(() => {
+        }).catch((err) => {
             dispatch({
                 type: types.FETCH_VIDEO_ERROR,
+                err,
             })
         })
     }

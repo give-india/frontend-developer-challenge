@@ -21,6 +21,20 @@ class HomePage extends React.Component{
             selectedIndex: -1
         }
         window.addEventListener('storage',this.changeState)
+        const state = localStorage.getItem('state');
+        try{
+            this.state  = JSON.parse(state);
+        }catch(e){
+            this.state = {
+                urlValue: '',
+                urlList:[],
+                notValid: false,
+                errorMsg:'',
+                loading: false,
+                selectedIndex: -1
+            }
+        }
+
     }
 
     static getDerivedStateFromProps(nextProps,prevState){
@@ -31,6 +45,9 @@ class HomePage extends React.Component{
                     errorMsg: nextProps.videoData.data.error
                 }
             }
+            localStorage.setItem('state',JSON.stringify({...prevState,urlList: prevState.urlList.concat(JSON.parse(JSON.stringify(nextProps.videoData.data))),
+                selectedIndex: prevState.urlList.length ? prevState.selectedIndex : prevState.urlList.length,
+                loading: false}));
             return {
                 urlList: prevState.urlList.concat(JSON.parse(JSON.stringify(nextProps.videoData.data))),
                 selectedIndex: prevState.urlList.length ? prevState.selectedIndex : prevState.urlList.length,
@@ -48,6 +65,8 @@ class HomePage extends React.Component{
         this.setState({
             urlValue: e.target.value,
             notValid:false
+        },() => {
+            localStorage.setItem('state',JSON.stringify(this.state));
         })
     }
 
@@ -74,12 +93,16 @@ class HomePage extends React.Component{
                     selectedIndex: prevState.selectedIndex === index ? '' : prevState.selectedIndex,
                     urlList:prevState.urlList,
                 }}
+            },() => {
+                localStorage.setItem('state',JSON.stringify(this.state));
             })
         }
     }
     changeVideo = (index) => {
         this.setState({
             selectedIndex:  index
+        },() => {
+            localStorage.setItem('state',JSON.stringify(this.state));
         })
     }
 
@@ -89,6 +112,8 @@ class HomePage extends React.Component{
             return {
                 urlList: prevState.urlList,
             }
+        },() => {
+            localStorage.setItem('state',JSON.stringify(this.state));
         })
     }
     addUrl = (e) => {
@@ -115,7 +140,6 @@ class HomePage extends React.Component{
     }
 
     render() {
-        localStorage.setItem('state',JSON.stringify(this.state));
         return(
             <LoadingOverlay 
                 active={this.props.videoData.loading}

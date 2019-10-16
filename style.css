@@ -1,0 +1,89 @@
+.youtube-player {
+    height: 100vh;
+    padding: 40px 0;
+    background-color: #000;
+}
+
+.youtube-player h1 {
+    margin: 0 0 30px;
+    color: #fff;
+}
+
+.geturl {
+    padding: 15px;
+    background-color: #1f1f1f;
+    color: #fff;
+}
+
+.pad0 {
+    padding: 0;
+}
+
+.geturl input {
+    background: transparent;
+    border: 1px solid #555;
+    width: 100%;
+    padding: 10px;
+}
+
+.geturl input:focus {
+    outline: none;
+}
+
+.play-btn {
+    position: absolute;
+    right: 22px;
+    top: 22px;
+    padding: 3px 20px;
+}
+
+.playlist {
+    background-color: #1f1f1f;
+    padding: 20px;
+    color: #fff;
+    border: 1px solid #333;
+}
+
+.playlist h3 {
+    margin: 0;
+}
+
+.listing {
+    margin: 15px 0;
+    border: 1px solid #555;
+}
+
+.listing ul {
+    padding: 0;
+    list-style: none;
+    overflow-y: auto;
+    height: calc(100vh - 221px);
+}
+
+.listing li {
+    border-bottom: 1px solid #6f6f6f;
+    padding: 15px;
+}
+
+.video-player {
+    padding: 0;
+    height: 480px;
+    border: 10px solid;
+    margin: 50px;
+}
+
+li span {
+    float: right;
+    color: #f10000;
+    cursor: pointer;
+}
+
+li p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 389px;
+    display: inline-block;
+    margin: 0;
+    cursor: pointer;
+}

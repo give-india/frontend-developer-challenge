@@ -28,5 +28,9 @@ Sample UI below. The app doesn't need to have fancy design. We are looking for f
 - Create a fork of this repository
 - Code your solution in a frontend stack of your choice
 - Include instructions on how to set it up and run in the README.md
-- Add your resume and other profile / project links
 - Submit a pull request (PR)
+
+
+### Instruction
+
+Just click on index.html nothing need to be included enjoy your youtube player.

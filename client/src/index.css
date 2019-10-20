@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.App {
+  background-color: #141414;
+}
+.title {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+.addtrack-container {
+  background-color: #141414;
+  padding: 20px;
+  margin: 10px 0px;
+}
+.trackField {
+  border: none;
+  width: 75vw;
+  background-color: #141414;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  font-size: 15px;
+}
+
+.divider {
+  display: flex;
+  width: 100vw;
+}
+.videoplayer-container {
+  width: 65vw;
+  height: auto;
+  background-color: #cd2c31;
+  display: flex;
+  justify-content: center;
+}
+.tracklist-container {
+  width: 35vw;
+  height: auto;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trackTitle {
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
+  color: #fff;
+}
+.track-item {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  padding: 2px;
+  background-color: #141414;
+  margin-bottom: 3px;
+  color: white;
+  cursor: pointer;
+}
+.closeBtn {
+  font-weight: bold;
+}
+.closeBtn:hover {
+  color: green;
+  cursor: pointer;
+}
+@media only screen and (max-width: 900px) {
+  .track-item {
+    width: auto;
+  }
+}

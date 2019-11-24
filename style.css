@@ -1,0 +1,12 @@
+body {
+    
+    overflow-x: hidden;
+}
+iframe{
+    width:65.2%!important;
+    height: 78%;
+    margin:2% 0 0 8.8%;
+    border:2px solid #161616; 
+    border-radius: 20px;
+    box-shadow: 0 0 30px 2px black;
+}

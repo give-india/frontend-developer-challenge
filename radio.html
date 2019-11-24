@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body class=" text-white">
+    <header>
+
+
+        <div class="row">
+
+            <div class="col-sm-10 " style="background-color:#322e25;">
+
+                <img src="./logo1.png" class="mb-3 ml-2 ml-12">
+
+                <input type="text" class=" m-3 col-sm-9 pr-3  mt-5" placeholder="YouTube Song Url " id="youtubeUrl">
+                <button class="btn btn-outline-light ml-4 mb-1 " id="addUrl"> Add to playlist</button>
+
+
+            </div>
+
+            <div class="col-sm-2 " style="background-color:#322e25;">
+                <span class="offset-sm-5 text-warning">&copy;YouPLay 2019</span>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div class="col-sm-8 space"
+                style="background-image: url(video.png); background-repeat: no-repeat;background-position: 50px 95px;background-attachment: fixed;">
+                <br>
+                <iframe id="existing-iframe" class="d-none " 
+                    src="https://www.youtube.com/embed/?enablejsapi=1"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                    frameborder="0"></iframe>
+
+            </div>
+            <div class="col-sm-4 sidebar " style="min-height: 85vh;background-color: rgba(0, 0, 0, 0.932)">
+                <!-- background-image: linear-gradient(315deg, #a55c1b 0%, #322e25 74%); -->
+                <nav class="text-center ">
+                    <span> <img src="./playlist.png">Playlist</span>
+                    (Drag to reorder playlist)
+                    <hr class="bg-white col-sm-9 ">
+                    <ul class="text-left list-unstyled text-secondary" style="font-size: larger;" id="playlist">
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

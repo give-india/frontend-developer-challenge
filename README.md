@@ -30,3 +30,10 @@ Sample UI below. The app doesn't need to have fancy design. We are looking for f
 - Include instructions on how to set it up and run in the README.md
 - Add your resume and other profile / project links
 - Submit a pull request (PR)
+
+
+
+
+ 
+
+3 files are there HTML,CSS and Javascript..You can download and put them at same place and run it .It will display the youplay in which videos will come it will allow user to add songs to playlist and will play first in and first out.

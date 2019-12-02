@@ -2,7 +2,7 @@ Youtube Radio Player
 ====================
 A simple radio style Youtube player that allows user to add a link 
 to the playlist and play the songs first-in first-out. It also allows
-the user to increment or decrement the position of a song in the playlist as well as delete a song from the playlist. 
+the user to increment or decrement the position of a song in the playlist as well as delete a song from the playlist. The app is persistent across tabs as well.
 
 Requirements
 ==============================================================

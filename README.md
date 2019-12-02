@@ -1,32 +1,55 @@
-## Frontend Developer at Give
+Youtube Radio Player
+====================
+A simple radio style Youtube player that allows user to add a link 
+to the playlist and play the songs first-in first-out. It also allows
+the user to increment or decrement the position of a song in the playlist as well as delete a song from the playlist. 
 
-Not just ‘Frontend’, are you a pro at web development with a special liking for JavaScript? How about working with a team that’s full of the creative breed and where food and outings are considered as being equally important to work?
+Requirements
+==============================================================
 
-We would love it if you are blessed with prudent design aesthetics but we would also want you to be game about having ‘fun’ while working. Welcome to the world of Give, where we have come together to introduce a culture of giving that aims to change lives for the better.
-Stalk us at [our website](https://www.giveindia.org/), [FB](https://www.facebook.com/GiveIndia/), [Twitter](https://twitter.com/giveindia/), [LinkedIn](https://www.linkedin.com/company/giveindia/)
+For development, you will only need Node.js installed on your environement. 
 
-We are looking for determined front-end developers who come with a strong experience in implementing modern web UIs that prove to be are a delight for the user. If you think you have what it takes, build us this simple app in a frontend stack of your choosing.
+Node
+====
+Node is really easy to install & now include NPM. You should be able to run the following command after the installation procedure below.
 
-### Objective
-A simple Radio app where user can listen to already requested songs by other and request songs to be played by adding YouTube links
+$ node --version
+v0.10.24
 
-Sample UI below. The app doesn't need to have fancy design. We are looking for functional implementation.
-![Sample UI](https://d1v9g1a6pf512p.cloudfront.net/static/images/misc/ec4db85c-5e31-4427-9463-aec56061f61a-a.jpg)
+$ npm --version
+1.3.21
 
-### Tasks
-- The application must be a SPA.
-- The application should allow user to add a youtube link to the playlist and start playing songs from the playlist first in first out.
-- Once a song is finished, it should be removed from the playlist.
-- The youtube link must be validated by the app for proper url format before adding to the queue.
+Node installation on OS X
+=========================
+You will need to use a Terminal. On OS X, you can find the default terminal in /Applications/Utilities/Terminal.app.
 
-### Bonus
+Please install Homebrew if it's not already done with the following command.
 
-- Allow the user to remove and reorder items in the playlist.
-- Sync different versions of the application. If the application is open across two tabs, both must be in sync for all activities. For e.g adding/removing/forwarding a song on any one, should update both of them.
+$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
-### Deliverables
-- Create a fork of this repository
-- Code your solution in a frontend stack of your choice
-- Include instructions on how to set it up and run in the README.md
-- Add your resume and other profile / project links
-- Submit a pull request (PR)
+If everything when fine, you should run
+
+brew install node
+
+Node installation on Linux
+==========================
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs
+
+Node installation on Windows
+============================
+Just go on official Node.js website & grab the installer. Also, be sure to have git available in your PATH, npm might need it.
+
+
+Install
+=======
+$ git clone https://github.com/vibhanshuvaibhav/youtube-radio-player.git
+$ cd PROJECT
+$ npm install
+
+Start & watch
+=============
+$ npm start
+

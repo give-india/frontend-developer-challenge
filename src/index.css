@@ -1,0 +1,101 @@
+body {
+	background-color: black;
+	position: fixed;
+}
+
+#root {
+	height : 100%;
+	width : 100%;
+}
+
+.app {
+	display : grid;
+	height : 100%;
+	grid-template-columns: repeat(7, 1fr);
+	grid-template-rows: 60px 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-areas:
+	"f f f f f h h" 
+	"f f f f f l l"
+	"p p p p p l l"
+	"p p p p p l l"
+	"p p p p p l l"
+	"p p p p p l l"
+	"p p p p p l l";
+}
+
+.header-element{
+	grid-area : h;
+}
+
+.form-element{
+	grid-area : f;
+}
+
+.player-element{
+	grid-area : p;
+}
+
+.playlist-element{
+	grid-area : l;
+}
+
+.header-element{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	padding: 2px;
+}
+
+.playlist-element {
+    box-sizing: border-box;
+    padding: 10px;
+    overflow: scroll;
+    height: 100%;
+    width: 100%;
+}
+
+.player-element{
+	margin-top : 10px;
+	margin-left : 50px;
+	padding-left : 5px;
+}
+
+h1{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	color: white;
+}
+
+h2{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	color: white;
+}
+
+h3{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	color: white;
+}
+
+label{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	color: white;
+}
+
+button{
+	padding: 10px;
+	color : teal;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 5px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+li{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	color: white;
+}
+
+p{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	color: white;
+}

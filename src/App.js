@@ -9,7 +9,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       fullLink: "",
-      videoArr: ["https://www.youtube.com/watch?v=imjq5yQzNiI"]
+      videoArr: ["https://www.youtube.com/watch?v=imjq5yQzNiI"],
+      selected: "",
+      crossVideo: ""
     };
   }
   submitHandler = videoLink => {
@@ -18,8 +20,20 @@ class App extends React.Component {
         fullLink: videoLink,
         videoArr: [videoLink, ...this.state.videoArr]
       },
-      () => console.log(this.state)
+      () =>
+        this.setState({
+          selected: this.state.videoArr[0]
+        })
     );
+  };
+
+  crossHandler = crossVideo => {
+    //console.log(video);
+    //const newArray = [...this.state.videoArr];
+    const newArr = this.state.videoArr.filter(line => line !== crossVideo);
+    this.setState({
+      videoArr: newArr
+    });
   };
 
   render() {
@@ -36,6 +50,7 @@ class App extends React.Component {
               <VideoList
                 className="videoArrStyle"
                 videoArr={this.state.videoArr}
+                crossHandler={this.crossHandler}
               />
             </div>
           </div>

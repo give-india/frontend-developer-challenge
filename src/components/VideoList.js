@@ -12,7 +12,7 @@ export default class VideoList extends Component {
   render() {
     console.log(this.props);
     return (
-      <div className="videoListStyle">
+      <div className="ui relaxed divided list">
         <h3>Playlist</h3>
         {this.props.videoArr.map((video, index) => (
           <VideoItem key={index} video={video} />

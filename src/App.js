@@ -24,12 +24,21 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="ui container">
         <h1>Youtube Playlist</h1>
         <SearchBar submitHandler={this.submitHandler} />
-        <div className="container">
-          <VideoShow firstVideo={this.state.videoArr[0]} />
-          <VideoList className="videoArrStyle" videoArr={this.state.videoArr} />
+        <div className="ui grid">
+          <div className="ui row">
+            <div className="eleven wide column">
+              <VideoShow firstVideo={this.state.videoArr[0]} />
+            </div>
+            <div className="five wide column">
+              <VideoList
+                className="videoArrStyle"
+                videoArr={this.state.videoArr}
+              />
+            </div>
+          </div>
         </div>
       </div>
     );

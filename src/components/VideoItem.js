@@ -7,9 +7,13 @@ export default class VideoItem extends Component {
   render() {
     console.log(this.props);
     return (
-      <div className="ItemElemStyle">
-        <p>{this.props.video}</p>
-        <button onClick={this.onClickHandler}>X</button>
+      <div className="video-item item">
+        <div className="content">
+          <p className="header">{this.props.video}</p>
+          <button className="ui secondary button" onClick={this.onClickHandler}>
+            X
+          </button>
+        </div>
       </div>
     );
   }

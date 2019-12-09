@@ -3,7 +3,39 @@
 }
 
 .formInputStyle {
-  width: 80%;
+  width: 90%;
   padding: 1%;
   outline: none;
+}
+
+.container {
+  margin: 5% 5%;
+  width: 90%;
+  float: left;
+}
+
+.videoShowStyle {
+  float: left;
+  width: 600px;
+  height: 300px;
+}
+
+.videoListStyle {
+  float: right;
+}
+
+.ItemElemStyle {
+  float: left;
+}
+
+.ItemElemStyle p {
+  margin: 0;
+  padding: 0 5%;
+  float: left;
+  width: 50%;
+}
+.ItemElemStyle button {
+  float: right;
+  height: 35px;
+  width: 35px;
 }

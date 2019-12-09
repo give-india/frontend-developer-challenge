@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import VideoItem from "./VideoItem";
 
 export default class VideoList extends Component {
   constructor(props) {
@@ -9,7 +10,14 @@ export default class VideoList extends Component {
   }
 
   render() {
-    //console.log(this.props);
-    return <div></div>;
+    console.log(this.props);
+    return (
+      <div className="videoListStyle">
+        <h3>Playlist</h3>
+        {this.props.videoArr.map((video, index) => (
+          <VideoItem key={index} video={video} />
+        ))}
+      </div>
+    );
   }
 }

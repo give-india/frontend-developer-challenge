@@ -1,3 +1,27 @@
+### Instructions to run
+run
+```sh
+yarn && yarn start
+```
+**TL;DR**
+
+  - Install dependencies
+    ```sh
+    yarn
+    ```
+  - dev environments
+    - start
+        ```sh
+        yarn start
+        ```
+    - open `localhost:3000`
+  - production environments
+    - start
+        ```sh
+        yarn build
+        ```
+    - copy `dist/` folder
+
 ## Frontend Developer at Give
 
 Not just ‘Frontend’, are you a pro at web development with a special liking for JavaScript? How about working with a team that’s full of the creative breed and where food and outings are considered as being equally important to work?

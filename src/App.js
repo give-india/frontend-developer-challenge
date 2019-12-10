@@ -13,39 +13,60 @@ class App extends React.Component {
         // { id: 1, video: "https://www.youtube.com/watch?v=imjq5yQzNiI" },
         // { id: 2, video: "https://www.youtube.com/watch?v=WP316ABiTt0" },
         // { id: 3, video: "https://www.youtube.com/watch?v=9kgiZGKI1OU" }
-      ],
-      crossVideo: ""
+      ]
     };
+  }
+  componentDidMount() {
+    //console.log(JSON.parse(localStorage.getItem("LCState")));
+    if (localStorage.getItem("LCState")) {
+      const lcVidArr = JSON.parse(localStorage.getItem("LCState"));
+      this.setState({
+        fullLink: lcVidArr.fullLink,
+        videoArr: lcVidArr.videoArr
+      });
+    }
   }
   submitHandler = videoLink => {
     const videoItem = {
       id: Math.floor(Math.random() * 10000),
       video: videoLink
     };
-    this.setState({
-      fullLink: videoLink,
-      videoArr: [videoItem, ...this.state.videoArr]
-    });
+    this.setState(
+      {
+        fullLink: videoLink,
+        videoArr: [videoItem, ...this.state.videoArr]
+      },
+      () => localStorage.setItem("LCState", JSON.stringify(this.state))
+    );
   };
 
   crossHandler = crossVideoId => {
     const newArr = this.state.videoArr.filter(line => line.id !== crossVideoId);
-    this.setState({
-      videoArr: newArr
-    });
+    this.setState(
+      {
+        videoArr: newArr
+      },
+      () => localStorage.setItem("LCState", JSON.stringify(this.state))
+    );
   };
 
   videoCompleteHandler = remVideoArr => {
     console.log(remVideoArr);
-    this.setState({
-      videoArr: remVideoArr
-    });
+    this.setState(
+      {
+        videoArr: remVideoArr
+      },
+      () => localStorage.setItem("LCState", JSON.stringify(this.state))
+    );
   };
 
   orderChange = odrChgArr => {
-    this.setState({
-      videoArr: odrChgArr
-    });
+    this.setState(
+      {
+        videoArr: odrChgArr
+      },
+      () => localStorage.setItem("LCState", JSON.stringify(this.state))
+    );
   };
 
   render() {

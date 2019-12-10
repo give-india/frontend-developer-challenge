@@ -36,6 +36,8 @@ class App extends React.Component {
     });
   };
 
+  videoCompleteHandler = () => {};
+
   render() {
     return (
       <div className="ui container">
@@ -44,7 +46,10 @@ class App extends React.Component {
         <div className="ui grid">
           <div className="ui row">
             <div className="eleven wide column">
-              <VideoShow firstVideo={this.state.videoArr[0]} />
+              <VideoShow
+                firstVideo={this.state.videoArr}
+                videoCompleteHandler={this.videoCompleteHandler}
+              />
             </div>
             <div className="five wide column">
               <VideoList

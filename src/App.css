@@ -5,3 +5,8 @@
 .content {
   display: flex !important;
 }
+
+.header {
+  cursor: grab;
+  font-weight: bold;
+}

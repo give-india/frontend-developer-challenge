@@ -10,7 +10,7 @@ export default class VideoShow extends Component {
   render() {
     let videoId;
     if (this.props.firstVideo.length > 0) {
-      videoId = this.props.firstVideo[0].substring(32);
+      videoId = this.props.firstVideo[0].video.substring(32);
     }
     const opts = {
       playerVars: {
@@ -24,7 +24,7 @@ export default class VideoShow extends Component {
             <Youtube videoId={videoId} opts={opts} onEnd={this._onEnd} />
           </div>
           <div className="ui segment">
-            <h4 className="ui header">{this.props.firstVideo[0]}</h4>
+            <h4 className="ui header">{this.props.firstVideo[0].video}</h4>
           </div>
         </Fragment>
       );

@@ -9,29 +9,27 @@ class App extends React.Component {
     super(props);
     this.state = {
       fullLink: "",
-      videoArr: ["https://www.youtube.com/watch?v=imjq5yQzNiI"],
-      //selected: "",
+      videoArr: [
+        // { id: 1, video: "https://www.youtube.com/watch?v=imjq5yQzNiI" },
+        // { id: 2, video: "https://www.youtube.com/watch?v=WP316ABiTt0" },
+        // { id: 3, video: "https://www.youtube.com/watch?v=9kgiZGKI1OU" }
+      ],
       crossVideo: ""
     };
   }
   submitHandler = videoLink => {
-    this.setState(
-      {
-        fullLink: videoLink,
-        videoArr: [videoLink, ...this.state.videoArr]
-      }
-      // ,
-      // () =>
-      //   this.setState({
-      //     selected: this.state.videoArr[0]
-      //   })
-    );
+    const videoItem = {
+      id: Math.floor(Math.random() * 10000),
+      video: videoLink
+    };
+    this.setState({
+      fullLink: videoLink,
+      videoArr: [videoItem, ...this.state.videoArr]
+    });
   };
 
-  crossHandler = crossVideo => {
-    //console.log(video);
-    //const newArray = [...this.state.videoArr];
-    const newArr = this.state.videoArr.filter(line => line !== crossVideo);
+  crossHandler = crossVideoId => {
+    const newArr = this.state.videoArr.filter(line => line.id !== crossVideoId);
     this.setState({
       videoArr: newArr
     });
@@ -41,6 +39,12 @@ class App extends React.Component {
     console.log(remVideoArr);
     this.setState({
       videoArr: remVideoArr
+    });
+  };
+
+  orderChange = odrChgArr => {
+    this.setState({
+      videoArr: odrChgArr
     });
   };
 
@@ -62,6 +66,7 @@ class App extends React.Component {
                 className="videoArrStyle"
                 videoArr={this.state.videoArr}
                 crossHandler={this.crossHandler}
+                orderChange={this.orderChange}
               />
             </div>
           </div>

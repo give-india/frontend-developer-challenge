@@ -10,7 +10,7 @@ class App extends React.Component {
     this.state = {
       fullLink: "",
       videoArr: ["https://www.youtube.com/watch?v=imjq5yQzNiI"],
-      selected: "",
+      //selected: "",
       crossVideo: ""
     };
   }
@@ -19,11 +19,12 @@ class App extends React.Component {
       {
         fullLink: videoLink,
         videoArr: [videoLink, ...this.state.videoArr]
-      },
-      () =>
-        this.setState({
-          selected: this.state.videoArr[0]
-        })
+      }
+      // ,
+      // () =>
+      //   this.setState({
+      //     selected: this.state.videoArr[0]
+      //   })
     );
   };
 
@@ -36,7 +37,12 @@ class App extends React.Component {
     });
   };
 
-  videoCompleteHandler = () => {};
+  videoCompleteHandler = remVideoArr => {
+    console.log(remVideoArr);
+    this.setState({
+      videoArr: remVideoArr
+    });
+  };
 
   render() {
     return (

@@ -19,6 +19,9 @@ export default class SearchBar extends Component {
       this.state.link.substring(0, 32) === "https://www.youtube.com/watch?v="
     ) {
       this.props.submitHandler(this.state.link);
+      this.setState({
+        link: ""
+      });
     } else {
       alert("Incorrect Link");
     }

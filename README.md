@@ -11,3 +11,5 @@ To make our application more understandable, I added few dummy links, so you can
 To watch demo of this application please visit :  https://youtube-videos-player.netlify.com/ 
 
 I had included my resume in public folder, please take a glance at it.
+
+Demo links to my projects are available in my website:  https://www.satyasandeep.in  

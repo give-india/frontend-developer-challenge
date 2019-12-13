@@ -1,8 +1,8 @@
 Application at glance :
 
-Press the play button and add urls.
+Load valid youtube urls and they will get added to playlist.
 
-All links in the playlist will play in sequence. 
+Then Press Play button & All links in playlist will play in sequence. 
 
 You can move to other link with available options Next and Prev.
 

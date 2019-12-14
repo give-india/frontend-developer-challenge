@@ -1,0 +1,86 @@
+<html>
+<body>
+<div>
+ Enter Song: <input type="text" name="fname" id="add_song" size="100"><br>
+<button onclick="addSong()">Add Song</button>
+<p id="songs">
+<br>
+</p>
+
+
+</div>
+<div id="player"></div>
+<button id="show_songs">Show Playlist</button>
+<div id="show"></div>
+<script src="http://www.youtube.com/player_api"></script>
+
+<script>
+var x =[];
+x.push('_wgDPGBbfjU');
+
+
+
+function addSong() {
+    var new_song = document.getElementById("add_song").value;
+    var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+if (new_song.match(p)) {
+  result = new_song.replace(/(^\w+:|^)\/\//, '');
+  VID_REGEX = /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/; 
+		songs =	result.match(VID_REGEX)[1]; 
+            x.push(songs);
+  } else {
+    alert('Invalid URL');
+}
+};
+function showSong(){
+    if(x.length == 0 || x== 'undefined' ){
+    document.getElementById("show").innerHTML ='_wgDPGBbfjU';
+    }
+   
+    for(var i=0;i<x.length;i++){
+        document.getElementById("show").append(x[i]);
+    }
+};
+
+
+document.getElementById("show_songs").onclick = function() {showSong()};
+
+
+
+   var player, currentVideoId = 1;
+    function onYouTubePlayerAPIReady() {
+        player = new YT.Player('player', {
+          width: '640',
+          height: '390',
+       
+          events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+    function onPlayerReady(event) {
+        event.target.loadVideoById(x[0]);
+    }
+
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.ENDED) {
+
+            if (currentVideoId < x.length) {
+                localStorage.removeItem('state');
+                window.localStorage.setItem('state', x[currentVideoId]);
+                player.loadVideoById(x.shift());
+            }
+        }
+    }
+
+
+   
+
+   
+
+</script>
+</body>
+
+</html>
+

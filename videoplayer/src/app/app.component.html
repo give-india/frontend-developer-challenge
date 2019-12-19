@@ -1,0 +1,27 @@
+<div class="container video-background">
+  <div class="row seach-tab">
+    <form #seachForm="ngForm" (ngSubmit)="onSearch(seachForm)">
+    <input type="text" name="search" id="search"  placeholder="Enter link of your favorite youtube video..." ngModel>
+  </form>
+</div>
+  <div class="row video-player">
+    <div class="col-md-8 video-control">
+      <youtube-player
+      [height]=350
+      [width]=600
+      [videoId]="id"
+      (ready)="savePlayer($event)"
+      (change)="onStateChange($event)"
+    ></youtube-player>
+    <span style="color: orange;">{{videoinfo}}</span>
+       </div>
+    <div class="col-md-4 playlist">
+      <h2>Playlist</h2>
+      <hr class="line"/>
+      <ul class="playlist-link" *ngFor="let item of playlist; let i = index" >
+        <li #ival><a class="trim-text" (click)="playing(item)">{{i+1}}. video_id= {{item}} </a><i class="m-1 fa fa-caret-up" (click)="upward(i)"></i><i class="m-1 fa fa-caret-down" (click)="downward(i)"></i><i class="m-1 fa fa-times-circle fa-1x" (click)="deletelink(i)"></i></li>
+      </ul>
+    </div>
+  </div>
+</div>
+

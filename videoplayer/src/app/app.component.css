@@ -1,0 +1,78 @@
+
+.row{
+    margin:1em;
+}
+.video-background{
+    background-color: black;
+    height:100% !important;
+}
+.seach-tab form{
+    width: 100% !important;
+    margin: 0.5em;
+}
+.seach-tab input{
+    width: 100% !important;
+    border:0px;
+    border-bottom:1px solid orange;
+    background-color:black;
+    color:white;
+}
+.video-player{
+    width: 100%;
+    height: 100%;
+    overflow:visible;
+}
+.video-frame{
+    width: 100%;
+    height: 25em !important;
+    border:0px;
+}
+
+
+.playlist h2{
+    font-size:2em;
+    font-family: Pacifico;
+    color: orange;
+    text-align: center;
+    margin:0px;
+}
+hr{
+    
+    margin: -4px auto;
+    border-top: 1px dashed orange;
+    width:60%;
+}
+ ul{
+    padding-left: 0px !important;
+    margin-top:1em ;
+}
+.playlist-link li{
+    display:flex ;
+    list-style-type: none;  
+}
+.playlist-link a{
+    color: orange;
+    font-family:Varela ;
+    cursor: pointer;
+    overflow:hidden;              
+    white-space:nowrap;           
+   
+}
+.playlist-link i{
+    color:red;
+}
+.video-title{
+    font-family:Varela ;
+    color: orange;
+}
+
+a{
+    max-width: 100% !important;
+}
+/* .trim-text {
+    
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  } */

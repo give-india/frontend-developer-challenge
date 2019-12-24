@@ -1,0 +1,40 @@
+.header{
+    font-family: 'Lato';
+    text-align: center;
+    background-color: #0d0d0c;
+    color: #fafaf7;
+    padding: 1rem;
+}
+.video-container{
+    padding: 1rem;
+}
+.container-padding{
+    padding: 1rem;
+}
+.youtube-link-container{
+    font-family: 'Lato';
+    background-color: #0d0d0c;
+    color: #fafaf7;
+    float: left;
+}
+hr{
+    height: 0.1px;
+    background-color: #fafaf7;
+}
+.link{
+    display: flex;
+}
+.remove-link {
+    border-width: 0px;
+    color: #fafaf7;
+    background-color: transparent;
+    margin-left: 5rem;
+}
+.video-container{
+    padding-top: 2rem;
+    width: inherit;
+}
+.video{
+    width: inherit;
+    height: 550px;
+}

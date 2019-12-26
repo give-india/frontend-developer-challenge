@@ -21,9 +21,7 @@ hr{
     height: 0.1px;
     background-color: #fafaf7;
 }
-.link{
-    display: flex;
-}
+
 .remove-link {
     border-width: 0px;
     color: #fafaf7;

@@ -1,0 +1,109 @@
+$section-color: #383535;
+$font-grey: #ccc;
+
+body{
+  background: #000;
+}
+
+.App{
+  // background: #000;
+  width: 100%;
+  padding: 10px 0;
+  display: inline-block;
+  .link-add-header{
+    position: fixed;
+    top: -0;
+    width: 100%;
+    background: $section-color;
+    padding: 10px;
+    box-shadow: 0 10px 20px 0 #000;
+  }
+  input{
+    width: calc(100% - 20px);
+    background: $section-color;
+    border: none;
+    border-bottom: 1px solid $font-grey;
+    box-shadow: none;
+    width: 60%;
+    color: #fff;
+    padding-left: 10px;
+    float: left;
+  }
+  .add-btn{
+    border: none;
+    background: content-box;
+    color: #fff;
+    position: absolute;
+    right: 547px;
+    &:active{
+      box-shadow: 2px 2px 5px #ccc;
+      background: #fff;
+      color: #000;
+    }
+  }
+  .add-section{
+    width: 60%;
+    display: inline-block;
+    margin-top: 32px;
+    .no-video{
+      color: #fff;
+      text-align: center;
+    }
+  }
+
+  .links-section{
+    width: 40%;
+    background: $section-color;
+    color: #fff;
+    display: inline-block;
+    margin-top: 32px;
+    float: right;
+    h3{
+      color: #ccc;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+      width: 90%;
+      margin: 10px auto;
+      padding-bottom: 10px;
+    }
+    ul{
+      padding-left: 10px;
+      list-style: none;
+      word-break: break-all;
+      .placeholder{
+        background-color: #1f3245;
+        border: 2px solid #1f3245;
+        height: 66px;
+      }
+      li{
+        font-size: 25px;
+        color: $font-grey;
+        cursor: pointer;
+        margin-right: 20px;
+        .you-link{
+          cursor: pointer;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+        .remove-us{
+          float: right;
+          &:hover{
+            color: aqua;
+          }
+        }
+      }
+    }
+    .no-list{
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+  .controllers{
+    color: #fff;
+  }
+
+  button{
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,23 @@
+.video-detail-block {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  background-color: var(--bg-ternary);
+  margin: 10px 0;
+  box-shadow: 1px solid rgba(0, 0, 0, 1);
+}
+
+.video-detail__image {
+  width: 150px;
+  height: auto;
+}
+
+.video-detail__detail {
+  flex: 1;
+  margin: 0px 20px;
+}
+
+.video-detail__remove {
+  margin: 5px;
+  cursor: pointer;
+}

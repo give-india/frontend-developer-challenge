@@ -1,0 +1,28 @@
+.video-playlist-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+}
+.video-player {
+  width: 70% !important;
+  height: 600px !important;
+}
+
+.playlist {
+  padding: 0 1%;
+  width: 28%;
+  height: 600px;
+  overflow-y: scroll;
+}
+
+@media (max-width: 800px) {
+  .video-player {
+    width: 100% !important;
+  }
+
+  .playlist {
+    width: 100%;
+  }
+}

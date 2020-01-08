@@ -1,0 +1,36 @@
+.add-video-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.btn {
+  padding: 10px;
+  color: var(--text-primary);
+  background-color: var(--element);
+  border: 0;
+  font-size: 0.8rem;
+  margin: 10px;
+}
+
+.danger {
+  color: red;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  border: var(--bg-primary);
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}

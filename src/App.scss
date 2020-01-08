@@ -1,0 +1,9 @@
+@import "./styles/index.scss";
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-secondary);
+}

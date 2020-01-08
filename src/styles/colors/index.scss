@@ -1,0 +1,22 @@
+@import "css-vars/css-vars";
+
+$css-vars-use-native: true;
+
+$bg-primary: #2f3136;
+$bg-secondary: #36393f;
+$bg-ternary: #0c0b0b;
+$element: #7289da;
+$text-primary: #ffffff;
+$text-secondary: #e8e8e8;
+$text-ternary: #d1d1d199;
+
+@include css-vars(
+  (
+    --bg-primary: $bg-primary,
+    --bg-secondary: $bg-secondary,
+    --element: $element,
+    --text-primary: $text-primary,
+    --text-secondary: $text-secondary,
+    --text-ternary: $text-ternary
+  )
+);

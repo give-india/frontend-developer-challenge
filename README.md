@@ -1,2 +1,2 @@
-Hi, since I'm facing issues in raising PR from original account. Please look into commit history, original docs and everything in that repo. (both are my accounts). 
-[Link for Original Account](https://github.com/senthilbalajiganesan/frontend-developer-challenge)
+Hi, since I'm facing issues in raising PR from original account due to re-setup of upstream. Please look into commit history, original docs and everything in that repo. (both are my accounts). 
+[Link for Original Account and Repo](https://github.com/senthilbalajiganesan/frontend-developer-challenge)

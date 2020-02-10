@@ -1,0 +1,35 @@
+@import 'sass-rem';
+@import '../../assets/variables';
+
+.video-item {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: rem(50px);
+  padding: rem(10px) rem(2px) rem(20px) rem(2px);
+  border-bottom: rem(0.5px) solid map-get($palette, placeholder);
+
+  &__image {
+    width: 20%;
+  }
+
+  &__info {
+    width: auto;
+    color: map-get($palette, secondary);
+  }
+
+  &__name {
+    height: 71%;
+    overflow: hidden;
+    font-size: rem(15px);
+    font-weight: 550;
+    text-overflow: ellipsis;
+  }
+
+  &__time {
+    height: 50%;
+    margin-top: rem(10px);
+    padding-bottom: 0;
+    font-size: rem(14px);
+  }
+}

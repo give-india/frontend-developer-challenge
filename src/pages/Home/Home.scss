@@ -1,0 +1,23 @@
+@import 'sass-rem';
+@import '../../assets/variables';
+
+.home-page {
+  min-height: rem(750px);
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: rem(550px);
+    border-bottom: 1px solid map-get($palette, placeholder);
+  }
+
+  &__player {
+    width: 75%;
+  }
+
+  &__play-list {
+    width: 25%;
+    border-left: 1px solid map-get($palette, placeholder);
+  }
+}

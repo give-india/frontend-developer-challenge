@@ -1,32 +1,54 @@
-## Frontend Developer at Give
+## Video Streaming App Challenge
 
-Not just ‘Frontend’, are you a pro at web development with a special liking for JavaScript? How about working with a team that’s full of the creative breed and where food and outings are considered as being equally important to work?
+A basic youtube video streaming application, this appp allows the user to add youtube videos to playlist and play them according to how they were added. Not only that, the application also allow the user to re-arrange the order of the list by siply dragging the item to the desired posisition. When there is no current video playing, the user can simply drag any video from any position into the video player container to start playing the video or simply click the next button to play next video on the queue. However the player automatacally picks the next video on the queue after the current video has ended.
 
-We would love it if you are blessed with prudent design aesthetics but we would also want you to be game about having ‘fun’ while working. Welcome to the world of Give, where we have come together to introduce a culture of giving that aims to change lives for the better.
-Stalk us at [our website](https://www.giveindia.org/), [FB](https://www.facebook.com/GiveIndia/), [Twitter](https://twitter.com/giveindia/), [LinkedIn](https://www.linkedin.com/company/giveindia/)
+Click [here](https://vibrant-thompson-b99e8e.netlify.com/) for demo
 
-We are looking for determined front-end developers who come with a strong experience in implementing modern web UIs that prove to be are a delight for the user. If you think you have what it takes, build us this simple app in a frontend stack of your choosing.
+## **Getting Started**
 
-### Objective
-A simple video player app where user can request videos to be played in a queue by adding YouTube links
+These instructions bellow will guide you in setting up the project on your local machine.
 
-Sample UI below. The app doesn't need to have fancy design. We are looking for functional implementation.
-![Sample UI](https://d1v9g1a6pf512p.cloudfront.net/static/images/misc/ec4db85c-5e31-4427-9463-aec56061f61a-a.jpg)
+## Prerequisites
 
-### Tasks
-- The application must be a SPA.
-- The application should allow user to add a youtube link to the playlist and start playing from the playlist first in first out.
-- Once a video is finished, it should be removed from the playlist.
-- The youtube link must be validated by the app for proper url format before adding to the queue.
+You will need to have the following softwares installed on your local machine
 
-### Bonus
+- node js & npm or yarn
+- git (optional)
 
-- Allow the user to remove and reorder items in the playlist.
-- Sync different versions of the application. If the application is open across two tabs, both must be in sync for all activities. For e.g adding/removing/forwarding a video on any one, should update both of them.
+## Installing
 
-### Deliverables
-- Create a fork of this repository
-- Code your solution in a frontend stack of your choice
-- Include instructions on how to set it up and run in the README.md
-- Add your resume and other profile / project links
-- Submit a pull request (PR)
+download the project using the download button or use git if you have git installed in your computer
+
+```
+git clone https://github.com/nwashangai/frontend-developer-challenge.git
+```
+
+To install npm dependencies run
+
+```
+npm install or yarn install
+```
+
+rename the `.env.example` to `.env` and replace `[YOUR_KEY]` with your actual google api key
+
+Note: `YOUR_KEY` is your google developer API key with youtube service enabled
+
+To start the server run
+
+```
+npm start:dev or yarn start:dev
+```
+
+## Profile
+
+Resume: [My resume](https://docs.google.com/document/d/1LQ4Hy1U5raGdS8Rx1mtmbK6glMXENe9LMWAnyQnhnBY/edit?usp=sharing)
+
+Linkedin: [My Linkedin](https://www.linkedin.com/in/chiagoziem-young-nwadike-6154079b/)
+
+Other works includes
+
+blockcahin: [Blockchain simulation](https://github.com/nwashangai/blockchain) stack (typescript, nodejs and express)
+
+Human resource Application: [Powernik](https://github.com/nwashangai/Powernik) stack (typescript, react and redux) calculates bonus for employee from slack time for a week demo [here](https://hopeful-dijkstra-02160a.netlify.com/)
+
+bill pay (in progress): [bill pay](https://github.com/nwashangai/bill-pay)

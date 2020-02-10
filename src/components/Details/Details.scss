@@ -1,0 +1,44 @@
+@import 'sass-rem';
+@import '../../assets/variables';
+
+.video-details {
+  display: flex;
+
+  &__stats {
+    width: 75%;
+    max-height: rem(200px);
+    padding: rem(10px);
+  }
+
+  &__clear-list {
+    width: 25%;
+    text-align: start;
+  }
+
+  &__tittle {
+    margin-bottom: rem(10px);
+    font-size: rem(20px);
+  }
+
+  &__info {
+    position: relative;
+    display: flex;
+    color: map-get($palette, secondary);
+  }
+
+  &__views {
+    min-width: rem(100px);
+    font-size: rem(15px);
+  }
+
+  &__clear-btn {
+    background: map-get($palette, danger);
+    width: 102%;
+    height: rem(40px);
+    border: hidden;
+    font-size: rem(24px);
+    font-weight: bold;
+    color: map-get($palette, pure);
+    outline: none;
+  }
+}

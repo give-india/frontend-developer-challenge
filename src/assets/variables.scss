@@ -1,0 +1,22 @@
+$palette: (primary: #0072FF,
+tittle: rgb(91, 129, 209),
+secondary: rgb(143, 145, 148),
+success: rgb(84, 209, 100),
+danger: rgb(202, 39, 39),
+background: rgb(244, 244, 245),
+button-hover: #E26580,
+placeholder: #C8CBCF,
+shadow: #B3B2B2,
+dark: #1F1E1E,
+pure: #FFF,
+card-border: rgb(238, 240, 241),
+transparent: rgba(238, 240, 241, 0),
+);
+
+$text-colors: (label: #8E9999,
+input: #474949,
+);
+
+.cursor {
+  cursor: pointer;
+}

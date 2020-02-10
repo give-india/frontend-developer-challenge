@@ -1,0 +1,40 @@
+@import 'sass-rem';
+@import '../../assets/variables';
+
+.header-page {
+  width: 100%;
+  border-bottom: rem(1px) solid map-get($palette, placeholder);
+
+  &__input-wrapper {
+    width: 80%;
+    height: rem(50px);
+    margin: rem(10px) auto rem(15px) auto;
+  }
+
+  &__input-text:focus,
+  &__input-button:focus {
+    outline: none;
+  }
+
+  &__input-text {
+    vertical-align: top;
+    width: 60%;
+    height: 92%;
+    padding: 0 rem(10px);
+    border: 1px solid map-get($palette, placeholder);
+    border-top-left-radius: rem(5px);
+    border-bottom-left-radius: rem(5px);
+    font-size: rem(20px);
+  }
+
+  &__input-button {
+    background-color: map-get($palette, tittle);
+    height: 95%;
+    border: hidden;
+    border-top-right-radius: rem(5px);
+    border-bottom-right-radius: rem(5px);
+    font-size: rem(35px);
+    font-weight: bold;
+    color: map-get($palette, pure);
+  }
+}

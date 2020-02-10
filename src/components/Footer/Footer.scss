@@ -1,0 +1,13 @@
+@import 'sass-rem';
+@import '../../assets/variables';
+
+.footer {
+  padding: rem(5px) 0;
+  border-top: rem(1px) solid map-get($palette, placeholder);
+  text-align: center;
+  color: map-get($palette, secondary);
+
+  &__creator {
+    font-size: rem(12px);
+  }
+}

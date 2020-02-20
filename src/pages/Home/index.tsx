@@ -1,4 +1,4 @@
-import React, { createRef, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // third party libraries
 import Loader from 'react-loader';
@@ -44,6 +44,7 @@ const Home = ({
   playlist,
   updatePosition,
   playing,
+  progress,
   next,
   dropToPlay,
   isDragging,
@@ -52,27 +53,40 @@ const Home = ({
   clear
 }: any) => {
   const [state, setState] = useState({
+    progress,
     isLoading: false,
     isDragging: false,
-    progress: 0
+    url: ''
   });
 
-  const URLRef = createRef<HTMLInputElement>();
+  useEffect(() => {
+    setState({
+      ...state,
+      progress
+    });
+  }, [playing]);
 
   const onhandleProgress = (progress: any) => {
     updateProgress(progress.playedSeconds);
   };
 
+  const handleOnChange = (event: any) => {
+    setState({
+      ...state,
+      [event.target.id]: event.target.value.trim()
+    });
+  };
+
   const onAddURL = async () => {
-    if (URLRef.current) {
-      const isValidURL = isValidYoutubeURL(URLRef.current.value);
+    if (state.url.length > 0) {
+      const isValidURL = isValidYoutubeURL(state.url);
       if (isValidURL) {
         setState({
           ...state,
           isLoading: true
         });
         try {
-          await addVideoData(URLRef.current.value);
+          await addVideoData(state.url);
         } catch (error) {
           ToastsStore.error(error.message);
           setState({
@@ -82,7 +96,8 @@ const Home = ({
         }
         setState({
           ...state,
-          isLoading: false
+          isLoading: false,
+          url: ''
         });
       } else {
         ToastsStore.error('Invalid youtube link!');
@@ -103,13 +118,15 @@ const Home = ({
       <div className="home-page">
         <Header
           classes="header-page"
-          URLRef={URLRef}
+          defaultValue={state.url}
           onsubmit={onAddURL}
+          handleOnChange={handleOnChange}
         ></Header>
         <div className="home-page__body">
           <Player
             classes="home-page__player"
             playing={playing}
+            progress={state.progress}
             onProgress={onhandleProgress}
             drop2Play={dropToPlay}
             isDragging={isDragging}
@@ -144,7 +161,8 @@ const Home = ({
 export const mapStateToProps = (state: any) => ({
   playlist: state.player.playlist,
   playing: state.player.play,
-  isDragging: state.player.isDragging
+  isDragging: state.player.isDragging,
+  progress: state.player.stats.progress
 });
 
 export const mapDispatchToProps = (dispatch: any) => ({

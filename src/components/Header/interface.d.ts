@@ -1,5 +1,6 @@
 export interface HeaderInterface {
   classes: string;
-  URLRef: any;
   onsubmit: any;
+  defaultValue: string;
+  handleOnChange: any;
 }

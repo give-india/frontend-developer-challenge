@@ -10,12 +10,10 @@ import { PlayerInterface } from './interface';
 // Styles
 import './Player.scss';
 
-const retrievedStats = localStorage.getItem('stats');
-const progress = retrievedStats ? JSON.parse(retrievedStats).progress : 0;
-
 const Player = ({
   classes,
   playing,
+  progress,
   drop2Play,
   onProgress,
   onEnded,
@@ -25,7 +23,6 @@ const Player = ({
     accept: 'VIDEO',
     drop: (item, monitor) => {
       drop2Play(item);
-      // onDrag(false)
     }
   });
 

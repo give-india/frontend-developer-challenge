@@ -109,7 +109,7 @@ const Player = (state = defaultState, action: any) => {
         ...state,
         playlist: [...newList],
         play: video,
-        stats: { progress: 0 }
+        stats: { ...state.stats, progress: 0 }
       };
     case DROP_TO_PLAY:
       const [now, newPlayList] = [

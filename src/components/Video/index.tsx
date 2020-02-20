@@ -33,7 +33,7 @@ const Video = ({ video, onDrop, index, onDrag }: VideoInterface) => {
 
   return (
     <div ref={drop}>
-      <div className="cursor video-item" ref={drag}>
+      <div className="grabbable video-item" ref={drag}>
         <div className="video-item__image">
           <img
             src={thumbnails.default.url}

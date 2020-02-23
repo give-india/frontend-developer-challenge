@@ -26,7 +26,7 @@ Now you can use the application
 
 <hr/>
 #### My personal details:
-Resume: https://docs.google.com/document/d/1pU5DXQzuWGv44LXS2mCLmFHAJs8JVtArfyvJT3cgnGI/edit?usp=sharing
+Resume: https://docs.google.com/document/d/1pU5DXQzuWGv44LXS2mCLmFHAJs8JVtArfyvJT3cgnGI/edit?usp=sharing <br/>
 Github: https://github.com/jagannath-swarnkar
 
 happy coding :)

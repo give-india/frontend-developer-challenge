@@ -18,16 +18,18 @@ You can remove and reorder items in your playlist. <br/>
 2. Go to the directory `frontend-developer-challenge` by `cd frontend-developer-challenge` and run command `npm install` to install all necessary dependencies. <br/>
 3. Run command `npm start` to run frontend application and visit http://localhost:3000/ .
 
-##### it also has a smaill backend part, follow the given steps to run backend.
+##### It also has a smaill backend part, follow the given steps to run backend.
 4. Go to the `server` directory inside `frontend-developer-challenge` and run `npm install` to install all the dependencies. <br/>
 5. Run `nodemon server.js` to run the backned application.
 
 Now you can use the application 
 
 <hr/>
+
 #### My personal details:
 Resume: https://docs.google.com/document/d/1pU5DXQzuWGv44LXS2mCLmFHAJs8JVtArfyvJT3cgnGI/edit?usp=sharing <br/>
 Github: https://github.com/jagannath-swarnkar
 
+<br/>
 happy coding :)
 

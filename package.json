@@ -10,6 +10,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "1.0.13",
     "react-youtube": "^7.9.0",
+    "redux-state-sync": "^3.1.1",
     "redux-thunk": "^2.3.0",
     "style-component": "^0.0.1",
     "styled-components": "^4.4.1"

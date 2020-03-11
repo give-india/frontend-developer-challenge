@@ -3,16 +3,12 @@ import "./styles.css";
 import PlyList from "./PlayList";
 import Player from "./Player";
 import { INPUT_PLACEHOLDER, PLEASE_ADD_A_VIDEO_TO_PLAYLIST, PLEASE_ADD_VALID_LINK, VIDEO_ALREADY_IN_PLAYLIST } from "./constants";
+import { connect } from 'react-redux'
+import * as actions from "./redux/action"
+import { bindActionCreators } from 'redux'
 
-export default function App(props) {
-  const [videos, setVideos] = useState({
-    videos: [
-      {
-        id: "Link 1583925582680",
-        link: "BU53zRWeUHM"
-      }
-    ]
-  });
+function App(props) {
+  const videos = props.videos;
   const [inputError, setInputError] = useState("");
   const [playerIndex, setPlayerIndex] = useState(0);
   const videoLinkInput = useRef(null);
@@ -28,18 +24,15 @@ export default function App(props) {
     const input = videoLinkInput.current.value;
     if (validateYTVideoLink(input)) {
       videoLinkInput.current.value = "";
-      const videosLink = videos.videos;
+      const videosLink = videos;
       const link = input.split("be/").length>1 ? input.split("be/")[1] : (input.split("?v=").length>1 ? input.split("?v=")[1]: "");
       const match = videosLink.find((video)=> video.link === link)
       if (match) {
         return setInputError({ inputError: VIDEO_ALREADY_IN_PLAYLIST});
       }
-      videosLink.unshift({
+      props.addVideoToPlayList({
         id: `Link ${Date.now()}`,
         link: link
-      });
-      setVideos({
-        videos: videosLink
       });
     } else {
       videoLinkInput.current.value = "";
@@ -55,18 +48,14 @@ export default function App(props) {
     setPlayerIndex(0);
     handleRemoveVideo(id);
   }
+
   const handleRemoveVideo = id => {
     setPlayerIndex(0);
-    const updatedVideos = videos.videos.filter(video => {
-      return video.id !== id;
-    });
-    setVideos({
-      videos: updatedVideos
-    });
+    props.removeVideoToPlayList(id);
   };
 
   const handleChangeVideo = id => {
-    const index = videos.videos.findIndex((video)=>video.id === id);
+    const index = videos.findIndex((video)=>video.id === id);
     setPlayerIndex(index);
   }
 
@@ -76,6 +65,7 @@ export default function App(props) {
 
   return (
     <div className="App">
+      {console.log("rendering")}
       <input
         type="text"
         ref={videoLinkInput}
@@ -88,12 +78,25 @@ export default function App(props) {
       </button>
 
       <PlyList
-        links={videos.videos}
+        links={videos}
         handleRemoveVideo={handleRemoveVideo}
         handleChangeVideo={handleChangeVideo}
         playerIndex={playerIndex}
       />
-      {videos.videos.length > 0 ? <Player video={videos.videos[playerIndex]} handleVideoEnd={handleVideoEnd} />: <h1>{PLEASE_ADD_A_VIDEO_TO_PLAYLIST}</h1>}
+      {videos.length > 0 ? <Player video={videos[playerIndex]} handleVideoEnd={handleVideoEnd} />: <h1>{PLEASE_ADD_A_VIDEO_TO_PLAYLIST}</h1>}
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    videos: [...state.links],
+    playerIndex: state.playerIndex
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators (actions,dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps )(App);

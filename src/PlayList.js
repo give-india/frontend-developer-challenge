@@ -7,7 +7,7 @@ export default function PlyList(props) {
       <hr/>
       <div>
       {props.links.map((link, index) => (
-        <div id="playlist-element">
+        <div id="playlist-element" key={link.id}>
           <span id="link-name" onClick={() => props.handleChangeVideo(link.id)}style={index === props.playerIndex ? {color: "blue"}:{}} >{link.id}</span>
           <button onClick={() => props.handleRemoveVideo(link.id)} id="close">X</button>
         </div>

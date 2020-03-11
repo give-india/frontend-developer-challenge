@@ -1,10 +1,12 @@
 
-const initialValue =  {
+const initialValue =  
+{
     links: [{
       id: "Link 1583925582680",
       link: "BU53zRWeUHM"
     }],
-    playerIndex: 0};
+    playerIndex: 0
+};
 
 export default function reducer (state = initialValue, action) {
     switch(action.type) {

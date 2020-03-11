@@ -65,7 +65,6 @@ function App(props) {
 
   return (
     <div className="App">
-      {console.log("rendering")}
       <input
         type="text"
         ref={videoLinkInput}

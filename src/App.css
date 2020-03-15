@@ -1,0 +1,53 @@
+.headerTxtField{
+  padding: 10px 20px 10px 10px;
+  width: 50%;
+}
+
+.inputFieldClass{
+  height: 80%;
+  width: 75%;
+  padding: 2px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+}
+
+.button-class{
+  width: 15%;
+  margin-left: 5%;
+}
+
+.App-header {
+  background-color: #3a4721;
+  min-height: 9vh;
+  display: flex;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.videoPlayerDiv{
+  border: 1px solid red;
+  width: 70%;
+  height: 562px;
+  float: left;
+}
+
+.videoPlayListDiv{
+  border: 1px solid green;
+  width: 30%;
+  height: 562px;
+  float: right;
+  padding: 4px;
+  overflow: auto;
+}
+
+.plalistDiv{
+  width: 10%;
+  padding: 15px;
+  margin-left: 30%;
+}

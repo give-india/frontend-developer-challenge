@@ -1,32 +1,36 @@
-## Frontend Developer at Give
+# The Video Player
 
-Not just ‘Frontend’, are you a pro at web development with a special liking for JavaScript? How about working with a team that’s full of the creative breed and where food and outings are considered as being equally important to work?
+A video player that plays YouTube Videos on adding proper YouTube URLs. The project has a redux workflow along with React JS.
 
-We would love it if you are blessed with prudent design aesthetics but we would also want you to be game about having ‘fun’ while working. Welcome to the world of Give, where we have come together to introduce a culture of giving that aims to change lives for the better.
-Stalk us at [our website](https://www.giveindia.org/), [FB](https://www.facebook.com/GiveIndia/), [Twitter](https://twitter.com/giveindia/), [LinkedIn](https://www.linkedin.com/company/giveindia/)
+## Getting Started with the project
 
-We are looking for determined front-end developers who come with a strong experience in implementing modern web UIs that prove to be are a delight for the user. If you think you have what it takes, build us this simple app in a frontend stack of your choosing.
+After npm install, create .env file in the main app directory and provide the API key :
 
-### Objective
-A simple video player app where user can request videos to be played in a queue by adding YouTube links
+```
+    REACT_APP_API_KEY = {Your YouTube Data API_KEY}
+```
 
-Sample UI below. The app doesn't need to have fancy design. We are looking for functional implementation.
-![Sample UI](https://d1v9g1a6pf512p.cloudfront.net/static/images/misc/ec4db85c-5e31-4427-9463-aec56061f61a-a.jpg)
+### API_KEY without the braces
 
-### Tasks
-- The application must be a SPA.
-- The application should allow user to add a youtube link to the playlist and start playing from the playlist first in first out.
-- Once a video is finished, it should be removed from the playlist.
-- The youtube link must be validated by the app for proper url format before adding to the queue.
+To Create your You Tube Data API Key :  
+You need a Google Account to access the Google API Console,
+request an API key, and register your application.
+Follow the link : [Create YouTube Data API](https://developers.google.com/youtube/v3/getting-started) for more details.
 
-### Bonus
+Try out some links mentioned below:-
 
-- Allow the user to remove and reorder items in the playlist.
-- Sync different versions of the application. If the application is open across two tabs, both must be in sync for all activities. For e.g adding/removing/forwarding a video on any one, should update both of them.
+- [(https://www.youtube.com/watch?v=aaWlUAAzH9g)]
+- [(https://www.youtube.com/watch?v=_2raNqztPX0)]
+- [(https://www.youtube.com/watch?v=lQWnIA0pJss&feature=youtu.be)]
+- [(https://www.youtube.com/watch?v=_BvB0182xag)]
 
-### Deliverables
-- Create a fork of this repository
-- Code your solution in a frontend stack of your choice
-- Include instructions on how to set it up and run in the README.md
-- Add your resume and other profile / project links
-- Submit a pull request (PR)
+## Authors
+
+- **Shahbaz Gul Khan** - _Front-end React JS Devloper_ - [Shahbaz](https://github.com/shahbaz-projects-react)
+   ** [LinkedInProfile](https://www.linkedin.com/in/shahbaz-gul-khan-4a337798/)
+
+You can find an hosted e-commerce website [Clothing-app](https://mywardrobe-live.herokuapp.com/) (with login/signup under progress), apart from other slef projects including a projects-memo-app also in React-Redux and using Firebase auth and Firestore.
+
+## Acknowledgments
+
+- Thanks to Give India for giving such task to do.

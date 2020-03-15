@@ -1,0 +1,14 @@
+.App {
+  padding: 1vh;
+}
+.heading-primary {
+  color: rgb(47, 209, 128);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 10px;
+}

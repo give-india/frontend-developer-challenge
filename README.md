@@ -9,8 +9,7 @@ After npm install, create .env file in the main app directory and provide the AP
 ```
     REACT_APP_API_KEY = {Your YouTube Data API_KEY}
 ```
-
-### API_KEY without the braces
+//API_KEY without the braces
 
 To Create your You Tube Data API Key :  
 You need a Google Account to access the Google API Console,
@@ -29,7 +28,7 @@ Try out some links mentioned below:-
 - **Shahbaz Gul Khan** - _Front-end React JS Devloper_ - [Shahbaz](https://github.com/shahbaz-projects-react)
    ** [LinkedInProfile](https://www.linkedin.com/in/shahbaz-gul-khan-4a337798/)
 
-You can find an hosted e-commerce website [Clothing-app](https://mywardrobe-live.herokuapp.com/) (with login/signup under progress), apart from other slef projects including a projects-memo-app also in React-Redux and using Firebase auth and Firestore.
+You can find an hosted e-commerce website [Clothing-app](https://mywardrobe-live.herokuapp.com/) (with login/signup under progress), apart from other self projects including a projects-memo-app also in React-Redux and using Firebase auth and Firestore.
 
 ## Acknowledgments
 

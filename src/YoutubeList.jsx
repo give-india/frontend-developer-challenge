@@ -5,6 +5,7 @@ import {
     Card,
     ListGroup
 } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { Icon } from 'react-icons-kit';
 import { ic_delete as deleteIcon } from 'react-icons-kit/md/ic_delete';
 import ReactPlayer from 'react-player';
@@ -40,7 +41,7 @@ class YoutubePlayer extends Component {
                 })
             }
             else {
-                alert('Url already exit in our list');
+                alert('Given Url already exists in our Playlist');
                 this.setState({
                     addList: ""
                 })
@@ -64,14 +65,21 @@ class YoutubePlayer extends Component {
     }
 
     async handleDelete(counter) {
+        const deletedUrl = this.state.videos[counter];
+        const currentUrl = this.state.activeUrl;
         await this.setState(prevState => {
             prevState.videos.splice(counter, 1);
             return {
                 videos: prevState.videos
             };
         });
-        if (counter === 0) {
-            this.handlePlayVideo(this.state.videos[0]);
+        if(deletedUrl === currentUrl) {
+            if (counter === this.state.videos.length) {
+                await this.handlePlayVideo(this.state.videos[0]);
+            }
+            else {
+                await this.handlePlayVideo(this.state.videos[counter]);
+            }
         }
     }
 
@@ -115,7 +123,9 @@ class YoutubePlayer extends Component {
                                         <ListGroup.Item>
                                             <Row>
                                                 <Col sm={10}>
-                                                    <p onClick={() => this.handlePlayVideo(videoList)}> Link {index + 1}</p>
+                                                    <Link className="btn-link" onClick={() => this.handlePlayVideo(videoList)} to="#">
+                                                        Link {index + 1}
+                                                    </Link>
                                                 </Col>
                                                 <Col sm={2}>
                                                     <Icon size={30} icon={deleteIcon} onClick={() => this.handleDelete(index)} />

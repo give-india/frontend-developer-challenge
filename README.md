@@ -10,11 +10,9 @@ Step 2 - Install npm
 ### `npm install`
 Step 3 - Start npm
 ### `npm start`
-<br/>
-Runs the app in the development mode.
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 <br/><br/><br/>
-### 'Features covered in YouTube Application developed -'
+## Features covered in YouTube Application developed -
 <br/>
 1 - Addition of You tube video urls<br/>
 2 - FIFO order of video play by Default<br/>
@@ -25,10 +23,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 7 - URL delete feature is added. Under this, we have taken care to automatically play next available Video if current video being played is deleted<br/>
 
 
-### 'Developer Details'
+### Developer Details
 **Deepak Kumar(Front-End Developer)**
+
 **Git Url** :-https://github.com/deeptisl
+
 **Linkedin** :-https://www.linkedin.com/in/deepak-kumar-379256125/
+
 
 
 **Thanks GiveIndia for giving opportunity to build YouTube Playlist Application**

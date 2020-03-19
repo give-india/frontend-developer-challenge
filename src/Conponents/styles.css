@@ -1,0 +1,78 @@
+.mb-50 {
+	margin-bottom: 50px;
+}
+.mt-20 {
+	margin-top: 20px;
+}
+
+.add-link-input-field {
+	font-size: 16px;
+	background: #fefefe;
+	color: #727272;
+	outline: none;
+	border: 1px solid #727272;
+	border-radius: 4px;
+	padding: 10px;
+	margin-right: 15px;
+	width: 81%;
+}
+
+.add-link-button {
+	font-size: 16px;
+	background: #fefefe;
+	color: #727272;
+	outline: none;
+	border: 1px solid #727272;
+	border-radius: 4px;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.error-text {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 5px;
+	color: #ff6347;
+	font-size: 14px;
+}
+
+.playlist-container {
+	width: 400px;
+	border: 1px solid #727272;
+	border-radius: 4px;
+}
+.playlist-header {
+	text-align: center;
+	font-size: 24px;
+	padding: 30px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #727272;
+}
+
+.list-item {
+	padding: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* .list-item:hover {
+	background-color: #e2e2e2;
+} */
+
+.list-item span {
+	font-size: 14px;
+	color: #727272;
+	cursor: pointer;
+}
+
+.list-item button {
+	font-size: 12px;
+	padding: 5px;
+	background: none;
+	outline: none;
+	border: 1px solid #ff6347;
+	border-radius: 4px;
+	color: #ff6347;
+	cursor: pointer;
+}

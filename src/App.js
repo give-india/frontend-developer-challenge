@@ -1,10 +1,14 @@
 import React from "react";
 import { Provider } from "react-redux";
-import VideoPlayer from "./Conponents/VideoPlayer";
+import { toast } from "react-toastify";
 import Playlist from "./Conponents/Playlist";
 import store from "./store";
 
+import "react-toastify/dist/ReactToastify.css";
+
 import "./App.css";
+
+toast.configure();
 
 function App() {
 	return (

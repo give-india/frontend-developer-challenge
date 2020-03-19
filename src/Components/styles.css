@@ -5,6 +5,10 @@
 	margin-top: 20px;
 }
 
+.d-none {
+	display: none;
+}
+
 .add-link-input-field {
 	font-size: 16px;
 	background: #fefefe;
@@ -28,12 +32,23 @@
 	cursor: pointer;
 }
 
-.error-text {
+.add-link-button:active {
+	transform: scale(0.95);
+}
+
+.text {
 	margin: 0;
 	padding: 0;
 	margin-bottom: 5px;
-	color: #ff6347;
 	font-size: 14px;
+}
+
+.error {
+	color: #ff6347;
+}
+
+.success {
+	color: #228b22;
 }
 
 .playlist-container {

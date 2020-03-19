@@ -1,8 +1,12 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { toast } from "react-toastify";
-import Playlist from "./Conponents/Playlist";
+
 import store from "./store";
+
+import InputBox from "./Components/InputBox";
+import VideoPlayer from "./Components/VideoPlayer";
+import Playlist from "./Components/Playlist";
 
 import "react-toastify/dist/ReactToastify.css";
 

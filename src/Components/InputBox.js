@@ -35,13 +35,13 @@ const InputBox = () => {
 	};
 
 	const checkLinkAlreadyInList = input => {
-		return links.includes(input);
+		return links.findIndex(link => link.link === input) !== -1;
 	};
 
 	const handleAddLink = () => {
 		const input = inputRef.current.value;
+		const vidId = getVideoId(input);
 		if (isValidYoutubeLink(input)) {
-			const vidId = getVideoId(input);
 			if (!checkLinkAlreadyInList(vidId)) {
 				if (!links.length) {
 					dispatch({
@@ -51,7 +51,7 @@ const InputBox = () => {
 				}
 				dispatch({
 					type: SET_VIDEO_LINKS_LIST,
-					payload: [...links, vidId]
+					payload: [...links, { link: vidId, id: `Link ${vidId}` }]
 				});
 				toast.success("Link added successfully");
 				inputRef.current.value = "";

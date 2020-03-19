@@ -17,14 +17,16 @@ const VideoPlayer = () => {
 	};
 
 	const handleVideoEnd = () => {
-		let index = links.findIndex(link => link === currentPlayingVideo);
-		let updatedList = links.filter(link => !(link === currentPlayingVideo));
+		let index = links.findIndex(link => link.link === currentPlayingVideo);
+		let updatedList = links.filter(
+			link => !(link.link === currentPlayingVideo)
+		);
 		let updatedNowPlayingVideo =
 			links.length === 1
 				? ""
 				: index === links.length - 1
-				? links[0]
-				: links[index + 1];
+				? links[0].link
+				: links[index + 1].link;
 		dispatch({ type: SET_VIDEO_LINKS_LIST, payload: updatedList });
 		dispatch({
 			type: SET_CURRENT_PLAYING_VIDEO,

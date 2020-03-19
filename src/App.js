@@ -2,6 +2,9 @@ import React from "react";
 import { Provider } from "react-redux";
 import { toast } from "react-toastify";
 
+import { DndProvider } from "react-dnd";
+import Backend from "react-dnd-html5-backend";
+
 import store from "./store";
 
 import InputBox from "./Components/InputBox";
@@ -22,7 +25,9 @@ function App() {
 					<InputBox />
 					<VideoPlayer />
 				</div>
-				<Playlist />
+				<DndProvider backend={Backend}>
+					<Playlist />
+				</DndProvider>
 			</Provider>
 		</div>
 	);

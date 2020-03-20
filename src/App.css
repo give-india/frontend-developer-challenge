@@ -1,0 +1,15 @@
+.d-flex {
+	display: flex;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.w-85 {
+	width: 85%;
+}
+
+.app-container {
+	padding: 80px;
+}

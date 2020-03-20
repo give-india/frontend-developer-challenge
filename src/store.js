@@ -7,8 +7,7 @@ import {
 import reducer from "./reducers";
 
 const config = {
-	// TOGGLE_TODO will not be triggered in other tabs
-	blacklist: ["TOGGLE_TODO"]
+	initiateWithState: true
 };
 const middlewares = [createStateSyncMiddleware(config)];
 const store = createStore(reducer, applyMiddleware(...middlewares));

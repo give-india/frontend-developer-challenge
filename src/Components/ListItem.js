@@ -10,8 +10,19 @@ const ListItem = ({ link, id, index, moveLink }) => {
 	const dispatch = useDispatch();
 
 	const handleRemoveLink = () => {
-		const updatedList = links.filter(item => !(item.link === link));
+		let index = links.findIndex(linkData => linkData.link === link);
+		let updatedList = links.filter(linkData => !(linkData.link === link));
+		let updatedNowPlayingVideo =
+			links.length === 1
+				? ""
+				: index === links.length - 1
+				? links[0].link
+				: links[index + 1].link;
 		dispatch({ type: SET_VIDEO_LINKS_LIST, payload: updatedList });
+		dispatch({
+			type: SET_CURRENT_PLAYING_VIDEO,
+			payload: updatedNowPlayingVideo
+		});
 	};
 
 	const handleChangePlayingVideo = () => {

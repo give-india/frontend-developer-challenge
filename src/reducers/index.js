@@ -1,3 +1,5 @@
+import { withReduxStateSync } from "redux-state-sync";
+
 import { SET_VIDEO_LINKS_LIST, SET_CURRENT_PLAYING_VIDEO } from "../actions";
 
 const initialState = {
@@ -16,4 +18,4 @@ const rootReducer = (state = initialState, action) => {
 	}
 };
 
-export default rootReducer;
+export default withReduxStateSync(rootReducer);

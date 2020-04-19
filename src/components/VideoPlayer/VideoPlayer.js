@@ -22,20 +22,29 @@ const VideoPLayer = () => {
       setMessage("Please enter a valid youtube video link");
     }
   };
-  const removeFromPlaylist = (index = 0) => {
+  const removeFromPlaylist = (index = undefined) => {
     const tempPlaylist = [...playlist];
     if (tempPlaylist.length > 0) {
-      if (index === 0) {
+      if (index === undefined) {
         tempPlaylist.shift();
         setVideoSrc(
           tempPlaylist[0].substring(tempPlaylist[0].lastIndexOf("/") + 1)
         );
         setPlaylist(tempPlaylist);
       } else {
-        setVideoSrc(
-          tempPlaylist[0].substring(tempPlaylist[0].lastIndexOf("/") + 1)
-        );
+        
+        
         tempPlaylist.splice(index, 1);
+        if(tempPlaylist.length>0){
+          setVideoSrc(
+            tempPlaylist[0].substring(tempPlaylist[0].lastIndexOf("/") + 1)
+          );
+        }
+        else{
+          setVideoSrc(
+            ""
+          );
+        }
 
         setPlaylist(tempPlaylist);
       }

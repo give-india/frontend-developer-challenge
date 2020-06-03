@@ -4,9 +4,11 @@ import ReactPlayer from "react-player";
 import "../App.css";
 
 export const VideoPlayer = () => {
+
   const [links, setLinks] = useState([]);
   const [videoUrl, setvideoUrl] = useState("");
   const [hasError, setHasError] = useState(false);
+
   var inputLink = useRef(null);
 
   const removeLink = idx => {
@@ -42,7 +44,6 @@ export const VideoPlayer = () => {
     if (!result.destination) {
       return;
     }
-
     const videoLinks = reorderPlaylist(
       links,
       result.source.index,
@@ -69,6 +70,7 @@ export const VideoPlayer = () => {
     onDeletePlaylist(index);
     handlePlaylist(links[0]);
   };
+  
   return (
     <div>
       <input

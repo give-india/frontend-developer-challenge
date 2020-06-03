@@ -1,11 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import VideoPlayer from "./components/videoPlayer";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      Radio App
+      <VideoPlayer />
     </div>
   );
 }

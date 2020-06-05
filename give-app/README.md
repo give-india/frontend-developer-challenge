@@ -2,7 +2,7 @@
 Deployed in aws for demo purpose
 
 website url: https://master.d1yl4y19vg0x4h.amplifyapp.com/
-###To run the project
+### To run the project
 
 In the project directory, you can run:
 ### `npm install`

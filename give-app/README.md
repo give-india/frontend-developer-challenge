@@ -1,5 +1,5 @@
 
-This is youTube vide player app created using ReactJS library. State management of app is done using Redux.
+This is a youTube video player app created using ReactJS library. State management of app is done using Redux.
 Application is devloped such that it preserves state even if user switch between tabs.
 
 Deployed in aws for demo purpose

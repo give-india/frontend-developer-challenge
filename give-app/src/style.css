@@ -71,9 +71,9 @@ body{
     box-shadow:3px 3px 5px rgb(163,177,198,0.6),-3px -3px 5px rgba(255,255,255, 0.5);
     border-radius: 4px;
     word-wrap: break-word;
-    height: 50px;
+    height: 70px;
     color: grey;
-    line-height: 50px;
+    line-height: 70px;
     font-size: 15px;
     animation: scale-display .3s;
 }
@@ -95,6 +95,7 @@ body{
     right: 10px;
     font-size: 18px;
     cursor: pointer;
+    top: 25px;
 }
 .has-error{
     color: orangered;
@@ -106,17 +107,18 @@ body{
 .arrow-icon-up{
     position: absolute;
     left: 10px;
+    top: 5px;
 }
 .arrow-icon-down{
     position: absolute;
-    left: 50px;
+    left: 10px;
+    bottom: 5px;
 }
 .icons{
 line-height: 30px;
 height: 30px;
 width: 30px;
 cursor: pointer;
-top: 15px;
 border-radius: 50%;
 box-shadow:3px 3px 5px rgb(163,177,198,0.6),-3px -3px 5px rgba(255,255,255, 0.5);
 }

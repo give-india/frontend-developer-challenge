@@ -1,0 +1,93 @@
+h1,
+h2,
+h3,
+h4,
+hr {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  /* font-family: "Montserrat", sans-serif; */
+  font-family: 'Roboto Mono', monospace;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+  background-color: #000000;
+}
+
+.App {
+  padding: 40px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin-top: 40px;
+  grid-gap: 20px;
+}
+
+.input-url {
+  border: none;
+  border-bottom: 1px solid white;
+  width: 100%;
+  font-size: 16px;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.input-url:focus {
+  outline-width: 0;
+  outline-style: none;
+}
+
+.add-link {
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  margin-top: 15px;
+  color: #ffffff;
+}
+
+.text {
+  font-size: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: #ffffff;
+}
+
+hr {
+  background-color: white;
+}
+
+.delete {
+  width: 25px; 
+  height: 44px;
+  cursor: pointer;
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%;
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+iframe {
+  border-radius: 10px;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+}
+
+.error {
+  color: red;
+}

@@ -16,11 +16,10 @@ const VideoList = props => {
 
     const renderList = () => {
         return props.videoList.map(video=>{
-            console.log(props.selectedVideo,video)
         return  <div className={`list-item ${props.selectedVideo == video?`highLight`:''}`} key={video}> 
         <span className="material-icons arrow-icon-up icons" onClick={()=>moveUp(video)}>keyboard_arrow_up</span>
         <span className="material-icons arrow-icon-down icons" onClick={()=>moveDown(video)}>keyboard_arrow_down</span>
-        Link:{video} 
+        <span className="link">Link: </span>{video} 
         <span className="material-icons close-icon icons" onClick={()=>removeVideo(video)}>close</span>
         </div>
         });
@@ -28,7 +27,7 @@ const VideoList = props => {
 
     return (
         <div className="video-list-wrapper">
-            <div>Play List</div>
+            <div className="title">PLAY LIST</div>
             {renderList()}
         </div>
     );

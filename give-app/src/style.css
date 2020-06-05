@@ -60,6 +60,7 @@ body{
     height: 100%;
     width: 30%;
     text-align: center;
+    overflow: auto;
     box-shadow:3px 3px 5px rgb(163,177,198,0.6),-3px -3px 5px rgba(255,255,255, 0.5);
 }
 .list-item{
@@ -71,7 +72,23 @@ body{
     border-radius: 4px;
     word-wrap: break-word;
     height: 50px;
+    color: grey;
     line-height: 50px;
+    font-size: 15px;
+    animation: scale-display .3s;
+}
+@keyframes scale-display {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+    -webkit-transform: scale(0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+    -webkit-transform: scale(1);
+	}
 }
 .close-icon{
     position: absolute;
@@ -108,4 +125,15 @@ box-shadow:3px 3px 5px rgb(163,177,198,0.6),-3px -3px 5px rgba(255,255,255, 0.5)
 }
 .highLight{
     background-color: ghostwhite;
+}
+.title{
+    font-size: 25px;
+    font-weight: 700;
+    padding: 10px 0px;
+    color: darkslategrey
+}
+.link{
+    font-size: 15px;
+    font-weight: 900;
+    color: darkslategrey
 }

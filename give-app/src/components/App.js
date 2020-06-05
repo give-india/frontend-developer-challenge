@@ -9,6 +9,7 @@ import { loadState } from '../localStorage';
 
 class App extends Component {
     componentDidMount() {
+        //code updates state from once tab is visible
         window.addEventListener(visibilityChange, () => {
             if (document[visibilityState] === 'visible') {
                 this.props.updateStore(loadState());
@@ -28,6 +29,7 @@ class App extends Component {
     }
 }
 
+//code to set visibility type according to browsers
 let visibilityState, visibilityChange;
 
 if (typeof document.hidden !== "undefined") {

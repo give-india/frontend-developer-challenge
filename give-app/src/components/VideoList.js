@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {connect} from 'react-redux';
-import { removeVideo,moveDown,moveUp } from '../actions';
+import { removeVideo,moveDown,moveUp,dragDrop} from '../actions';
 import ListItem from './ListItem';
 
 const VideoList = props => {
+    const [dragElement,setDragElement] = useState('');
+
     const removeVideo = video => {
         props.removeVideo(props.videoList.indexOf(video));
     }
@@ -15,9 +17,21 @@ const VideoList = props => {
         props.moveDown(props.videoList.indexOf(video));
     }
 
+    const dragDrop = (addVideo) => {
+        const addIndex = props.videoList.indexOf(addVideo);
+        const removeIndex = props.videoList.indexOf(dragElement);
+        props.dragDrop(addIndex,removeIndex);
+    }
+
     const renderList = () => {
         return props.videoList.map(video=>{
-        return  <ListItem key={video} selectedVideo={props.selectedVideo} video={video} moveUp={moveUp} moveDown={moveDown} removeVideo={removeVideo}/>
+        return  <ListItem key={video} 
+        selectedVideo={props.videoList[0]} 
+        video={video} moveUp={moveUp}
+         moveDown={moveDown} 
+         removeVideo={removeVideo}
+         dragDrop={dragDrop}
+         setDragElement={setDragElement}/>
         });
     }
 
@@ -31,9 +45,8 @@ const VideoList = props => {
 
 const mapStateToProps = state => {
     return {
-        videoList: state.videoList,
-        selectedVideo: state.selectedVideo
+        videoList: state.videoList
     };
 }
 
-export default connect(mapStateToProps,{removeVideo,moveDown,moveUp})(VideoList);
+export default connect(mapStateToProps,{removeVideo,moveDown,moveUp,dragDrop})(VideoList);

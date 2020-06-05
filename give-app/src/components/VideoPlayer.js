@@ -11,14 +11,12 @@ const opts = {
 
 class VideoPlayer extends Component{
     onEnd = (e)=>{
-        console.log(this.props.nextVideo);
         this.props.popVideo(this.props.nextVideo);
     }
     render(){
-        console.log("selected"+this.props.selectedVideo);
     return(
         <div className="video-player-wrapper">
-            <YouTube  className="video" videoId={this.props.selectedVideo} opts={opts} onError={this.onEnd} onEnd={this.onEnd} onStateChange={this._onReady}/>
+            <YouTube  className="video" videoId={this.props.videoList[0]} opts={opts} onError={this.onEnd} onEnd={this.onEnd} onStateChange={this._onReady}/>
         </div>
     );
     }
@@ -26,8 +24,8 @@ class VideoPlayer extends Component{
 
 const mapStateToProps = (state)=>{
  return {
-     selectedVideo: state.selectedVideo,
-     nextVideo: state.videoList.length>1?state.videoList[1]:''
+     nextVideo: state.videoList.length>1?state.videoList[1]:'',
+     videoList: state.videoList
  }
 }
 

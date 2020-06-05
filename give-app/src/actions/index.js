@@ -31,6 +31,17 @@ export const moveDown = (index) => {
         payload:index
     }
 }
+
+export const dragDrop = (addIndex,removeIndex)=>{
+    return {
+        type: 'DRAG_DROP',
+        payload:{
+            drop: addIndex,
+            drag: removeIndex
+        }
+    }
+}
+
 export const updateStore = state => {
     return {
         type: 'UPDATE',

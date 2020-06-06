@@ -3,8 +3,18 @@ This is a youTube video player app created using ReactJS library. State manageme
 Application is devloped such that it preserves state even if user switch between tabs.
 
 Deployed in aws for demo purpose
-
 website url: https://master.d1yl4y19vg0x4h.amplifyapp.com/
+
+### App features
+1. Allows user to add a youtube link to the playlist and start playing from the playlist first in first out
+2. Once a video is finished, it should be removed from the playlist.
+3. The youtube link validated by the app for proper url format before adding to the queue.
+4. User will not be allowed to add link if it is duplicate
+5. Allow the user to remove link from list
+6. Allows user to reorder items in the playlist by dragging the item in list
+7. Sync different versions of the application. If the application is open across two tabs, both will be in sync for all activities.
+8. State is managed using redux
+
 ### To run the project
 
 In the project directory, you can run:

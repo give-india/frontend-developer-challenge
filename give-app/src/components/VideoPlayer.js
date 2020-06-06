@@ -16,6 +16,7 @@ class VideoPlayer extends Component{
     render(){
     return(
         <div className="video-player-wrapper">
+            {this.props.videoList.length?null:<div className="add-video-modal"><span className="modal-text">Add YouTube video Links</span></div>}
             <YouTube  className="video" videoId={this.props.videoList[0]} opts={opts} onError={this.onEnd} onEnd={this.onEnd} onStateChange={this._onReady}/>
         </div>
     );

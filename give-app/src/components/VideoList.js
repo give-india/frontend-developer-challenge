@@ -29,7 +29,10 @@ const VideoList = props => {
 
     return (
         <div className="video-list-wrapper">
+            <div className="play">
+            <div className="play-btn"><span className="material-icons play-icon">play_arrow</span></div>
             <div className="title">PLAY LIST</div>
+            </div>
             {renderList()}
         </div>
     );

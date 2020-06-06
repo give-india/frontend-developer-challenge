@@ -21,9 +21,10 @@ const ListItem = props => {
     }
 
     return(
-        <div className={`list-item ${props.selectedVideo === props.video?`highLight`:''}`} video={props.video} onDragOver={onDragOver}>
+        <div className="list-item" video={props.video} onDragOver={onDragOver}>
         <div onDragStart={dragging} draggable="true" video={props.video} onDragEnd={onDragEnd}> 
-        <span className="link">Link: </span>{props.video} 
+        <span className="material-icons link-icon">link</span>
+        <span  className={`${props.selectedVideo === props.video?`highLight`:''}`}>{props.video} </span>
         <span className="material-icons close-icon icons" onClick={()=>props.removeVideo(props.video)}>close</span>
         </div>
         </div>

@@ -4,17 +4,32 @@ body{
 }
 .app{
     margin: 40px;
+    margin-top: 10px;
     height: 100%;
 }
 
+.logo-bar{
+    margin-bottom: 20px;
+    font-weight: 900;
+    font-size: 20px;
+    color: #8c1022;
+}
+.logo-icon{
+    position: absolute;
+    left: 15px;
+    top: 7px;
+    font-size: 30px;
+}
 /*input section*/
 .input-tab{
+    background-color: #E0E5EC;
     position: relative;
     width: 100%;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 4px;
     box-shadow: 3px 3px 5px rgb(163,177,198,0.6), -3px -3px 5px rgba(255,255,255, 0.5);
 }
 .input-tab input{
@@ -24,12 +39,19 @@ body{
     padding: 10px 5px;
     background-color: #E0E5EC;
     outline: none;
+    border-radius: 4px;
     box-shadow: inset 3px 3px 5px rgb(163,177,198,0.6),inset -3px -3px 5px rgba(255,255,255, 0.5);
 }
-.input-tab button{
+.add-btn{
     padding: 8px;
     width: 100px;
-    box-shadow:3px 3px 5px rgb(163,177,198,0.6),-3px -3px 5px rgba(255,255,255, 0.5);
+    text-align: center;
+    border-radius: 4px;
+    margin-left: 10px;
+    font-weight: 900;
+    cursor: pointer;
+    background: linear-gradient(to right, #970D1A 0%,  #4E204D 80%, #4E204D 100%);
+    box-shadow: 3px 3px 5px rgb(163,177,198,0.6),-3px -3px 5px rgba(255,255,255, 0.5);
 }
 /*video*/
 
@@ -39,10 +61,13 @@ body{
     width: 100%;
 }
 .video-player-wrapper{
+    background-color: #E0E5EC;
     margin: 15px 0px;
     padding: 10px;
     height: 100%;
     width: 70%;
+    position: relative;
+    border-radius: 4px;
     box-shadow:3px 3px 5px rgb(163,177,198,0.6),-3px -3px 5px rgba(255,255,255, 0.5);
 }
 .video-player-wrapper div{
@@ -54,6 +79,8 @@ body{
 }
 
 .video-list-wrapper{
+    background: url('./bg.svg');
+    background-color: #E0E5EC;
     margin: 15px;
     margin-right: 0px;
     padding: 10px;
@@ -61,13 +88,14 @@ body{
     width: 30%;
     text-align: center;
     overflow: auto;
+    border-radius: 4px;
     box-shadow:3px 3px 5px rgb(163,177,198,0.6),-3px -3px 5px rgba(255,255,255, 0.5);
 }
 .list-item{
-    width: 90%;
-    margin: 5px 5%;
-    padding: 5px;
+    background-color: #E0E5EC;
+    width: 100%;
     position: relative;
+    margin-bottom: 10px;
     box-shadow:3px 3px 5px rgb(163,177,198,0.6),-3px -3px 5px rgba(255,255,255, 0.5);
     border-radius: 4px;
     word-wrap: break-word;
@@ -100,7 +128,7 @@ body{
     right: 10px;
     font-size: 18px;
     cursor: pointer;
-    top: 25px;
+    top: 21px;
 }
 .has-error{
     color: orangered;
@@ -122,9 +150,41 @@ box-shadow:3px 3px 5px rgb(163,177,198,0.6),-3px -3px 5px rgba(255,255,255, 0.5)
     box-shadow:inset 3px 3px 5px rgb(163,177,198,0.6),inset -3px -3px 5px rgba(255,255,255, 0.5);
 }
 .highLight{
+    animation: blink 1s linear infinite;
+}
+@keyframes blink{
+    0%{opacity: 0;}
+    50%{opacity: .5;}
+    100%{opacity: 1;}
+    }
+.play{
     background-color: ghostwhite;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    /* justify-content: center; */
+    padding: 10px 0px;
+    border-radius: 4px;
+    box-shadow:3px 3px 5px rgb(163,177,198,0.6),-3px -3px 5px rgba(255,255,255, 0.5);
+}
+.play-icon{
+    font-size: 30px;
+}
+.play-btn{
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin-left: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:3px 3px 5px rgb(163,177,198,0.6),-3px -3px 5px rgba(255,255,255, 0.5);
 }
 .title{
+    float: left;
+    margin-left: 15%;
     font-size: 25px;
     font-weight: 700;
     padding: 10px 0px;
@@ -144,7 +204,34 @@ box-shadow:3px 3px 5px rgb(163,177,198,0.6),-3px -3px 5px rgba(255,255,255, 0.5)
 .invisible{
     display: none;
 }
-
+.add-video-modal{
+    background: #eae5de;
+    position: absolute;
+    color: #b0320a;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    opacity: 0;
+    top: 0px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.add-video-modal:hover{
+    opacity: 1;
+}
+.modal-text{
+    font-weight: 700;
+}
+.link-icon{
+    position: absolute;
+    left: 10px;
+    top: 21px;
+    transform: rotate(90deg);
+    font-size: 30px;
+    color: #8c1022;
+}
 @media only screen and (max-width: 600px) {
     .app{
         margin:30px;
@@ -162,5 +249,10 @@ box-shadow:3px 3px 5px rgb(163,177,198,0.6),-3px -3px 5px rgba(255,255,255, 0.5)
     .video-list-wrapper{
         width: 100%;
         margin:0px;
+    }
+    .logo-icon{
+        position: relative;
+        left: unset;
+        top: 8px;
     }
   }

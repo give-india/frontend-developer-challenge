@@ -19,6 +19,7 @@ class App extends Component {
     render() {
         return (
             <div className="app">
+                <div className="logo-bar"><span className="material-icons logo-icon">ondemand_video</span>VIDEO PLAYER</div>
                 <InputTab />
                 <div className="video-wrapper">
                     <VideoPlayer />

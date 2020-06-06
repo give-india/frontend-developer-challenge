@@ -25,7 +25,7 @@ const InputTab = props => {
     return (
         <div className="input-tab">
             <input value={input} onChange={e => setInput(e.target.value)} onFocus={() => setErrorMsg('')} onKeyPress={e => e.key === 'Enter' && onAdd()} placeholder="Enter youTube url here..." />
-            <button onClick={onAdd}>Add</button>
+            <div className="add-btn" onClick={onAdd}>ADD</div>
             <div className="has-error">{errorMsg}</div>
         </div>
     );

@@ -1,0 +1,128 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+#additem{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+}
+.playlistitem{
+  color: rgb(236, 228, 228);
+  width: 100px;
+  margin-left: 15px;
+}
+#playlist_and_player{
+  
+  display: flex;
+  flex-direction: row;
+}
+#player_background{
+  background-color: rgb(31, 29, 29);
+}
+#sp{
+  height: 10px;
+}
+#player{
+ width: 800px;
+ height: 500px;
+ margin: 20px;
+ margin-top: 10px;
+ background-color: black;
+}
+#item_adder{
+  width: 600px;
+    margin: 5px;
+    border-radius: 5px;
+}
+#playlist_ul{
+  list-style: none;
+  padding: 5px;
+  width: fit-content;
+}
+#playlisttag{
+  color: aquamarine;
+  font-size: x-large;
+  
+  font: 2em sans-serif;
+  
+}
+#spaceing{
+  width: 40px;
+  height: 500px;
+}
+#space{
+  width: 100px;
+}
+#playlist{
+  margin: 10px;
+  margin-top: 0px;
+  width: 315px;
+  height: 500px;
+  background-color: #282c34;
+}
+.itemwrpper{
+  width: 293px;
+  height: 35px;
+  margin-top: 2px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(68, 56, 56);
+}
+.playlistbutton{
+  width: 74px;
+  height: 25px;
+  padding-left: 10px;
+  color: rgb(235, 229, 229);
+  background-color: rgb(94, 85, 85);
+  margin: 0 5px;
+}
+.uparrow{
+  background: url(uparrow.png);
+  background-size: 100%;
+  width: 25px;
+}
+.downarrow{
+  background: url(downarrow.jpg);
+  background-size: 100%;
+  width: 25px;
+}
+#total{
+  width: 100%;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

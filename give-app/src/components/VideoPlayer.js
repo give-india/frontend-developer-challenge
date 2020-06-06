@@ -11,7 +11,7 @@ const opts = {
 
 class VideoPlayer extends Component{
     onEnd = (e)=>{
-        this.props.popVideo(this.props.nextVideo);
+        this.props.popVideo();
     }
     render(){
     return(
@@ -24,7 +24,6 @@ class VideoPlayer extends Component{
 
 const mapStateToProps = (state)=>{
  return {
-     nextVideo: state.videoList.length>1?state.videoList[1]:'',
      videoList: state.videoList
  }
 }

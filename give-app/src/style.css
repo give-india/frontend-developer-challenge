@@ -75,6 +75,10 @@ body{
     color: grey;
     line-height: 70px;
     font-size: 15px;
+    
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
     animation: scale-display .3s;
 }
 @keyframes scale-display {
@@ -90,6 +94,7 @@ body{
     -webkit-transform: scale(1);
 	}
 }
+
 .close-icon{
     position: absolute;
     right: 10px;
@@ -104,16 +109,7 @@ body{
     bottom: 5px;
     left: 40px;
 }
-.arrow-icon-up{
-    position: absolute;
-    left: 10px;
-    top: 5px;
-}
-.arrow-icon-down{
-    position: absolute;
-    left: 10px;
-    bottom: 5px;
-}
+
 .icons{
 line-height: 30px;
 height: 30px;
@@ -140,7 +136,10 @@ box-shadow:3px 3px 5px rgb(163,177,198,0.6),-3px -3px 5px rgba(255,255,255, 0.5)
     color: darkslategrey
 }
 .hold{
-    border: 2px solid greenyellow;
+    border: 2px solid darkslategrey;
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
 }
 .invisible{
     display: none;

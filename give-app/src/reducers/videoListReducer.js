@@ -11,18 +11,6 @@ export default (state = [], action) => {
             return [...state]
         case 'UPDATE':
             return action.payload.videoList;
-        case 'MOVE_UP':
-            if (action.payload === 0) return state;
-            temp = state[action.payload];
-            state[action.payload] = state[action.payload - 1];
-            state[action.payload - 1] = temp;
-            return [...state];
-        case 'MOVE_DOWN':
-            if (action.payload === state.length-1) return state;
-            temp = state[action.payload];
-            state[action.payload] = state[action.payload + 1];
-            state[action.payload + 1] = temp;
-            return [...state];
         case 'DRAG_DROP':
             let temp = state[action.payload.drag];
             state.splice(action.payload.drag,1);

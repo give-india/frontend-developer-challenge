@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {connect} from 'react-redux';
-import { removeVideo,moveDown,moveUp,dragDrop} from '../actions';
+import { removeVideo,dragDrop} from '../actions';
 import ListItem from './ListItem';
 
 const VideoList = props => {
@@ -8,13 +8,6 @@ const VideoList = props => {
 
     const removeVideo = video => {
         props.removeVideo(props.videoList.indexOf(video));
-    }
-
-    const moveUp = video => {
-        props.moveUp(props.videoList.indexOf(video));
-    }
-    const moveDown = video => {
-        props.moveDown(props.videoList.indexOf(video));
     }
 
     const dragDrop = (addVideo) => {
@@ -27,8 +20,7 @@ const VideoList = props => {
         return props.videoList.map(video=>{
         return  <ListItem key={video} 
         selectedVideo={props.videoList[0]} 
-        video={video} moveUp={moveUp}
-         moveDown={moveDown} 
+        video={video}
          removeVideo={removeVideo}
          dragDrop={dragDrop}
          setDragElement={setDragElement}/>
@@ -49,4 +41,4 @@ const mapStateToProps = state => {
     };
 }
 
-export default connect(mapStateToProps,{removeVideo,moveDown,moveUp,dragDrop})(VideoList);
+export default connect(mapStateToProps,{removeVideo,dragDrop})(VideoList);

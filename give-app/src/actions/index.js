@@ -5,29 +5,16 @@ export const addVideo = (link) => {
     }
 }
 
-export const popVideo = (nextVideo) => {
+export const popVideo = () => {
  return {
      type: 'POP_VIDEO',
-     payload: nextVideo
+     payload: ''
  };
 }
 
 export const removeVideo = (index) => {
     return{
         type:'REMOVE_VIDEO',
-        payload:index
-    }
-}
-
-export const moveUp = (index) => {
-    return{
-        type:'MOVE_UP',
-        payload:index
-    }
-}
-export const moveDown = (index) => {
-    return{
-        type:'MOVE_DOWN',
         payload:index
     }
 }

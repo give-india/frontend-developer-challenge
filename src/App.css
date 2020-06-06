@@ -1,0 +1,76 @@
+body{
+  background-color: #2C3335 ;
+}
+
+#to-do input{
+  background-color: #EAF0F1;
+  border:0;
+  width:700px;
+  height:50px;
+  padding:0 20px;
+  margin:20px;
+  font-size: 18px;
+  border-radius: 10px;
+
+}
+
+#to-do input:focus,#to-do button:focus{
+  outline: none;
+}
+
+#to-do .button{
+  height:48px;
+  width:110px;
+  border-radius: 5px;
+  border:15px;
+  cursor: pointer; 
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+#to-do .buttonlist{
+  position:absolute;
+  margin: 20px;
+  height:48px;
+  width:400px;
+  border-radius: 5px;
+  border:0;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.videolist{
+  position:fixed;
+  padding:0 10px;
+  margin: 50px;
+}
+
+.list1{
+  position: fixed;
+}
+
+.list{
+  position:relative;
+  width:400px;
+  background-color: #EAF0F1;
+  height:50px;
+  margin:20px ;
+  border-radius:5px;
+  left:890px;
+}
+
+.list p{
+  padding:10px;
+  position: relative;
+}
+
+.list p span{
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+
+.faicons{
+  margin: 0 10px;
+  font-size: 15px;
+}

@@ -1,5 +1,6 @@
 const global_state ={
-    playlist:[]
+    playlist:[],
+
        
 };
 const reducer = (state = global_state, action) => {
@@ -10,9 +11,9 @@ const reducer = (state = global_state, action) => {
     if(action.type === 'submit')
     {
         let url = action.value;
-        if(url.lastIndexOf("=")!=-1)
+        if(url.indexOf("=")!=-1)
         {
-           url=url.substring(url.lastIndexOf("=")+1,url.length)
+           url=url.substring(url.indexOf("=")+1,url.length)
         }
         if(url.lastIndexOf("=")==-1)
         {

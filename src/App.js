@@ -24,20 +24,32 @@ class App extends Component {
   playlistindex=0;
 
   submit = () => {
+    if(this.url.value!="")
+    {
     this.props.submit(this.url.value);
     this.url.value="";
+    }
   }
   remove = (itemno) => {
    this.props.remove(itemno);
   }
   change = (itemno,changeindex) => {
-    this.props.change(itemno,changeindex);
+    if(itemno==0&&changeindex==-1||itemno==this.props.globalplaylist.length-1&&changeindex==this.props.globalplaylist.length)
+    {
+      return null
+    }
+    else
+    {
+      this.props.change(itemno,changeindex);
+    }
+   
   }
   onvideoend=()=>{
     this.remove(0);
 
   }
   render() {
+    let playurl=this.props.globalplaylist[0];
     return (
       <div>
         <center>
@@ -48,7 +60,7 @@ class App extends Component {
             <center>
             <div id="additem">
               <div id="space"></div>
-              <input id="item_adder" type="text" placeholder="Enter Your Link Here" ref={(input) => this.url = input }></input>
+              <input id="item_adder" type="text"  ref={(input) => this.url = input }></input>
               <Input onclickfunction={this.submit}></Input>
             </div>
             <div id="sp"></div>
@@ -60,8 +72,8 @@ class App extends Component {
               height= "500px"
                controls={true}
                className="react-player"
-               playing={true}
-              url={"https://www.youtube.com/watch?v="+this.props.globalplaylist[0]} onEnded={this.onvideoend}></ReactPlayer>
+               
+              url={"https://www.youtube.com/watch?v="+playurl} onEnded={this.onvideoend}></ReactPlayer>
               </div>
               <div id="playlist">
                 <div id="playlisttag">PLAYLIST</div>

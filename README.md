@@ -1,3 +1,7 @@
+```
+You can find Project README.md file inside project folder /give-app
+```
+
 ## Frontend Developer at Give
 
 Not just ‘Frontend’, are you a pro at web development with a special liking for JavaScript? How about working with a team that’s full of the creative breed and where food and outings are considered as being equally important to work?

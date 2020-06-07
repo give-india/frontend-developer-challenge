@@ -3,7 +3,7 @@ import './App.css';
 import Button from 'react-bootstrap/Button'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faTrash}  from "@fortawesome/free-solid-svg-icons";
+import {faTrash, faArrowUp, faArrowDown}  from "@fortawesome/free-solid-svg-icons";
 import ReactPlayer from 'react-player'
 
 
@@ -53,6 +53,30 @@ class App extends React.Component {
     })
   }
 
+
+  moveUp = (index) => {
+    var arr= this.state.videoList;
+    if(index===0){ return; }
+    var temp= arr[index];
+    arr[index]=arr[index-1];
+    arr[index-1]=temp;
+    this.setState({
+      videoList:arr,
+    })
+  }
+
+
+  moveDown = (index) => {
+    var arr= this.state.videoList;
+    if(index===arr.length-1){ return; }
+    var temp= arr[index];
+    arr[index]=arr[index+1];
+    arr[index+1]=temp;
+    this.setState({
+      videoList:arr,
+    })
+  }
+
   onVideoEnd = () => {
     const {videoList,playing} = this.state;
     var arr= videoList;
@@ -87,9 +111,11 @@ class App extends React.Component {
                   <div>
                       {videoList.map((item,index) => {
                         return(
-                          <div className="videoitem row pl-2 ml-0 mb-2">
-                              <span className="col-sm-10">{item}</span>
-                              <FontAwesomeIcon className="delete col-sm-2" onClick={() => this.deleteItem(index)} icon={faTrash}/>
+                          <div className="videoitem row  ml-0 mb-2">
+                              <span className="col-sm-9">{item}</span>
+                              <FontAwesomeIcon className="delete col-sm-1 pl-1 pr-1" onClick={() => this.deleteItem(index)} icon={faTrash}/>
+                              <FontAwesomeIcon className="moveup col-sm-1 p1-1 pr-1" onClick={() => this.moveUp(index)} icon={faArrowUp}/>
+                              <FontAwesomeIcon className="movedown col-sm-1 pl-1 pr-1" onClick={() => this.moveDown(index)} icon={faArrowDown}/>
                             
                           </div>
                         )

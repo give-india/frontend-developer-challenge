@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faTrash}  from "@fortawesome/free-solid-svg-icons";
 import ReactPlayer from 'react-player'
 
+
 class App extends React.Component {
   constructor(){
     super()
@@ -74,26 +75,31 @@ class App extends React.Component {
   render () {
     const {isAddActive,videoList,playing} = this.state;
     return (
-      <div className="PlayList">
-          <Button variant="info" onClick={this.setAddActive}> + Add new video </Button>{' '}
-           {isAddActive ? 
-           <div>
-             <input type="text" value={this.state.url} name="url" onChange={this.handleURLChange}/>
-             <span><Button variant="danger" onClick={this.AddUrl}>Done</Button> </span>  
-           </div>: "" }
-           <div>
-               {videoList.map((item,index) => {
-                 return(
-                   <div className="videoitem">
-                      {item}
-                      <FontAwesomeIcon onClick={() => this.deleteItem(index)} icon={faTrash}/>
-                     
-                   </div>
-                 )
-               })}
-           </div>
-           {playing>=0 ? <ReactPlayer controls className="player" style={{float:'right'}} url={this.state.videoList[playing]} onEnded={this.onVideoEnd}/> : ""}
-        
+      <div className="container">
+        <div className="row">
+              <div className="PlayList col-sm-5">
+                  <Button variant="info" className="add" onClick={this.setAddActive}> + Add new video </Button>{' '}
+                  {isAddActive ? 
+                  <div className="urlinput">
+                    <input type="text" className= "inputbox" value={this.state.url} name="url" onChange={this.handleURLChange}/>
+                    <span><Button variant="danger" onClick={this.AddUrl}>Done</Button> </span>  
+                  </div>: "" }
+                  <div>
+                      {videoList.map((item,index) => {
+                        return(
+                          <div className="videoitem row pl-2 ml-0 mb-2">
+                              <span className="col-sm-10">{item}</span>
+                              <FontAwesomeIcon className="delete col-sm-2" onClick={() => this.deleteItem(index)} icon={faTrash}/>
+                            
+                          </div>
+                        )
+                      })}
+                  </div>
+              </div>
+              <div className="col-sm-7">
+                  {playing>=0 ? <ReactPlayer controls className="player" url={this.state.videoList[playing]} onEnded={this.onVideoEnd}/> : ""}
+              </div>
+          </div>
       </div>
     );
   }

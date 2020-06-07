@@ -1,0 +1,43 @@
+.videoitem {
+    padding:1%;
+    border: solid 1px black;
+    border-radius: 10px;
+
+}
+
+.delete {
+    font-size: larger;
+    color: red;
+    position: relative;
+}
+
+.player {
+    float:right;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    height: 80%;
+}
+
+.add {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 3%;
+    margin-top: 1%;
+
+}
+
+.urlinput {
+    width: 100%;
+    margin-bottom: 3%;
+    margin-top: 1%;
+}
+
+.inputbox {
+    width: 80%;
+    overflow-x: hidden;
+    height:39px;
+}
+
+.PlayList{
+}

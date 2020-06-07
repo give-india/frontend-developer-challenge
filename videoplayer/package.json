@@ -13,8 +13,10 @@
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
+    "react-list-drag-and-drop": "^0.9.2",
     "react-player": "^2.1.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "youtube-validate": "^1.2.4"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -16,4 +16,4 @@
 - The application is made efficient using SPA concepts. The application is built using React library.
 
 ### Github link
-[](https://github.com/AyushiDamele)
+[Ayushi Damele Github Profile](https://github.com/AyushiDamele)

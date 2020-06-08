@@ -1,7 +1,7 @@
 
 ### To run the project
 - clone the project.
-- open command prompt in the project directory.
+- open command prompt in the project directory i.e. inside the videoplayer directory.
 - run "npm install" to install required packages.
 - run "npm start" to run the project
 - Go to localhost:3000 in the browser to use your videoplayer.

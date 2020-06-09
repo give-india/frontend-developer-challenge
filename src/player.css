@@ -1,0 +1,45 @@
+.App{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+.header form{
+    width:75%
+}
+.errmsg{
+    font-size: 12px;
+    color: red;
+}
+
+.playbox{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+.video{
+    width: 450px;
+    height: 310px;
+    margin-right: 25px;
+}
+.playlist{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}

@@ -39,7 +39,11 @@ I have used React JS to build this project. I am using MobX for state management
 
 - I have already deployed the website using Netlify. Please click [here](https://youtubeplayer.netlify.app/) for checking the live version. 
 - For checking the code and running it in local kindly Clone the Repo and open cmd.exe from the repo folder(Where package.json is present).
-- Enter "npm start" to serve it in localhost and run locally.
+- Enter "npm install" to install all the required packages.
+```
+npm install
+```
+- Enter "npm start" to serve it in localhost and run locally by entering **localhost:3000** in your broswer.
 ```
 npm start
 ```

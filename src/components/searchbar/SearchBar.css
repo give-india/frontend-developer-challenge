@@ -1,0 +1,16 @@
+.searchBar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.inputBox {
+  width: 70%;
+  color: #f4f4f4;
+  border: 2px solid white;
+  border-radius: 0.25rem;
+}
+
+.searchButton {
+  width: 20%;
+}

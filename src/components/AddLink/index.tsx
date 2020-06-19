@@ -8,7 +8,7 @@ import { LinkEntry } from "../../App";
 interface AddLinkProps {
 
   onChange: (x: LinkEntry) => void;
-  
+
 }
 
 
@@ -20,7 +20,7 @@ export const AddLink: React.FC<AddLinkProps> = (props: AddLinkProps) => {
   };
 
   const onAddEntry = () => {
-    const entry: LinkEntry = { name, id: Date.now() };
+    const entry: LinkEntry = { link, id: Date.now() };
     props.onChange(entry);
   };
 

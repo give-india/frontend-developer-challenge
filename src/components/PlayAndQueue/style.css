@@ -1,18 +1,54 @@
-.playqueue-main{
-    display: grid;
-    grid-template-columns: 3.5fr 1fr;
-    height: 100vh;
+.playqueue-main {
+  display: grid;
+  grid-template-columns: 3.5fr 1fr;
+  height: 100vh;
 }
 
-.play-video{
+.play-video {
+  border-right: solid;
+  border-right-width: thin;
+  margin: 2em 2em 2em 2em;
+}
 
-    border-right: solid;
-    border-right-width: thin;
-    margin: 2em 2em 2em 2em;
+.play-queue {
+
+  margin: 2em 2em 2em 2em;
 
 }
 
-.play-queue{
-    margin: 2em 2em 2em 2em;
+.play-card {
+
+    -webkit-box-shadow: 10px 10px 15px -13px rgba(0,0,0,0.64);
+    -moz-box-shadow: 10px 10px 15px -13px rgba(0,0,0,0.64);
+    box-shadow: 10px 10px 15px -13px rgba(0,0,0,0.64);
+  width: 100%;
+  height: 7vh;
+  font-size: 1.5em;
+
+  margin-bottom: 1em;
+
+  display: flex;
+  flex-direction: row;
 
 }
+.remove-link-btn {
+
+
+    border: none;
+    height: 2em;
+    width: 2em;
+    background-color: white;
+    margin-left: 8em;
+    
+
+}
+
+.remove-task-icon{
+    width: 1.2em;
+}
+
+.link-title{
+    margin-left: 1em;
+    margin-top: 1em;
+}
+

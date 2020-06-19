@@ -1,0 +1,18 @@
+.playqueue-main{
+    display: grid;
+    grid-template-columns: 3.5fr 1fr;
+    height: 100vh;
+}
+
+.play-video{
+
+    border-right: solid;
+    border-right-width: thin;
+    margin: 2em 2em 2em 2em;
+
+}
+
+.play-queue{
+    margin: 2em 2em 2em 2em;
+
+}

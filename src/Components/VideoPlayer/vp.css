@@ -1,0 +1,16 @@
+.player-wrapper {
+  position: relative;
+}
+
+.react-player {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: auto !important;
+}
+
+@media only screen and (max-width: 993px) {
+  .react-player {
+  }
+}

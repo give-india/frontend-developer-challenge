@@ -1,32 +1,22 @@
-## Frontend Developer at Give
+# PLAY - MY - LIST
 
-Not just ‘Frontend’, are you a pro at web development with a special liking for JavaScript? How about working with a team that’s full of the creative breed and where food and outings are considered as being equally important to work?
+## HoW to Run
 
-We would love it if you are blessed with prudent design aesthetics but we would also want you to be game about having ‘fun’ while working. Welcome to the world of Give, where we have come together to introduce a culture of giving that aims to change lives for the better.
-Stalk us at [our website](https://www.giveindia.org/), [FB](https://www.facebook.com/GiveIndia/), [Twitter](https://twitter.com/giveindia/), [LinkedIn](https://www.linkedin.com/company/giveindia/)
+1. Clone this Repo
+2. cd cloned_Directory
+3. Go to Terminal and run 1. "npm install" 2. "npm start"
 
-We are looking for determined front-end developers who come with a strong experience in implementing modern web UIs that prove to be are a delight for the user. If you think you have what it takes, build us this simple app in a frontend stack of your choosing.
+## How it works
 
-### Objective
-A simple video player app where user can request videos to be played in a queue by adding YouTube links
+1. Add your favourite urls
+2. Click on Playme After Adding All the urls and now these urls will be played in shuffle.
 
-Sample UI below. The app doesn't need to have fancy design. We are looking for functional implementation.
-![Sample UI](https://d1v9g1a6pf512p.cloudfront.net/static/images/misc/ec4db85c-5e31-4427-9463-aec56061f61a-a.jpg)
+now go to http://localhost:3000
 
-### Tasks
-- The application must be a SPA.
-- The application should allow user to add a youtube link to the playlist and start playing from the playlist first in first out.
-- Once a video is finished, it should be removed from the playlist.
-- The youtube link must be validated by the app for proper url format before adding to the queue.
+## LIVE PROJECT
 
-### Bonus
+visit https://playmylist.netlify.app
 
-- Allow the user to remove and reorder items in the playlist.
-- Sync different versions of the application. If the application is open across two tabs, both must be in sync for all activities. For e.g adding/removing/forwarding a video on any one, should update both of them.
+## DOWNLOAD my RESUME
 
-### Deliverables
-- Create a fork of this repository
-- Code your solution in a frontend stack of your choice
-- Include instructions on how to set it up and run in the README.md
-- Add your resume and other profile / project links
-- Submit a pull request (PR)
+[CLICK HERE TO DOWNLOAD](https://internshala.com/student/resume_download/F4E2BD37-7527-E177-9E52-6AD148E20986/8591494)

@@ -1,0 +1,28 @@
+.link-main{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    border-bottom: solid;
+    border-bottom-width: thin;
+    margin-top: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
+    height: 10vh;
+    
+    
+}
+
+.link-input{
+
+      width: 5em;
+      height: 2.5em;
+      font-weight: 200;
+      font-size: large;
+      
+}
+
+.add-link-button{
+    margin-left: 1em;
+}
+

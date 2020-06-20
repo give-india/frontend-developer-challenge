@@ -1,8 +1,10 @@
 import React from "react";
+import YouTube from 'react-youtube';
 import "./style.css";
 
 import { LinkEntry } from "../../App";
 import crossIcon from "../../assets/cross-icon.svg";
+
 
 interface PlayAndQueueProps {
   children: any;
@@ -16,10 +18,20 @@ export const PlayAndQueue: React.FC<PlayAndQueueProps> = (
   props: PlayAndQueueProps
 ) => {
   const { children } = props;
+
+  const opts = {
+    height: '800',
+    width: '1100',
+    PlayerVars: {
+      autoplay: 1,
+    },
+  };
+  
+
   return (
     <div className="playqueue-main">
       <div className="play-video">
-        <h1>play screen</h1>
+      <YouTube videoId="2g811Eo7K8U" opts={opts} />
       </div>
       <div className="play-queue">{children}</div>
     </div>

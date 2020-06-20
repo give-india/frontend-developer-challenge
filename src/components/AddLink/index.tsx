@@ -17,11 +17,9 @@ export const AddLink: React.FC<AddLinkProps> = (props: AddLinkProps) => {
   };
 
   const onAddEntry = () => {
+    
     let validate = false;
-    let regexp: RegExp = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})?$/;
-    
-
-    
+    let regexp: RegExp = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})?$/
     if(regexp.test(link))
     {
       validate = true;

@@ -8,6 +8,8 @@ import crossIcon from "../../assets/cross-icon.svg";
 interface PlayAndQueueProps {
   entry: LinkEntry[];
   children: any;
+  onRemove: (id: number) => void;
+
 }
 interface PQCardProps {
   entry: LinkEntry;
@@ -17,7 +19,7 @@ interface PQCardProps {
 export const PlayAndQueue: React.FC<PlayAndQueueProps> = (
   props: PlayAndQueueProps
 ) => {
-  const { entry, children } = props;
+  const { entry, children ,onRemove} = props;
 
   const opts = {
     height: "800",
@@ -27,7 +29,7 @@ export const PlayAndQueue: React.FC<PlayAndQueueProps> = (
     },
   };
   let yid;
-
+  const onRemoveTask = () => onRemove(entry[0].id);
   try{
   yid = entry[0].link.split("v=")[1].substring(0, 16)
   }catch(error){
@@ -37,7 +39,7 @@ export const PlayAndQueue: React.FC<PlayAndQueueProps> = (
   return (
     <div className="playqueue-main">
       <div className="play-video">
-        {yid!=="" && <YouTube videoId={yid} opts={opts} />}
+        {yid!=="" && <YouTube videoId={yid} opts={opts} onEnd={onRemoveTask}/>}
       </div>
       <div className="play-queue">{children}</div>
     </div>

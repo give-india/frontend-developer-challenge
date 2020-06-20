@@ -46,8 +46,8 @@ const App: React.FC = () => {
         <AddLink onChange={onAddEntry} />
       </div>
       <div className="queue">
-        <PlayAndQueue entry={entries}>
-        {(entries.length > 0 && entries[0].link!=="https://www.youtube.com/watch?v=mA-OzIjYf0g") ? (
+        <PlayAndQueue entry={entries} onRemove={() => onRemoveEntry(entries[0].id)}>
+        {entries.length > 0? (
                     entries.map((entry: LinkEntry) => (
                         <PQCard key={entry.id} entry={entry} onRemove={() => onRemoveEntry(entry.id)} />
                     ))

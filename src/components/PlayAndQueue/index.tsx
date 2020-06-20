@@ -1,12 +1,12 @@
 import React from "react";
-import YouTube from 'react-youtube';
+import YouTube from "react-youtube";
 import "./style.css";
 
 import { LinkEntry } from "../../App";
 import crossIcon from "../../assets/cross-icon.svg";
 
-
 interface PlayAndQueueProps {
+  entry: LinkEntry[];
   children: any;
 }
 interface PQCardProps {
@@ -17,21 +17,23 @@ interface PQCardProps {
 export const PlayAndQueue: React.FC<PlayAndQueueProps> = (
   props: PlayAndQueueProps
 ) => {
-  const { children } = props;
+  const { entry, children } = props;
 
   const opts = {
-    height: '800',
-    width: '1100',
+    height: "800",
+    width: "1100",
     PlayerVars: {
       autoplay: 1,
     },
   };
-  
+
+
+  const yid = entry[0].link.split("v=")[1].substring(0, 11); 
 
   return (
     <div className="playqueue-main">
       <div className="play-video">
-      <YouTube videoId="2g811Eo7K8U" opts={opts} />
+        {entry && <YouTube videoId={yid} opts={opts} />}
       </div>
       <div className="play-queue">{children}</div>
     </div>

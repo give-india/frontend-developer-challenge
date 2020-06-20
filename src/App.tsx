@@ -45,7 +45,7 @@ const App: React.FC = () => {
         <AddLink onChange={onAddEntry} />
       </div>
       <div className="queue">
-        <PlayAndQueue>
+        <PlayAndQueue entry={entries}>
         {entries.length > 0 ? (
                     entries.map((entry: LinkEntry) => (
                         <PQCard key={entry.id} entry={entry} onRemove={() => onRemoveEntry(entry.id)} />

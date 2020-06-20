@@ -26,14 +26,18 @@ export const PlayAndQueue: React.FC<PlayAndQueueProps> = (
       autoplay: 1,
     },
   };
+  let yid;
 
-
-  const yid = entry[0].link.split("v=")[1].substring(0, 11); 
-
+  try{
+  yid = entry[0].link.split("v=")[1].substring(0, 16)
+  }catch(error){
+    yid = ""
+  }
+  
   return (
     <div className="playqueue-main">
       <div className="play-video">
-        {entry && <YouTube videoId={yid} opts={opts} />}
+        {yid!=="" && <YouTube videoId={yid} opts={opts} />}
       </div>
       <div className="play-queue">{children}</div>
     </div>

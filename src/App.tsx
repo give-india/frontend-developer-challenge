@@ -13,7 +13,7 @@ export interface LinkEntry {
 const App: React.FC = () => {
   const onAddEntry = (entry: LinkEntry) => {
     if (entries) {
-      const newTasks = [...entries, entry];
+      let newTasks = [...entries, entry];
       storeTaskEntries(newTasks);
     } else {
       storeTaskEntries([entry]);
@@ -25,7 +25,7 @@ const App: React.FC = () => {
     const entries = entriesString ? JSON.parse(entriesString) : [];
     return entries;
   };
-
+  
   const [entries, setEntries] = React.useState<LinkEntry[]>(loadTaskEntries());
   const storeTaskEntries = (entries: LinkEntry[]) => {
     window.localStorage.setItem(storageKey, JSON.stringify(entries));
@@ -37,6 +37,7 @@ const App: React.FC = () => {
         const filteredTasks = entries.filter((entry: LinkEntry) => entry.id !== id);
         storeTaskEntries(filteredTasks);
     }
+  
 };
 
   return (
@@ -46,7 +47,7 @@ const App: React.FC = () => {
       </div>
       <div className="queue">
         <PlayAndQueue entry={entries}>
-        {entries.length > 0 ? (
+        {(entries.length > 0 && entries[0].link!=="https://www.youtube.com/watch?v=mA-OzIjYf0g") ? (
                     entries.map((entry: LinkEntry) => (
                         <PQCard key={entry.id} entry={entry} onRemove={() => onRemoveEntry(entry.id)} />
                     ))

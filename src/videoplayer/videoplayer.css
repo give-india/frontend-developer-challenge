@@ -1,0 +1,101 @@
+.header {
+  background-color: #484848;
+  width: auto;
+  height: 60px;
+}
+
+.body {
+  background-color: #33ddee !important;
+  width: auto;
+  height: 752px;
+}
+
+.videoplayer {
+  width: 500px;
+  height: 500px;
+  margin: 18px;
+  background: #333;
+  box-shadow: 2px -2px 3px rgba(132, 142, 165, 0.75);
+}
+
+.searchurl {
+  margin-left: 2px;
+}
+
+.inputfield {
+  padding: 2px;
+}
+.MuiInputBase-root {
+  color: rgba(0, 0, 0, 0.87);
+  cursor: text;
+  height: 47px;
+  width: 366px;
+  margin-right: 4px;
+  background: whitesmoke;
+}
+.MuiOutlinedInput-root {
+  border-radius: 23px;
+  margin-top: 7px;
+}
+.MuiButton-root {
+  min-width: 80px !important;
+  margin: 11px 14px !important;
+
+  height: 36px;
+}
+.MuiFormControl-root {
+  margin-left: 26px !important;
+
+  height: 32px !important;
+}
+
+.playlist {
+  position: absolute;
+  margin-top: 21px;
+  right: 150px;
+  width: 400px;
+  height: 500px;
+
+  background: #333;
+  box-shadow: 1px -1px 2px 0px #858585;
+}
+.body {
+  background: #000;
+}
+
+.table-right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: "space-around";
+  overflow: hidden;
+
+  background-color: #fff;
+  font-family: monospace !important;
+
+  border: 6px solid#000 !important;
+
+  font-weight: bold !important;
+}
+.gridlist {
+  width: 500;
+  height: 450;
+}
+
+.icon {
+  color: rgba(255, 255, 255, 0.54);
+}
+.playlist-details {
+  font-size: 14px !important;
+  padding: 2px 15px !important;
+  line-height: 13px !important;
+}
+
+.cell-column-style {
+  padding: 2px 15px !important;
+  background: #333;
+  color: #fff !important;
+  font-size: larger !important;
+}
+.MuiSvgIcon-root {
+  padding: 25px;
+}

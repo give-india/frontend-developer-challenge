@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<body>
+	<div class="main-container">
+		<div class="input-container">
+			<input id="inputURL" type="text" placeholder="Add to Playlist" value=""/>
+		</div>
+		<div id="youtube-container">
+			<div id="playlist-container">
+				<p class="play-btn">Playlist</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+<script>
+$("#inputURL").keypress(function(event) {
+if (event.keyCode === 13) {
+	addtoplaylist();
+}
+});
+
+var videoIds = [];
+function addtoplaylist(event){
+if($('#inputURL').val() && $('#inputURL').val().indexOf("youtube.com")>-1){
+	var node = 	$('#playlist-container');
+	var youtube_video_id = $('#inputURL').val().split("?v=")[1].split("&")[0];
+	var childnode = '<div class="playlist-item">'
+				+	'<a class="playlist-item-thumbnail"><img src="https://img.youtube.com/vi/'+youtube_video_id+'/sddefault.jpg"/></a>'
+				+   '<a class="playlist-item-remove">X</a>'
+				+	'</div>';
+	$(childnode).appendTo(node);
+} else{
+	alert("invalid URL");
+}
+$('#inputURL').val("");
+
+if(videoIds.indexOf(youtube_video_id) < 0){
+	videoIds.push(youtube_video_id);
+}
+}
+
+var player;
+$(document).on("click", ".playlist-item-thumbnail" , function(event) {
+if($('#video-placeholder').length > 0){
+	$('#video-placeholder').remove();
+}
+
+var vdoPlaceholder = '<div id="video-placeholder"></div>';
+$(vdoPlaceholder).appendTo($('#youtube-container'));
+
+var videoId = $(event.target)[0].currentSrc.split("/sddefault.jpg")[0].split("/vi/")[1];
+player = new YT.Player('video-placeholder', {
+	width: 660,
+	height: 580,
+	videoId: videoId,
+	playerVars: {
+		color: 'white',
+		playlist: videoIds
+	},
+	events: {
+		'onStateChange': onPlayerStateChange
+	}
+});
+});
+
+$(document).on("click", ".playlist-item-remove" , function(event) {
+$(event.target).parent().remove();
+var removedVideoId = $(event.target).siblings().find('img')[0].currentSrc.split("/sddefault.jpg")[0].split("/vi/")[1];
+for(var i=0;i<videoIds.length;i++){
+	if(videoIds.indexOf(removedVideoId) > -1){
+		videoIds.splice(i,1);
+	}
+}
+});
+
+var currentPlayingVideoId;
+function onPlayerStateChange(event) {
+if (event.data == YT.PlayerState.PLAYING) {
+	currentPlayingVideoId = player.getVideoData().video_id;
+	console.log("playing");
+}
+if (event.data == YT.PlayerState.ENDED) {
+	var currentEndedVideoId = currentPlayingVideoId;
+	var loop = $('.playlist-item').find('img');
+	for(var i=0;i=loop.length;i++){
+		id=loop[i].currentSrc.split("/sddefault.jpg")[0].split("/vi/")[1];
+		if(id==currentEndedVideoId){
+			loop[i].closest('.playlist-item').remove();
+			console.log("ENDED");
+		}
+	}
+	for(var i=0;i<videoIds.length;i++){
+		if(videoIds.indexOf(currentEndedVideoId) > -1){
+			videoIds.splice(i,1);
+		}
+	}
+}
+}
+
+</script>
+
+<style>
+.youtube {
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    transition: all 200ms ease-out;
+    cursor: pointer;
+}
+
+.youtube .play {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAERklEQVR4nOWbTWhcVRTHb1IJVoxGtNCNdal2JYJReC6GWuO83PM/59yUS3FRFARdFlwYP1CfiojQWt36sRCUurRIdVFXIn41lAoVdRGrG1M01YpKrWjiYmaSl8ybZJL3cd+YA//NLObd3++eO8x79z5jSq5Gw+8kov0AP8vMR5l1BtBZQM4B8ks75wCdZdYZZj5qLZ4hov2Nht9Z9vhKKSIaB/gI4M4w62KeAO6Mte4lYOq20FxrlqqOibhHmeWbvNC9ZfDX1mLae391aN6limO/gwgvAPJbWeAZuSDingdwXTBw7/0IsyaA/Fkh+KqOkD+YNfHej1QKD+y7iVlOhgLvFqFfNJvNGyuBJ+KDAF8MDd0tgS8y64OlgSdJMsysL4cG7SOHkyQZLhTee7+d2R2rAVy/S+Jd7/32ouBHAP4gNNRGQyTHc/84NhqNywZp5rvjjnnvt21aABFeCQ+RLwAf2hQ8s7sv9OCLk6AHNgQvIrvbfzKCD76g/O6cu7lf/iER/aQGgy448pExZmhdegAPhR9sObFWH1gT3lp7DaA/5bkIgJhZPgsNmz02novj+KqeApj1ubwXWe4kdyeznAgNvTpE/HQmvKqOMeuFogTUVQSRno+iaLRLAJF7uIgL9O4ubgL8aWgB7S44mNX+35YpICUiAvS9sBLkq1WzT+NFffl6AuoiApi6NT37h6sWkBIRZGkQ8YtLgyji6e1mBYTqCEBPG2Naz+0BWQgtoGoRgCzEsd9hAN1X5BfnFZASUfrSAFQNsyZ1FJASUVpHiLinDJG8U2cBZYogkrcNs5waBAGdstbeU9zdqpw0gPwwSAI6VUxHyFlDpOcHUUBBIuYNs14aZAE5RVwyzPr3/0EAEY0TyfGNjBWQvwZ +CTSbehfAH29mrID8bET0+0EUkAd8WYDOmqJ3ecsG30yr9wqRfm6Y+a1BEFDEjHfHvWmY9ck6CygHvBVr8Xhtb4ZE5HZA3y8DvBNA1TjnrmXWf+sioMwZX5V/VHXMGGMMoKdDCxCRvRWBdzKzdHEO+EisilbPyopHYqp6S9UCAsz4iojI7hUDAtyXVQgIDd6KnOoaWNkbI6FaPSuZGyMArsi7MZoloB4zviI/Nhr3X95jltwTRQmoIfgisy5ai+me67OI7fE4nrqjrqfK1t0eby0FPRB6oGVlchL3rgnfrq19RKbVBdhV9IOSwJmfmJi4vi/4ThERitwyCxVAFqydshuCX5awhQ9KtmuIWd8IDZED/nXT77rvVVv6sHRKwjYi91poqP7Dr+Y6JJ1VSZIMA3wkPNy6bX+o8Bcm0sXMdwM8Fxo0A3xORPaWBp6uPXsmbxCRD0NDL0dOANhVCXy6iAjMcjbcrMt3RITKwdMVRdFo+y5yvkL4eWZ+zHt/ZVD4dEVRNGotpst+dZZZH8k86lqn2pIvT/eqrNfn2xuyqYPZ8mv7s8pfn/8Pybm4TIjanscAAAAASUVORK5CYII=") no-repeat center center;
+    background-size: 64px 64px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: .8;
+    filter: alpha(opacity=80);
+    transition: all 0.2s ease-out;
+}
+
+.youtube .play:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+input[type=text]{
+    width: 70%;
+	border:none;
+	border-bottom: 1px solid black;
+    background: #f1f1f1;
+}
+
+.input-container {
+	background: #f1f1f1;
+	padding: 15px;
+}
+
+input[type=text]:focus{
+	outline: none;
+}
+
+.main-container{
+	max-width: 900px;
+    margin: auto;
+}
+
+#playlist-container{
+	width: 25%;
+	overflow: auto;
+	height: 580px;
+    float: right;
+	background:green;
+}
+
+.playlist-item-thumbnail img{
+	width: 100%;
+	cursor: pointer;
+}
+
+.playlist-item-remove{
+	float: right;
+	cursor: pointer;
+}
+
+.youtube-container{
+	cursor:pointer;
+	border-bottom:1px;
+}
+
+.play-btn{
+	text-align: center;
+    border-bottom: 1px solid #fff;
+}
+
+.play-btn a{
+	color: #fff;
+    text-decoration: none;
+}
+
+.playlist-item{
+	border-radius: 5px;
+    border: 1px solid white;
+    margin: 10px;
+}
+
+.playlist-item-thumbnail{
+	width: 70%;
+	display:inline-block;
+}
+
+.playlist-item-remove{
+	display: inline-block;
+    color: #fff;
+    margin-right: 5px;
+    font-size: 15px;
+    text-decoration: none;
+}
+</style>

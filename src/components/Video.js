@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import up from  "./up.svg"
 import down from "./down.svg"
-import './Todo.css'
+import './Video.css'
 
-const Todo = ({ onClick, completed, text, upArrow, downArrow }) => (
+const Video = ({ onClick, completed, text, upArrow, downArrow }) => (
   <div >
   
   <li
@@ -30,10 +30,10 @@ const Todo = ({ onClick, completed, text, upArrow, downArrow }) => (
   </div> 
 )
 
-Todo.propTypes = {
+Video.propTypes = {
   onClick: PropTypes.func.isRequired,
   completed: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired
 }
 
-export default Todo
+export default Video

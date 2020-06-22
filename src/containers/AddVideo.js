@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addTodo } from '../actions'
+import { addVideo } from '../actions'
 
-let AddTodo = ({ dispatch }) => {
+let AddVideo = ({ dispatch }) => {
   let input
   let regex = /^(http(s)?:\/\/)?((w){3}.)?youtu(be|.be)?(\.com)?\/.+/gm
 
@@ -16,7 +16,7 @@ let AddTodo = ({ dispatch }) => {
         if ( !input.value.match(regex)){
             return
         }
-        dispatch(addTodo(input.value))
+        dispatch(addVideo(input.value))
         input.value = ''
       }}>
         <input ref={node => {
@@ -29,6 +29,6 @@ let AddTodo = ({ dispatch }) => {
     </div>
   )
 }
-AddTodo = connect()(AddTodo)
+AddVideo = connect()(AddVideo)
 
-export default AddTodo
+export default AddVideo

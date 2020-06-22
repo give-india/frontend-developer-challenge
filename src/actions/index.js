@@ -1,7 +1,7 @@
-let nextTodoId = 1
-export const addTodo = (text) => ({
-  type: 'ADD_TODO',
-  id: nextTodoId++,
+let nextVideoId = 1
+export const addVideo = (text) => ({
+  type: 'ADD_VIDEO',
+  id: nextVideoId++,
   text
 })
 
@@ -10,8 +10,8 @@ export const setVisibilityFilter = (filter) => ({
   filter
 })
 
-export const toggleTodo = (id) => ({
-  type: 'TOGGLE_TODO',
+export const toggleVideo = (id) => ({
+  type: 'TOGGLE_VIDEO',
   id
 })
 

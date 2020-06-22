@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import todos from './todos'
+import videos from './videos'
 import visibilityFilter from './visibilityFilter'
 
-const todoApp = combineReducers({
-  todos,
+const videoApp = combineReducers({
+  videos,
   visibilityFilter
 })
 
-export default todoApp
+export default videoApp

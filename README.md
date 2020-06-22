@@ -2,7 +2,7 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________________________________________________
 
 WORKING : -
-1. Add a VALID youtube video url from input box
+1. Add a VALID youtube video url from input box, Invalid url will not be added
 2. double click to remove a video
 3. use arrow keys to move videos up and down
 4. By default one video is added in queue
@@ -11,7 +11,7 @@ WORKING : -
 HOW TO RUN THE PROJECT :- 
 1. Install node v14.4.0 (npm v6.14.5)
 2. npm install
-3. npm starts
+3. npm start
 
 
 REQUIREMENTS MEET FROM README IN ASSIGNMENT:-

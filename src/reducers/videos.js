@@ -1,21 +1,10 @@
-import undoable from 'redux-undo'
-
-const todo = (state, action) => {
+const addVideo = (state, action) => {
   switch (action.type) {
-    case 'ADD_TODO':
+    case 'ADD_VIDEO':
       return {
         id: action.id,
         text: action.text,
         completed: false
-      }
-    case 'TOGGLE_TODO':
-      if (state.id !== action.id) {
-        return state
-      }
-
-      return {
-        ...state,
-        completed: !state.completed
       }
     default:
       return state
@@ -31,16 +20,16 @@ function immutablySwapItems(items, firstIndex, secondIndex, length) {
   return results;
 }
 
-const todos = (state = [{ id : 0, text : 
+const videos = (state = [{ id : 0, text : 
   'https://www.youtube.com/watch?v=oUFJJNQGwhk',completed: false}
 ], action) => {
   switch (action.type) {
-    case 'ADD_TODO':
+    case 'ADD_VIDEO':
       return [
         ...state,
-        todo(undefined, action)
+        addVideo(undefined, action)
       ]
-    case 'TOGGLE_TODO':
+    case 'TOGGLE_VIDEO':
       return [
         ...state.slice(0, action.id),
         ...state.slice(action.id + 1)
@@ -54,6 +43,4 @@ const todos = (state = [{ id : 0, text :
   }
 }
 
-const undoableTodos = undoable(todos)
-
-export default undoableTodos
+export default videos

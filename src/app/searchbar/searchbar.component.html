@@ -1,0 +1,23 @@
+<div class="data-block">
+  <div class="col-md-12 input-container">
+    <mat-card class="row">
+      <div style="color:red;text-align: left;" *ngIf="error">{{errorString}}</div>
+      <mat-form-field  class="col-md-11 col-sm-10">
+        <mat-label>Enter youtube URL to add </mat-label>
+        <input matInput   [(ngModel)]="videoUrl"placeholder="Ex. https://www.youtube.com/watch?v=G2DCExerOsA">
+        <mat-error *ngIf="error">
+          Please enter a valid email address
+        </mat-error>
+      </mat-form-field>
+
+      <div class="col-md-1 col-sm-2 search-button"  *ngIf="!loading">
+        <button mat-raised-button color="primary" (click)="checkIfVideoExists()">Add</button>
+      </div>
+      <div class="col-md-1 col-sm-2 search-button" *ngIf="loading">
+        <mat-spinner diameter="35"></mat-spinner>
+      </div>
+
+    </mat-card>
+
+  </div>
+  </div>

@@ -19,11 +19,11 @@ const Video = ({ onClick, completed, text, upArrow, downArrow }) => (
   
     <img src={up}   style={{
         display: completed ? 'none' : 'block'
-      }} onClick={upArrow} />
+      }} alt="up" onClick={upArrow} />
 
     <img src={down}   style={{
       display: completed ? 'none' : 'block'
-      }} onClick={downArrow} />
+      }} alt="down" onClick={downArrow} />
 
 
 

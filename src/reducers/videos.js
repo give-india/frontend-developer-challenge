@@ -1,3 +1,5 @@
+import undoable from 'redux-undo'
+
 const addVideo = (state, action) => {
   switch (action.type) {
     case 'ADD_VIDEO':
@@ -43,4 +45,6 @@ const videos = (state = [{ id : 0, text :
   }
 }
 
-export default videos
+const undoableVideos = undoable(videos)
+
+export default undoableVideos

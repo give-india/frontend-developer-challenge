@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addVideo } from '../actions'
 
+
 let AddVideo = ({ dispatch }) => {
   let input
   let regex = /^(http(s)?:\/\/)?((w){3}.)?youtu(be|.be)?(\.com)?\/.+/gm

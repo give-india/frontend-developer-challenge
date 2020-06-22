@@ -5,6 +5,7 @@ import ReactPlayer from 'react-player'
 
 const VideoList = ({ videos, onVideoClick, moveUp, moveDown }) => {
   var [index, setIndex] = useState(0);
+  
   return (
   <ul>
     {videos.map((video,index) => {

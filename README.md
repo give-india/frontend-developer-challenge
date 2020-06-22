@@ -1,32 +1,28 @@
-## Frontend Developer at Give
+______________________________________________________________________________________________________________________________________________________________IMPORTANT NOTE - A video/media is denoted by a ToDo in codebase
+______________________________________________________________________________________________________________________________________________________________
 
-Not just ‘Frontend’, are you a pro at web development with a special liking for JavaScript? How about working with a team that’s full of the creative breed and where food and outings are considered as being equally important to work?
+WORKING : -
+1. Add a VALID youtube video url from input box
+2. double click to remove a video
+3. use arrow keys to move videos up and down
+4. By default one video is added in queue
 
-We would love it if you are blessed with prudent design aesthetics but we would also want you to be game about having ‘fun’ while working. Welcome to the world of Give, where we have come together to introduce a culture of giving that aims to change lives for the better.
-Stalk us at [our website](https://www.giveindia.org/), [FB](https://www.facebook.com/GiveIndia/), [Twitter](https://twitter.com/giveindia/), [LinkedIn](https://www.linkedin.com/company/giveindia/)
 
-We are looking for determined front-end developers who come with a strong experience in implementing modern web UIs that prove to be are a delight for the user. If you think you have what it takes, build us this simple app in a frontend stack of your choosing.
+HOW TO RUN THE PROJECT :- 
+1. Install node v14.4.0 (npm v6.14.5)
+2. npm install
+3. npm starts
 
-### Objective
-A simple video player app where user can request videos to be played in a queue by adding YouTube links
 
-Sample UI below. The app doesn't need to have fancy design. We are looking for functional implementation.
-![Sample UI](https://d1v9g1a6pf512p.cloudfront.net/static/images/misc/ec4db85c-5e31-4427-9463-aec56061f61a-a.jpg)
+REQUIREMENTS MEET FROM README IN ASSIGNMENT:-
 
-### Tasks
-- The application must be a SPA.
-- The application should allow user to add a youtube link to the playlist and start playing from the playlist first in first out.
-- Once a video is finished, it should be removed from the playlist.
-- The youtube link must be validated by the app for proper url format before adding to the queue.
+  Tasks
+    1. The application must be a SPA.
+    2. The application should allow user to add a youtube link to the playlist and start playing from the playlist first in first out.
+    3. Once a video is finished, it should be removed from the playlist.
+    4. The youtube link must be validated by the app for proper url format before adding to the queue.
 
-### Bonus
 
-- Allow the user to remove and reorder items in the playlist.
-- Sync different versions of the application. If the application is open across two tabs, both must be in sync for all activities. For e.g adding/removing/forwarding a video on any one, should update both of them.
+  Bonus
+    1. Allow the user to remove and reorder items in the playlist.
 
-### Deliverables
-- Create a fork of this repository
-- Code your solution in a frontend stack of your choice
-- Include instructions on how to set it up and run in the README.md
-- Add your resume and other profile / project links
-- Submit a pull request (PR)

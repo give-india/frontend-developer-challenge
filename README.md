@@ -1,3 +1,18 @@
+
+## Prerequisite
+ - Node LTS version installed.
+ 
+### Steps to Run
+- Take a clone of the code in your local machine.
+- Open a terminal inside the folder 'frontend-developr-challenge'.
+- Run command 'npm install'
+- After that is done, run command 'npm start'.
+- Open your browser and goto [http://localhost:4200](http://localhost:4200)
+
+### Resume and Project links
+- project details can be found in the Resume itself or the [Github Account](https://github.com/HitendraSinghRathore).
+- Resume is present inside the folder 'Hitendra Resume' or it can be accessed through the project, when it is open in your browser, click on the name 'HitendraSinghRathore' in the top right corner in the toolbar.
+----------------------------------------------------------------------------------------------------------------------------------------
 ## Frontend Developer at Give
 
 Not just ‘Frontend’, are you a pro at web development with a special liking for JavaScript? How about working with a team that’s full of the creative breed and where food and outings are considered as being equally important to work?
@@ -30,3 +45,6 @@ Sample UI below. The app doesn't need to have fancy design. We are looking for f
 - Include instructions on how to set it up and run in the README.md
 - Add your resume and other profile / project links
 - Submit a pull request (PR)
+
+
+

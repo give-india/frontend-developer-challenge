@@ -9,6 +9,13 @@
 - After that is done, run command 'npm start'.
 - Open your browser and goto [http://localhost:4200](http://localhost:4200)
 
+### Features added
+ - Url can be enetered in the search Bar and the video will be checked if exists, else error is displayed.
+ - First video from the playlist will be queued to play.
+ - User can reorder the playlist, by dragging the video link in the URL.
+ - User can delete any video, by using delete button, except the one that is playing.
+ - The app will sync data across tabs on the same browser, i.e. playlist will be updated when new tab is opened. In case user has tab      already opened, and after that any changes are done, user need to press 'sync playlist' button on the tab where data is not updated.
+
 ### Resume and Project links
 - project details can be found in the Resume itself or the [Github Account](https://github.com/HitendraSinghRathore).
 - Resume is present inside the folder 'Hitendra Resume' or it can be accessed through the project, when it is open in your browser, click on the name 'HitendraSinghRathore' in the top right corner in the toolbar.

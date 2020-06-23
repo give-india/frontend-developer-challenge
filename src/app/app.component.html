@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row >
+    <div class="toolbar col-md-12" >
+
+    <h1 class="web-logo col-md-10"><img src="assets/icons/video_library-white-18dp.svg" height="25px" class="logo">Youtube Player</h1>
+    <div class="author col-md-2">
+      <a class="author-link" href="assets/HitendraResume.pdf" target="_blank">HitendraSinghRathore</a>
+     </div>
+  </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<app-searchbar></app-searchbar>
+<div class="row">
+<div class="col-md-8 col-sm-12" style="height: 60vh;  padding: 30px 30px 0px 30px">
+  <div>
+<youtube-player  [style.display]="showPlayer ? 'block': 'none'" [width]="width" [height]="height" [videoId]="videoId" (stateChange)="stateChange($event)"></youtube-player>
+</div>
+<div [style.display]="!showPlayer ? 'block': 'none'" class="no-video">
+  <div class="text-over">
+   <img src="assets/icons/play_arrow-white-18dp.svg" height="50px"/> No Video to play
+  </div>
+</div>
+</div>
+<div class="col-md-4 col-sm-12">
+<app-playlist [playlist]="playlist" (playlistUpdated)="updatePaylist($event)" (refresh)='refresh($event)'></app-playlist>
+</div>
+</div>

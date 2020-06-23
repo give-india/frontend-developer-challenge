@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-header class="row">
+    <div  class="col-md-6 playlist-text"> <img src='assets/icons/playlist_play-white-18dp.svg' height="30px">Playlist</div>
+    <div class="col-md-4 col-md-offset-2" style="text-align: end;"><button mat-raised-button (click)="refreshPlaylist()"> Sync Playlist</button></div>
+  </mat-card-header>
+
+  <mat-card-content>
+  <div cdkDropList
+  [cdkDropListData] ="playlist"
+  (cdkDropListDropped)="drop($event)" class="list-array">
+<div *ngFor="let item of playlist;trackBy: item ; let i = index;"  class="list-item" cdkDrag  cdkDragBoundary='.list-array'>
+
+  https://www.youtube.com/watch?v={{item}}
+
+<button mat-raised-button *ngIf="i>0"  color="warn" (click)="delete(i)">Delete</button>
+</div>
+</div>
+</mat-card-content>
+</mat-card>

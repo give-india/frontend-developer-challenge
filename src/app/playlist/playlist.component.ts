@@ -1,10 +1,11 @@
-import { Component, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
-import { moveItemInArray, CdkDragDrop, transferArrayItem } from '@angular/cdk/drag-drop';
+import { Component, Input, OnChanges, SimpleChanges, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { moveItemInArray, CdkDragDrop } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-playlist',
   templateUrl: './playlist.component.html',
-  styleUrls: ['./playlist.component.css']
+  styleUrls: ['./playlist.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PlaylistComponent implements OnChanges {
 
@@ -19,7 +20,7 @@ export class PlaylistComponent implements OnChanges {
   }
   drop(event: CdkDragDrop<string[]>) {
   moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    this.playlistUpdated.emit(event.container.data);
+  this.playlistUpdated.emit(event.container.data);
 
 }
 delete(index){

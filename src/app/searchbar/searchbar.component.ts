@@ -1,22 +1,31 @@
+import { takeUntil } from 'rxjs/operators';
 import { PlayerService } from './../services/player.service';
 import { YoutubeService } from './../services/youtube.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-searchbar',
   templateUrl: './searchbar.component.html',
-  styleUrls: ['./searchbar.component.css']
+  styles: [`.data-block {
+    margin: 0px auto 15px auto;
+    }
+    .search-button {
+      display: inline-block;
+
+    }
+  `]
+
 })
-export class SearchbarComponent implements OnInit {
+export class SearchbarComponent implements OnDestroy  {
   videoUrl: string;
   error = false;
   errorString = '';
   loading = false;
+  destroy$: Subject<boolean> = new Subject<boolean>();
   constructor(private youtube: YoutubeService,
               private player: PlayerService) { }
 
-  ngOnInit() {
-  }
 
   checkIfVideoExists() {
     this.error = false;
@@ -30,7 +39,9 @@ export class SearchbarComponent implements OnInit {
          this.videoUrl = '';
          this.loading = false;
        } else{
-         this.youtube.searchVideo(videoId).subscribe((data) => {
+         this.youtube.searchVideo(videoId).pipe(
+           takeUntil(this.destroy$)
+         ).subscribe((data) => {
            if (data.items.length === 0) {
             this.error = true;
             this.errorString = 'No Video Found with the url you entered.';
@@ -48,6 +59,8 @@ export class SearchbarComponent implements OnInit {
            this.loading = false;
          });
        }
+    } else {
+      this.loading = false;
     }
   }
 
@@ -56,5 +69,8 @@ export class SearchbarComponent implements OnInit {
     this.videoUrl = '';
 
   }
-
+  ngOnDestroy() {
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
+  }
 }

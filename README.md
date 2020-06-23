@@ -3,7 +3,7 @@
 WORKING : -
 1. Add a VALID youtube video url from input box, Invalid url will not be added
 2. double click to remove a video
-3. use arrow keys to move videos up and down
+3. use arrow icons on ui to move videos up and down
 4. By default one video is added in queue
 
 

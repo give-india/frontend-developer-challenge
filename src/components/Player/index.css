@@ -12,3 +12,7 @@
     width: 90% !important;
     height: 80% !important;
 }
+
+.player .reactPlayer iframe {
+    border-radius: 15px;
+}

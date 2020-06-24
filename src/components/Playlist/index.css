@@ -1,0 +1,20 @@
+.playList {
+    margin-top: 15px;
+    overflow-y: auto;
+    position: relative;
+    height: calc(100% - 55px);
+}
+
+.playList .addLinkBtnContainer {
+    padding: 7px 2px;
+}
+
+.playList .addLinkBtn {
+    padding: 5px;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    border-radius: 19px;
+    background: #8080808c;
+    box-shadow: 0px 1px 3px 0px black;
+}

@@ -1,0 +1,36 @@
+.linkCard {
+    display: flex;
+    margin: 5px 0;
+    border-radius: 20px;
+    align-items: center;
+    padding: 10px 8px 11px;
+    border: 0.5px solid gray; 
+    justify-content: space-between;
+}
+
+.linkCard.activeCard {
+    background: #8080808c;
+    border-color: transparent;
+}
+
+.linkCard .cardContext {
+    max-width: 90%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.linkCard .removeBtn {
+    cursor: pointer;
+    padding: 5px 8px;
+    background: gray;
+    border-radius: 50%;
+}
+
+.linkCard.activeCard .playingIndicator {
+    color: white;
+    padding: 2px 5px;
+    border-radius: 10px;
+    background: #9d54e7;
+    text-transform: uppercase;
+}

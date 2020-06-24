@@ -12,6 +12,7 @@ const Player = ({
         <div className="player">
             <ReactPlayer
                 playing
+                controls
                 className='reactPlayer'
                 onEnded={videoEndedHandler}
                 url={activeItem ? activeItem.url : ''}

@@ -6,9 +6,7 @@ import './index.css';
 const Player = ({
     activeItem,
     videoEndedHandler
-}) => {
-    console.log('active Item>>>', activeItem)
-    return (
+}) => (
         <div className="player">
             <ReactPlayer
                 playing
@@ -19,6 +17,5 @@ const Player = ({
             />
         </div>
     )
-}
 
 export default Player;

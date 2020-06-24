@@ -1,0 +1,14 @@
+.player {
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 20px);
+    height: calc(100% - 58px);
+    margin: 20px 10px 10px 10px;
+}
+
+.player .reactPlayer {
+    background: gray;
+    border-radius: 15px;
+    width: 90% !important;
+    height: 80% !important;
+}

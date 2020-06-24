@@ -1,9 +1,9 @@
 .linkCard {
     display: flex;
     margin: 5px 0;
-    padding: 6px 8px;
     border-radius: 20px;
     align-items: center;
+    padding: 10px 8px 11px;
     border: 0.5px solid gray; 
     justify-content: space-between;
 }
@@ -25,4 +25,12 @@
     padding: 5px 8px;
     background: gray;
     border-radius: 50%;
+}
+
+.linkCard.activeCard .playingIndicator {
+    color: white;
+    padding: 2px 5px;
+    border-radius: 10px;
+    background: #9d54e7;
+    text-transform: uppercase;
 }

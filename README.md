@@ -5,7 +5,8 @@
 
 ## WORK IT IN LOCAL ...
 
-Download the project zip file and extract and go to this path ezedox-task1 and open terminal and type following commands
+Download the project zip file, extract, go inside the project folder (frontend-developer-challenge) and right click & select open terminal.
+Type following commands once terminal opened
 
 *1. To install all dependencies*, run `yarn`
 

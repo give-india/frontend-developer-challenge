@@ -1,0 +1,28 @@
+.linkCard {
+    display: flex;
+    margin: 5px 0;
+    padding: 6px 8px;
+    border-radius: 20px;
+    align-items: center;
+    border: 0.5px solid gray; 
+    justify-content: space-between;
+}
+
+.linkCard.activeCard {
+    background: #8080808c;
+    border-color: transparent;
+}
+
+.linkCard .cardContext {
+    max-width: 90%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.linkCard .removeBtn {
+    cursor: pointer;
+    padding: 5px 8px;
+    background: gray;
+    border-radius: 50%;
+}

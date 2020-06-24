@@ -10,7 +10,6 @@
   font-size: 25px;
   padding: 10px 0;
   text-align: center;
-  font-family: monospace;
   text-transform: uppercase;
 }
 
@@ -23,7 +22,7 @@
 .playerContainer {
   padding: 5px;
   height: calc(100% - 20px);
-  width: calc(100vw - 30% - 10px);
+  width: calc(100vw - 30% - 20px);
 }
 
 .playlistContainer {

@@ -30,3 +30,8 @@ Sample UI below. The app doesn't need to have fancy design. We are looking for f
 - Include instructions on how to set it up and run in the README.md
 - Add your resume and other profile / project links
 - Submit a pull request (PR)
+
+### functionality
+1. add url with validation
+2. remove url after video finish 
+3. you can remove url from playlist

@@ -1,0 +1,19 @@
+@import "../../assets/css/variables.scss";
+
+.list-container {
+  border: 1px solid #727272;
+  border-radius: 4px;
+}
+.list-header {
+  text-align: center;
+  font-size: $font-size-header;
+  padding: 10px;
+  border-bottom: 1px solid #727272;
+}
+
+.list-item {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

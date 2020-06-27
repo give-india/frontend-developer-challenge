@@ -19,4 +19,8 @@ export class VideoListComponent implements OnInit {
       }
     );
   }
+
+  itemRemovedFromList(index) {
+    this.videoservice.removeVideoUrl(index);
+  }
 }

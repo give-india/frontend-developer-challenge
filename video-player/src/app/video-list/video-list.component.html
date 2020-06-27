@@ -1,6 +1,9 @@
 <div class="list-container">
   <div class="list-header">PLAYLIST</div>
   <div>
-    <app-video-list-item [videoList]="videoUrlListTemp"></app-video-list-item>
+    <app-video-list-item
+      [videoList]="videoUrlListTemp"
+      (onRemoveItem)="itemRemovedFromList($event)"
+    ></app-video-list-item>
   </div>
 </div>

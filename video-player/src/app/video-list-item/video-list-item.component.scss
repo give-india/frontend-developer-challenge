@@ -1,0 +1,14 @@
+@import "../../assets/css/variables.scss";
+
+.video-list-item {
+  text-align: center;
+  font-size: 1.2em;
+  border-bottom: solid 1px #eee;
+  padding: 5px;
+  line-height: 2em;
+
+  &:hover {
+    background: $color-hover-primary;
+    color: $color-white-primary;
+  }
+}

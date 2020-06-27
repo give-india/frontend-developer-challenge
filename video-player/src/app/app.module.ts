@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { YouTubePlayerModule } from "@angular/youtube-player";
+import { FormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -19,7 +20,7 @@ import { VideoListItemComponent } from "./video-list-item/video-list-item.compon
     VideoContainerComponent,
     VideoListItemComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, YouTubePlayerModule],
+  imports: [BrowserModule, AppRoutingModule, YouTubePlayerModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

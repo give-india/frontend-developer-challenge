@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { VideoService } from "../services/video.service";
 import { Subscription } from "rxjs";
 @Component({
@@ -6,13 +6,13 @@ import { Subscription } from "rxjs";
   templateUrl: "./video-list.component.html",
   styleUrls: ["./video-list.component.scss"],
 })
-export class VideoListComponent implements OnInit {
+export class VideoListComponent implements OnInit, OnDestroy {
   videoUrlListTemp = [];
   videoUrlListSubscription: Subscription;
-  constructor(private videoservice: VideoService) {}
+  constructor(private videoService: VideoService) {}
 
   ngOnInit() {
-    this.videoUrlListSubscription = this.videoservice.videoUrlState$.subscribe(
+    this.videoUrlListSubscription = this.videoService.videoUrlState$.subscribe(
       (res) => {
         this.videoUrlListTemp = res;
         // console.log(this.videoUrlListTemp);
@@ -20,7 +20,11 @@ export class VideoListComponent implements OnInit {
     );
   }
 
+  ngOnDestroy() {
+    this.videoUrlListSubscription.unsubscribe();
+  }
+
   itemRemovedFromList(index) {
-    this.videoservice.removeVideoUrl(index);
+    this.videoService.removeVideoUrl(index);
   }
 }

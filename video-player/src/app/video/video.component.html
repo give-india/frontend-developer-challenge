@@ -1,9 +1,15 @@
-<div>
+<div *ngIf="videoUrl">
   <youtube-player
     videoId="{{ videoUrl }}"
     suggestedQuality="highres"
     [height]="600"
     [width]="1100"
+    [startSeconds]="0"
+    (ready)="videoLoaded($event)"
+    (stateChange)="videoStateChanged($event)"
   >
   </youtube-player>
+</div>
+<div *ngIf="!videoUrl" class="no-video-placeholder">
+  <h2>Add a url above to start playing</h2>
 </div>

@@ -3,8 +3,11 @@
 This project was built using Angular
 
 ## Development server
+Clone the repo, `cd video-player` and run `ng serve` for the dev server.
+Navigate to `http://localhost:4200/` to see the app in action
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`
+You can add video urls to the playList. Or rearrange and edit delete them
+
 
 ### Portfolio
 

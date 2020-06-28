@@ -77,6 +77,9 @@ var videoApp = new Vue({
 
     isYouTubeVideo: function(link){
       if(link.indexOf('https://www.youtube.com/watch?v=') === 0){
+        if(link.indexOf('&')){
+          this.linkInput = this.linkInput.split('&')[0];
+        }
         return true;
       }
       else if(link.indexOf('https://youtu.be/') === 0){
@@ -148,7 +151,7 @@ var videoApp = new Vue({
     // Method to move down the video in the priority Order 
     moveDown: function(e){
       let p = e.target.parentElement.getAttribute('priority');         
-      let index = this.videoQueue.findIndex(obj => obj.priority == p);      
+      let index = this.videoQueue.findIndex(obj => obj.priority == p);          
       if(index >= 1){
         if(this.videoQueue[index + 1]){
           this.swap(index, index+1);
@@ -157,8 +160,23 @@ var videoApp = new Vue({
           alert('Video Can\'t be moved down');
         }
       }
+      else{
+        alert('This is the first video, this can\'t be moved down');
+      }
     },
     
+    // Method to delete video from Queue
+    remove: function(e){
+      let p = e.target.parentElement.getAttribute('priority');         
+      let index = this.videoQueue.findIndex(obj => obj.priority == p);
+
+      if(index >= 1){
+        this.videoQueue.splice(index,1);
+      }
+      else{
+        alert('This is the first video, this can\'t be removed');
+      }
+    },
 
     // Method to play any video from the queue randomly 
     play: function(e){
@@ -172,7 +190,7 @@ var videoApp = new Vue({
         this.loadVideo(this.videoQueue[0].url);                
       }
       else{
-        alert('Video Already Playing or not in the Queue');
+        alert('Video Already Playing');
       }
     }
 

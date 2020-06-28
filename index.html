@@ -21,19 +21,21 @@
           <br/> 
           <span class="url">{{video.url}}</span> <br/>
           <span class="actions" v-on:click="moveUp">Up</span>  |
-          <span class="actions" v-on:click="moveDown">Down</span>
+          <span class="actions" v-on:click="moveDown">Down</span> | 
+          <span class="actions" v-on:click="remove">Delete</span>
         </li>
       </ul>
       <button v-if="videoQueue.length > 0" type="button" id="clearQueueButton" v-on:click="clearQueue">Clear Queue</button>
       <p v-if="videoQueue.length === 0" style="color: #FFF; font-size: 14px; width: 100%;">Add a video to the playlist by entering youtube link in the input field above.</p>
     </div>
+
     <div id="mainPanel">
       <div id="linkPanel">
         <input type="text" name="videoUrl" id="videoUrl" v-model="linkInput" placeholder="Enter Youtube Video Links here (eg.https://www.youtube.com/watch?v=XXXXXXXXXXX)"/>
         <button type="button" id="videoAddButton" v-on:click="addLink">Add Video to Playlist</button>
       </div>
       <p v-if="videoQueue.length === 0" style="color: #FFF; font-size: 14px; width: 100%;">Add a video to the playlist by entering youtube link in the input field above.</p>
-      <div id="videoPanel">
+      <div id="videoPanel" v-bind:class="{visible: videoQueue.length}">
         <div id="player"></div>     
       </div>
     </div>

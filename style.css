@@ -106,3 +106,11 @@ span.url{
   cursor: pointer;
   font-weight: bold;
 }
+
+#videoPanel{
+  display: none;
+}
+
+#videoPanel.visible{
+  display: block;
+}

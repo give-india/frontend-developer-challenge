@@ -15,16 +15,24 @@
 
   <div id="videoApp">
     <div id="sideBar">
-      <h2>Your Playlist</h2>
+      <h4>Your Playlist</h4>
       <ul>
-        <li v-for="video in videoQueue"><a :href="video.url">Link</a></li>
+        <li v-for="video in videoQueue" :key="video.priority" :priority="video.priority"><span class="videoName" v-on:click="play">Video {{video.priority}} </span>  
+          <br/> 
+          <span class="url">{{video.url}}</span> <br/>
+          <span class="actions" v-on:click="moveUp">Up</span>  |
+          <span class="actions" v-on:click="moveDown">Down</span>
+        </li>
       </ul>
+      <button v-if="videoQueue.length > 0" type="button" id="clearQueueButton" v-on:click="clearQueue">Clear Queue</button>
+      <p v-if="videoQueue.length === 0" style="color: #FFF; font-size: 14px; width: 100%;">Add a video to the playlist by entering youtube link in the input field above.</p>
     </div>
     <div id="mainPanel">
       <div id="linkPanel">
-        <input type="text" name="videoUrl" id="videoUrl" v-model="linkInput"/>
-        <button type="button" v-on:click="addLink">Add Video to Playlist</button>
+        <input type="text" name="videoUrl" id="videoUrl" v-model="linkInput" placeholder="Enter Youtube Video Links here (eg.https://www.youtube.com/watch?v=XXXXXXXXXXX)"/>
+        <button type="button" id="videoAddButton" v-on:click="addLink">Add Video to Playlist</button>
       </div>
+      <p v-if="videoQueue.length === 0" style="color: #FFF; font-size: 14px; width: 100%;">Add a video to the playlist by entering youtube link in the input field above.</p>
       <div id="videoPanel">
         <div id="player"></div>     
       </div>
@@ -35,6 +43,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="https://unpkg.com/vue-ls@3.2.1/dist/vue-ls.min.js"></script>
   <script src="./script.js" type="text/javascript"></script>
 
 </html>

@@ -61,7 +61,7 @@ run ```localhost/dev/frontend-developer-challenge/``` or ```localhost/dev/fronte
 
 ### Profile Information
 
-Name: Rohit Nair
+Name: Rohit Nair | rohitcse081@gmail.com
 
 - [Linked In](https://www.linkedin.com/in/rohit-s-nair-51218999/)
 - [GitHub](https://github.com/rhit99900)

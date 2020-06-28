@@ -39,3 +39,18 @@ Sample UI below. The app doesn't need to have fancy design. We are looking for f
 - [Vue.JS](https://vuejs.org/)
 - [Youtube Embed API](https://developers.google.com/youtube/iframe_api_reference)
 
+### Project Setup
+
+- Clone the Respository to your local System/Serve
+```
+  git clone git@github.com:rhit99900/frontend-developer-challenge.git
+```
+
+
+### Profile Information
+
+Name: Rohit Nair
+
+- [Linked In](https://www.linkedin.com/in/rohit-s-nair-51218999/)
+- [GitHub](https://github.com/rhit99900)
+- 

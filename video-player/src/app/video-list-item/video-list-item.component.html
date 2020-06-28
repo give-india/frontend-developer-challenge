@@ -1,6 +1,12 @@
-<div *ngFor="let item of videoList; let i = index" class="video-list-item">
-  <span>{{ item }}</span>
-  <span class="video-list-item__icon" (click)="removeElementFromList(i)"
-    >&#10005;</span
+<div cdkDropList (cdkDropListDropped)="drop($event)">
+  <div
+    *ngFor="let item of videoList; let i = index"
+    class="video-list-item"
+    cdkDrag
   >
+    <span>{{ item }}</span>
+    <span class="video-list-item__icon" (click)="removeElementFromList(i)"
+      >&#10005;</span
+    >
+  </div>
 </div>

@@ -22,6 +22,11 @@ export class VideoService {
     this.videoUrlState.next(this.videoUrlList);
   }
 
+  modifyVideoUrlList(list) {
+    this.videoUrlList = list;
+    this.videoUrlState.next(this.videoUrlList);
+  }
+
   // Getters
   get videoUrlState$() {
     return this.videoUrlState.asObservable();

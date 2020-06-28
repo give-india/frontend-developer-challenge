@@ -10,6 +10,8 @@ import { VideoLinkInputComponent } from "./video-link-input/video-link-input.com
 import { VideoListComponent } from "./video-list/video-list.component";
 import { VideoContainerComponent } from "./video-container/video-container.component";
 import { VideoListItemComponent } from "./video-list-item/video-list-item.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { DragDropModule } from "@angular/cdk/drag-drop";
 
 @NgModule({
   declarations: [
@@ -20,7 +22,14 @@ import { VideoListItemComponent } from "./video-list-item/video-list-item.compon
     VideoContainerComponent,
     VideoListItemComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, YouTubePlayerModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    YouTubePlayerModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    DragDropModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

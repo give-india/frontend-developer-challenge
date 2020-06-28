@@ -30,3 +30,12 @@ Sample UI below. The app doesn't need to have fancy design. We are looking for f
 - Include instructions on how to set it up and run in the README.md
 - Add your resume and other profile / project links
 - Submit a pull request (PR)
+
+
+# Software Usage Documentation
+
+### Frameworks in Use
+
+- [Vue.JS](https://vuejs.org/)
+- [Youtube Embed API](https://developers.google.com/youtube/iframe_api_reference)
+

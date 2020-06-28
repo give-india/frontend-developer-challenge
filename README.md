@@ -1,6 +1,6 @@
 # VideoPlayer
 
-This project was built using Angular
+This project was built using Angular. See it on `https://yt-playlist.netlify.app/`
 
 ## Development server
 Clone the repo, `cd video-player` and run `ng serve` for the dev server.

@@ -1,0 +1,31 @@
+@import "../../assets/css/variables.scss";
+
+.add-link {
+  &__input {
+    font-size: $font-size-header;
+    background: #fefefe;
+    color: #727272;
+    outline: none;
+    border: 1px solid #727272;
+    border-radius: 4px;
+    padding: 10px;
+    margin-right: 15px;
+    width: 81%;
+  }
+
+  &__button {
+    font-size: $font-size-header;
+    background: #fefefe;
+    color: #727272;
+    outline: none;
+    border: 1px solid #727272;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background: $color-hover-primary;
+      color: $color-white-primary;
+    }
+  }
+}

@@ -41,11 +41,21 @@ Sample UI below. The app doesn't need to have fancy design. We are looking for f
 
 ### Project Setup
 
-- Clone the Respository to your local System/Serve
+- Clone the Respository to your local System/Server.
 ```
   git clone git@github.com:rhit99900/frontend-developer-challenge.git
 ```
-
+- Go to your browser and open the index.html file.
+Eg. For the current mentioned structure,
+```
+-| dev
+--| frontend-developer-challenge
+---| index.html
+---| script.js
+---| style.css
+---| README.md
+```
+run ```localhost/dev/frontend-developer-challenge/```
 
 ### Profile Information
 

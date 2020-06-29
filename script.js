@@ -83,13 +83,30 @@ var videoApp = new Vue({
     }
 
     let updateSeekTime = (val) => {
-      if(this.currentTime !== val){
+      if((this.currentTime > (val-1) && this.currentTime < (val+1))){
         this.currentTime = val;
       }
     }
 
-    let updateQueue = (val) => {
-      // this.videoQueue = val;
+    let updateQueue = (val) => {  
+      if(val.length !== 0 && this.videoQueue.length !==0){    
+        if((this.videoQueue[0].url == val[0].url) && (this.videoQueue[0].priority == val[0].priority)){
+          this.videoQueue = val;
+        }
+        else{
+          this.videoQueue = val;
+          this.currentTime = 0;
+          this.loadVideo(this.videoQueue[0].url);
+        }
+      }
+      else if(val.length !== 0 && this.videoQueue.length === 0){
+        this.videoQueue = val;
+        this.loadVideo(this.videoQueue[0].url);
+        this.playVideo;
+      }
+      else{ //For Queue is Cleared, set the value to null.
+        this.clearQueue();
+      }
     }
 
     Vue.ls.on('isPaused',updatePlayPause);
@@ -168,6 +185,8 @@ var videoApp = new Vue({
       this.videoQueue = [];
       this.size = 0;
       this.lastIndex = 0;
+      this.isPaused = false;
+      this.currentTime = 0;
       player.stopVideo();
     },
 
@@ -223,7 +242,7 @@ var videoApp = new Vue({
     },
 
     // Method to play any video from the queue randomly 
-    play: function(e){
+    play: function(e){      
       let p = e.target.parentElement.getAttribute('priority');
       let index = this.videoQueue.findIndex(obj => obj.priority == p);
       let video = this.videoQueue[index];
@@ -231,6 +250,7 @@ var videoApp = new Vue({
         this.videoQueue.splice(index,1);
         this.videoQueue.splice(0,0,video);        
         this.currentTime = 0;
+        this.isPaused = false;
         this.loadVideo(this.videoQueue[0].url);                
       }
       else{
@@ -271,6 +291,7 @@ function onPlayerReady(event) {
   player.mute(); 
   // Video Player Muted to enable autoplay on browsers 
   event.target.playVideo();
+  // player.unMute();
 }
 
 

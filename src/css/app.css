@@ -1,0 +1,47 @@
+.app-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.app-header input {
+  width: 60%;
+}
+
+.container {
+  display: flex;
+}
+
+.video-wrapper {
+  flex-grow: 2;
+}
+
+.playlist-wrapper {
+  background: grey;
+  width: 400px;
+  height: 90vh;
+}
+.title {
+  text-align: center;
+  padding: 20px;
+}
+
+ul {
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+li {
+  padding: 10px;
+  background:#eee;
+  display: flex;
+}
+li span {
+  cursor: pointer;
+  color: red;
+  margin: 0 15px;
+}
+
+

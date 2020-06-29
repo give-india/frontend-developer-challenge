@@ -16,7 +16,8 @@ var videoApp = new Vue({
     size: 0, // Size of Queue
     videoQueue: [], // Video Queue
     playerLoaded: false,  
-    currentTime: 0, //Video Current Time (in Seconds)
+    currentTime: 0, //Video Current Time (in Seconds),
+    isPaused: false
   },
 
   // Watcher functions that takes care of change of value of the mentioned vairables. 
@@ -41,10 +42,24 @@ var videoApp = new Vue({
         }
       }
     },
+    isPaused: function(value){   
+      if(this.playerLoaded){   
+        if(value){
+          this.pause();        
+        }
+        else{
+          this.playVideo();
+        }
+        Vue.ls.set('isPaused',value);
+      }
+    },
 
     currentTime: function(time){
-      Vue.ls.set('currentTime',time);
-    }    
+      // if(this.playerLoaded){
+        Vue.ls.set('currentTime',time);   
+        // this.seek(time);
+      // }
+    }
   },
 
   // Upon creation the instance, variables are updated if any information is found in LocalStorage; 
@@ -53,6 +68,35 @@ var videoApp = new Vue({
     this.size = Vue.ls.get('size',0);
     this.currentTime = Vue.ls.get('currentTime',0);
     this.lastIndex = Vue.ls.get('lastIndex',0);
+    this.isPaused = Vue.ls.get('isPaused',false);
+  },
+
+  mounted: function(){
+
+    let updatePlayPause = (val) => {
+      if(val){
+        this.isPaused = true;
+      }
+      else{
+        this.isPaused = false;
+      }
+    }
+
+    let updateSeekTime = (val) => {
+      if(this.currentTime !== val){
+        this.currentTime = val;
+      }
+    }
+
+    let updateQueue = (val) => {
+      // this.videoQueue = val;
+    }
+
+    Vue.ls.on('isPaused',updatePlayPause);
+
+    Vue.ls.on('videoQueue',updateQueue);
+
+    // Vue.ls.on('currentTime',updateSeekTime);
   },
 
   methods: {
@@ -192,6 +236,14 @@ var videoApp = new Vue({
       else{
         alert('Video Already Playing');
       }
+    },
+
+    pause: function(){
+      player.pauseVideo();
+    },
+
+    seek: function(seconds){      
+      player.seekTo(seconds, true);
     }
 
   }
@@ -232,10 +284,18 @@ setInterval(function(){
 // 5. The API calls this function when the player's state changes.
 //    The function indicates that when playing a video (state=1),
 //    the player should play for six seconds and then stop.
-function onPlayerStateChange(event) {
+function onPlayerStateChange(event) {  
   if(event.data === YT.PlayerState.ENDED){
     videoApp.nextVideo();
     // upon the current playing video ends, load a new video and play it 
+  }
+
+  if(event.data === YT.PlayerState.PAUSED){
+    console.log('Here');
+    videoApp.isPaused = true;
+  }
+  else{
+    videoApp.isPaused = false;
   }
 }
 

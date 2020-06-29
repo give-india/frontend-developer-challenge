@@ -30,3 +30,52 @@ Sample UI below. The app doesn't need to have fancy design. We are looking for f
 - Include instructions on how to set it up and run in the README.md
 - Add your resume and other profile / project links
 - Submit a pull request (PR)
+
+
+# Software Usage Documentation
+
+### Frameworks in Use
+
+- [Vue.JS](https://vuejs.org/)
+- [Youtube Embed API](https://developers.google.com/youtube/iframe_api_reference)
+- [Vue.JS Localstorage](https://www.npmjs.com/package/vue-ls)
+
+### Project Setup
+
+- Clone the Respository to your local System/Server.
+```
+  git clone git@github.com:rhit99900/frontend-developer-challenge.git
+```
+- Go to your browser and open the index.html file.
+Eg. For the current mentioned structure,
+```
+- WebServer (/var/www or /Documents/WebServer or /htdocs)
+--| dev
+---| frontend-developer-challenge
+----| index.html
+----| script.js
+----| style.css
+----| README.md
+```
+run ```localhost/dev/frontend-developer-challenge/``` or ```localhost/dev/frontend-developer-challenge/index.html```
+
+### Profile Information
+
+Name: Rohit Nair | rohitcse081@gmail.com
+
+- [Linked In](https://www.linkedin.com/in/rohit-s-nair-51218999/)
+- [GitHub](https://github.com/rhit99900)
+
+
+### How it works?
+
+- Enter the video url (eg. https://www.youtube.com/watch?v=sGPrx9bjgC8) at the input box and click on Add to Playlist.
+- If the queue is empty, the newly added video will start playing automatically and other videos added later will be added to the queue later.
+
+#### Controls
+
+- Add videos to the queue.
+- Reorder the videos, move up and down the order in the queue.
+- Play any video from the between that will get pushed to the first element in the queue.
+- Opening the the link in another tab in the same browser will play the videos in sync (However, since there's a delay in loading the video from internet, there's a slight delay expected ~ 2 sec.)
+- Note: Videos are loaded in mute to enable auto-play, the same could be changed using the video manual control.

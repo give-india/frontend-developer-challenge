@@ -1,0 +1,22 @@
+.videoApp {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    min-height: 600px;
+    background-color: red;
+}
+
+.playlist {
+    background: rgb(121, 118, 118);
+}
+
+.playlist__heading {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.playlist__border {
+    width: 80%;
+    margin-top:-10px;
+}

@@ -1,0 +1,47 @@
+.header {
+    background: rgb(121, 118, 118);
+    padding: 20px;
+}
+
+.header__inputUrl {
+border: none;
+border-bottom: 3px solid rgb(209, 194, 194);
+min-width: 70%;
+font-size: 20px;
+background: rgb(121, 118, 118);
+color: white;
+}
+.header__inputUrl:focus {
+    outline-style: none;
+    outline-width: 0;
+}
+.header__inputUrl::placeholder {
+    color: white;
+    opacity: 0.6;
+}
+
+.playlist-wrapper {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 700px;
+    margin-top: 2px;
+}
+.playlist-wrapper__links {
+    background: rgb(121, 118, 118);
+}
+
+.playlist-wrapper__links__lists {
+    list-style-type: none;
+    font-size: 25px;
+    color: white;
+        
+}
+.playlist-wrapper__link{
+    cursor: pointer;
+}
+.playlist-wrapper__links__heading {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+} 

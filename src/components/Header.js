@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
-import '../style/header.css'
-import { useSelector, useDispatch } from 'react-redux'
-import { addLink } from '../action'
-import { v4 as uuidv4 } from 'uuid';
-
+import '../style/style.css'
+import { v4 as uuidv4 } from 'uuid'
+import VideoPlayer from './VideoPlayer'
 
 function Header () {
   const [val, setVal] = useState('')
-  const dispatch = useDispatch()
+  const [playlists, setPlaylists] = useState([])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -16,7 +14,7 @@ function Header () {
       id: uuidv4(),
       isPlay: true
     }
-    dispatch(addLink(obj))
+    setPlaylists([obj, ...playlists])
     setVal('')
   }
 
@@ -25,15 +23,18 @@ function Header () {
   }
 
   return (
-    <form className='header' onSubmit={handleSubmit}>
-      {console.log('header rendering')}
-      <input
-        type='text' id='link' name='link' value={val}
-        placeholder='Add a youtube link  (Ex: https://www.youtube.com/watch?v=k5E2AVpwsko)'
-        className='header__inputUrl'
-        onChange={handleChange}
-      />
-    </form>
+    <>
+      <form className='header' onSubmit={handleSubmit}>
+        {console.log('header rendering', playlists)}
+        <input
+          type='text' id='link' name='link' value={val}
+          placeholder='Add a youtube link  (Ex: https://www.youtube.com/watch?v=k5E2AVpwsko)'
+          className='header__inputUrl'
+          onChange={handleChange}
+        />
+      </form>
+      <VideoPlayer lists={playlists} isPlayLists />
+    </>
   )
 }
 

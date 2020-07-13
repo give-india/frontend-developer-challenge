@@ -1,3 +1,7 @@
+.App {
+    background-color: black;
+}
+
 .header {
     background: rgb(121, 118, 118);
     padding: 20px;
@@ -28,6 +32,7 @@ color: white;
 }
 .playlist-wrapper__links {
     background: rgb(121, 118, 118);
+    padding:30px;
 }
 
 .playlist-wrapper__links__lists {

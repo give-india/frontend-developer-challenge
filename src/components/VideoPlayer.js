@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import ReactPlayer from 'react-player'
+import closeBtn from '../assets/img/close2.png'
 
-function VideoPlayer ({ lists }) {
-  console.log('props', lists)
+function VideoPlayer ({ lists, onVideoEnd }) {
+  console.log('lists as props', lists)
   const [links, setlinks] = useState('')
 
   useEffect(() => {
+    console.log('lists in useEffect', lists)
+    console.log('links', links)
     if (lists.length) {
-      handleClickOnLink(lists[0].id)
+      const id = lists.filter(item => item.isPlay === true)[0].id
+      handleClickOnLink(id)
+    } else {
+      setlinks(lists)
     }
   }, [lists])
 
@@ -24,20 +30,24 @@ function VideoPlayer ({ lists }) {
     setlinks(isPlayLists)
   }
 
+  const handleVideoEnd = (id, index) => onVideoEnd(id, index)
+
   return (
     <section className='playlist-wrapper'>
 
       <article className='playlist-wrapper__video'>
-
+        {console.log('links in ReactPlayer', links)}
         {links.length
-          ? links.map(item => {
+          ? links.map((item, index) => {
             if (item.isPlay) {
               return (
                 <ReactPlayer
+                  key={item.id}
                   height='100%'
                   width='100%'
                   url={item.link} controls playing
                   className='playlist-wrapper__video--reactPlayer'
+                  onEnded={() => handleVideoEnd(item.id, index)}
                 />)
             }
           })
@@ -55,7 +65,9 @@ function VideoPlayer ({ lists }) {
                 key={item.id}
                 className='playlist-wrapper__link'
                 onClick={(e) => handleClickOnLink(item.id)}
-              >{item.link}
+              >
+                <span>{item.link}</span>
+                <img src={closeBtn} alt="close-icon" className='playlist-wrapper__links__closeBtn' />
               </li>
             )
           })}

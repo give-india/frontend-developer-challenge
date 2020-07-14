@@ -1,0 +1,68 @@
+.App {
+  background-color: black;
+}
+
+.header {
+  background: rgb(58, 56, 56);
+  padding: 20px;
+}
+
+.header__inputUrl {
+  border: none;
+  border-bottom: 3px solid rgb(209, 194, 194);
+  min-width: 70%;
+  font-size: 20px;
+  background: rgb(58, 56, 56);
+  color: white;
+}
+
+.header__inputUrl:focus {
+  outline-style: none;
+  outline-width: 0;
+}
+
+.header__inputUrl::placeholder {
+  color: white;
+  opacity: 0.6;
+}
+
+.playlist-wrapper {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 700px;
+  margin-top: 2px;
+}
+
+.playlist-wrapper__links {
+  background: rgb(58, 56, 56);
+  padding: 0px 30px;
+}
+
+.playlist-wrapper__links__lists {
+  list-style-type: none;
+  font-size: 22px;
+  color: white;
+}
+
+.playlist-wrapper__link {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 10px;
+}
+
+.playlist-wrapper__links__heading {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.playlist-wrapper__links__closeBtn {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: white;
+  margin-left:10px;
+}

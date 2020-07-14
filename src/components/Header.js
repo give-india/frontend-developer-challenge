@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../style/style.css'
+import '../assets/css/app.css'
 import { v4 as uuidv4 } from 'uuid'
 import VideoPlayer from './VideoPlayer'
 
@@ -22,6 +22,47 @@ function Header () {
     setVal(e.target.value)
   }
 
+  const handleVideoEnd = (id, index) => {
+    const newPlaylists = playlists.filter(item => item.id !== id)
+
+    if (!newPlaylists.length) {
+      setPlaylists(newPlaylists)
+      return
+    }
+    if (newPlaylists.length !== 1 && newPlaylists.length === index) {
+      const items = newPlaylists.map((item, i) => {
+        if (i === 0) {
+          item.isPlay = true
+          return item
+        }
+        return item
+      })
+      setPlaylists(items)
+      return
+    }
+
+    if (newPlaylists.length !== 1 && newPlaylists.length !== index) {
+      const items = newPlaylists.map((item, i) => {
+        if (i === index) {
+          item.isPlay = true
+          return item
+        }
+        return item
+      })
+      setPlaylists(items)
+      return
+    }
+
+    const items = newPlaylists.map((item, i) => {
+      if (i === 0) {
+        item.isPlay = true
+        return item
+      }
+      return item
+    })
+    setPlaylists(items)
+  }
+
   return (
     <>
       <form className='header' onSubmit={handleSubmit}>
@@ -33,7 +74,7 @@ function Header () {
           onChange={handleChange}
         />
       </form>
-      <VideoPlayer lists={playlists} isPlayLists />
+      <VideoPlayer lists={playlists} onVideoEnd={(id, index) => handleVideoEnd(id, index)} />
     </>
   )
 }

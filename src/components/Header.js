@@ -6,75 +6,104 @@ import VideoPlayer from './VideoPlayer'
 function Header () {
   const [val, setVal] = useState('')
   const [playlists, setPlaylists] = useState([])
+  const [error, setError] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const obj = {
-      link: val,
-      id: uuidv4(),
-      isPlay: true
+    const urlFormat = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/
+    if (val.match(urlFormat)) {
+      const obj = {
+        link: val,
+        id: uuidv4(),
+        isPlay: true
+      }
+      setError(false)
+      setPlaylists([obj, ...playlists])
+      setVal('')
+    } else {
+      setError(true)
     }
-    setPlaylists([obj, ...playlists])
-    setVal('')
   }
 
   const handleChange = (e) => {
     setVal(e.target.value)
   }
 
-  const handleVideoEnd = (id, index) => {
-    const newPlaylists = playlists.filter(item => item.id !== id)
+  const handleVideoEnd = async (id, index) => {
+    const newPlaylists = await playlists.filter(item => item.id !== id)
 
+    // If Playlist is empty
     if (!newPlaylists.length) {
       setPlaylists(newPlaylists)
       return
     }
+
+    // If last video in the queue is ended then play from the first in the queue
     if (newPlaylists.length !== 1 && newPlaylists.length === index) {
-      const items = newPlaylists.map((item, i) => {
+      newPlaylists.forEach((item, i) => {
         if (i === 0) {
           item.isPlay = true
-          return item
         }
-        return item
       })
-      setPlaylists(items)
+      setPlaylists(newPlaylists)
       return
     }
 
+    // Play the immediate next video
     if (newPlaylists.length !== 1 && newPlaylists.length !== index) {
-      const items = newPlaylists.map((item, i) => {
+      newPlaylists.forEach((item, i) => {
         if (i === index) {
           item.isPlay = true
-          return item
         }
-        return item
       })
-      setPlaylists(items)
+      setPlaylists(newPlaylists)
       return
     }
 
-    const items = newPlaylists.map((item, i) => {
+    newPlaylists.forEach((item, i) => {
       if (i === 0) {
+        item.isPlay = true
+      }
+    })
+    setPlaylists(newPlaylists)
+  }
+
+  const handleReplace = (dropId, dragId) => {
+    // Reordering after drag and drop function
+    const items = [...playlists]
+    const item = playlists[dropId]
+    items[dropId] = items[dragId]
+    items[dragId] = item
+
+    const newItems = items.map((item, index) => {
+      if (index === 0) {
         item.isPlay = true
         return item
       }
       return item
     })
-    setPlaylists(items)
+    setPlaylists(newItems)
   }
 
   return (
     <>
       <form className='header' onSubmit={handleSubmit}>
-        {console.log('header rendering', playlists)}
         <input
           type='text' id='link' name='link' value={val}
           placeholder='Add a youtube link  (Ex: https://www.youtube.com/watch?v=k5E2AVpwsko)'
           className='header__inputUrl'
           onChange={handleChange}
         />
+
+        {
+          error ? <p className='header__error'>Please Enter the valid Youtube Url</p> : null
+        }
       </form>
-      <VideoPlayer lists={playlists} onVideoEnd={(id, index) => handleVideoEnd(id, index)} />
+      <VideoPlayer
+        lists={playlists}
+        onVideoEnd={(id, index) => handleVideoEnd(id, index)}
+        onReplace={(dropId, dragId) => handleReplace(dropId, dragId)}
+      />
     </>
   )
 }

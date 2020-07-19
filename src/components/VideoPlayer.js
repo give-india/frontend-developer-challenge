@@ -2,13 +2,10 @@ import React, { useState, useEffect } from 'react'
 import ReactPlayer from 'react-player'
 import closeBtn from '../assets/img/close2.png'
 
-function VideoPlayer ({ lists, onVideoEnd }) {
-  console.log('lists as props', lists)
+function VideoPlayer ({ lists, onVideoEnd, onReplace }) {
   const [links, setlinks] = useState('')
 
   useEffect(() => {
-    console.log('lists in useEffect', lists)
-    console.log('links', links)
     if (lists.length) {
       const id = lists.filter(item => item.isPlay === true)[0].id
       handleClickOnLink(id)
@@ -31,6 +28,38 @@ function VideoPlayer ({ lists, onVideoEnd }) {
   }
 
   const handleVideoEnd = (id, index) => onVideoEnd(id, index)
+
+  const handleDragStart = (e, id, index) => {
+    e.dataTransfer.setData('id', index)
+    e.target.style.opacity = '0.4'
+    e.dataTransfer.dropEffect = 'move'
+  }
+
+  const handleDrop = (e, id, index) => {
+    console.log('Drop')
+    e.preventDefault()
+    const draggedId = e.dataTransfer.getData('id')
+    console.log('DraggedId', draggedId, 'dropId', index)
+    onReplace(index, draggedId)
+  }
+
+  const handleDragOver = (e) => {
+    e.preventDefault()
+    e.dataTransfer.dropEffect = 'move'
+  }
+
+  const handleDragEnter = (e) => {
+    e.currentTarget.style.border = 'dashed'
+  }
+
+  const handleDragLeave = (e) => {
+    e.currentTarget.style.border = 'none'
+  }
+
+  const handleDragEnd = (e) => {
+    e.target.style.opacity = ''
+    e.currentTarget.style.border = 'none'
+  }
 
   return (
     <section className='playlist-wrapper'>
@@ -58,16 +87,30 @@ function VideoPlayer ({ lists, onVideoEnd }) {
       <article className='playlist-wrapper__links'>
         <p className='playlist-wrapper__links__heading'>PlayList</p>
         <hr className='playlist-wrapper__links__border' />
-        <ul className='playlist-wrapper__links__lists'>
+        <ul
+          className='playlist-wrapper__links__lists'
+
+        >
           {lists.map((item, index) => {
             return (
               <li
                 key={item.id}
                 className='playlist-wrapper__link'
-                onClick={(e) => handleClickOnLink(item.id)}
+                onClick={e => handleClickOnLink(item.id)}
+                draggable
+                onDragStart={e => handleDragStart(e, item.id, index)}
+                onDragEnter={e => handleDragEnter(e)}
+                onDragLeave={e => handleDragLeave(e)}
+                onDragEnd={e => handleDragEnd(e)}
+                onDragOver={e => handleDragOver(e)}
+                onDrop={e => handleDrop(e, item.id, index)}
               >
                 <span>{item.link}</span>
-                <img src={closeBtn} alt="close-icon" className='playlist-wrapper__links__closeBtn' />
+                <img
+                  src={closeBtn} alt='close-icon'
+                  className='playlist-wrapper__links__closeBtn'
+                  onClick={() => handleVideoEnd(item.id, index)}
+                />
               </li>
             )
           })}

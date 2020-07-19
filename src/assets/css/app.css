@@ -26,6 +26,12 @@
   opacity: 0.6;
 }
 
+.header__error {
+  color: red;
+  font-size:20px ;
+  margin-left: 20px;
+}
+
 .playlist-wrapper {
   display: grid;
   grid-template-columns: 4fr 1fr;

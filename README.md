@@ -30,3 +30,11 @@ Sample UI below. The app doesn't need to have fancy design. We are looking for f
 - Include instructions on how to set it up and run in the README.md
 - Add your resume and other profile / project links
 - Submit a pull request (PR)
+
+### Steps to Run the App
+- Clone the repo 
+- Run the command `npm install` to install dependencies
+- Run the command `npm start`
+
+### Depolyed at 
+- https://giveindia-task.netlify.app/

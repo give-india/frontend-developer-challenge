@@ -1,0 +1,47 @@
+.App {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #151a19;
+  color: white;
+}
+
+button {
+  padding: 5px;
+  border-radius: 20px;
+  margin: 0 5px;
+  background-color: rgb(47, 47, 56);
+  color: white;
+}
+
+.allVideo {
+  margin: 0;
+  color: white;
+  border-radius: 50px;
+  height: 10px;
+}
+.video {
+  border-radius: 50px;
+  margin: 10px 0;
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+}
+.inputText {
+  color: white;
+  cursor: pointer;
+}
+
+.linkInput {
+  width: 80%;
+  border-radius: 20px;
+  border-color: #151a19;
+  padding: 5px;
+}
+
+.deleteBtn {
+  background: transparent;
+  border: 0;
+  color: yellow;
+}
